@@ -8,4 +8,5 @@ C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\bin\Debug\
 C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\bin\Debug\AdministratorApp.pdb
 C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.exe
 C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.pdb
-C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.dashboard.resources
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.Meniu.resources
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.StatusAngajat.resources
