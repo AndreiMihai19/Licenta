@@ -1,0 +1,11 @@
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.csproj.AssemblyReference.cache
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.Properties.Resources.resources
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.csproj.GenerateResource.cache
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\bin\Debug\AdministratorApp.exe.config
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\bin\Debug\AdministratorApp.exe
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\bin\Debug\AdministratorApp.pdb
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.exe
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.pdb
+C:\Users\andre\source\repos\Licenta\AdministratorApp\AdministratorApp\obj\Debug\AdministratorApp.dashboard.resources
