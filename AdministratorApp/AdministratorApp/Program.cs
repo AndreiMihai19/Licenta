@@ -16,7 +16,7 @@ namespace AdministratorApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Meniu());
+            Application.Run(new Autentificare());
         }
     }
 }

@@ -12,25 +12,35 @@ namespace AdministratorApp
 {
     public partial class Meniu : Form
     {
+        private Size meniuSize;
+        //private Point locatieInitiala;
+
         public Meniu()
         {
             InitializeComponent();
+
+
+
+            this.StartPosition = FormStartPosition.CenterScreen;
+
         }
 
         private void btnStatus_Click(object sender, EventArgs e)
         {
-            StatusAngajat statusAngajat=new StatusAngajat();
+            meniuSize = this.Size;
 
-            statusAngajat.FormClosed += StatusAngajat_FormClosed;
-
-            statusAngajat.Show();
+            Angajati angajati = new Angajati();
+            //   statusAngajat.Location = locatieInitiala;
+            angajati.FormClosed += Meniu_FormClosed;
+            angajati.Size = meniuSize;
+            angajati.Show();
 
             this.Hide();
         }
 
-        private void StatusAngajat_FormClosed(object sender, FormClosedEventArgs e)
+        private void Meniu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();   
+            this.Close();
         }
 
         private void Meniu_Load(object sender, EventArgs e)
@@ -41,6 +51,18 @@ namespace AdministratorApp
         private void btnIesire_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAdaugaAngajat_Click(object sender, EventArgs e)
+        {
+            meniuSize = this.Size;
+
+            AdaugareAngajat adaugaAngajat = new AdaugareAngajat();
+            //  adaugaAngajat.Location = locatieInitiala;
+            adaugaAngajat.FormClosed += Meniu_FormClosed;
+            adaugaAngajat.Show();
+
+            this.Hide();
         }
     }
 }
