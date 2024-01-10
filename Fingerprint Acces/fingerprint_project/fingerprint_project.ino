@@ -328,7 +328,6 @@ uint8_t getFingerprintID() {
     return p;
   }
 
-
   // found a match!
 
 

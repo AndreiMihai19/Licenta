@@ -22,8 +22,6 @@ char password[] = "andreiandreiandrei191919";
 WiFiClient client;
 MySQL_Connection conn((Client *)&client);
 
-char INSERT_SQL[] = "INSERT INTO licenta.Identificatori (id) VALUES (?)";
-
 
 void setup() {
 
