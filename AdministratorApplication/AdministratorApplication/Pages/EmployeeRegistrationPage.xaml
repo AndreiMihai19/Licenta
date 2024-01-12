@@ -1,0 +1,43 @@
+﻿<Page x:Class="AdministratorApplication.Pages.EmployeeRegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AdministratorApplication.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EmployeeRegistrationPage" Height="350" Width="500">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Email:"/>
+        <TextBox Grid.Row="1" Name="txtEmail" Margin="5"/>
+
+        <Label Grid.Row="2" Content="Parola:"/>
+        <PasswordBox Grid.Row="3" Name="txtParola" Margin="5"/>
+
+        <Label Grid.Row="4" Content="Nume:"/>
+        <TextBox Grid.Row="5" Name="txtNume" Margin="5"/>
+
+        <Label Grid.Row="6" Content="Funcție:"/>
+        <TextBox Grid.Row="7" Name="txtPosition" Margin="5"/>
+
+        <Label Grid.Row="8" Content="Salariu:"/>
+        <TextBox Grid.Row="9" Name="txtSalary" Margin="5"/>
+
+        <Button Grid.Row="10" Content="Înregistrează" Margin="5"/>
+    </Grid>
+</Page>

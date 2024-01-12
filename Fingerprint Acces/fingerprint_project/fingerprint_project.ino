@@ -16,7 +16,7 @@ unsigned int option = -1;
 
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
 
-uint8_t id = 3;
+uint8_t id;
 
 void setup()
 {
