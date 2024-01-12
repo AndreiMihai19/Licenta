@@ -11,14 +11,14 @@ namespace AdministratorApplication.Classes
 
         public int? Id { get; set; }
         public string? Email { get; set; }
-        public string? Password { get; set; }
-        public string? FirstName { get; set; }
-        public string? LastName { get; set; }
-        public string? DateOfBirth { get; set; }
+        public string? Parola{ get; set; }
+        public string? Nume { get; set; }
+        public string? Prenume { get; set; }
+        public string? DataNasterii { get; set; }
         public string? CNP { get; set; }
-        public string? PhoneNumber { get; set; }
-        public string? JobPosition { get; set; }
-        public int? Hours { get; set; }
+        public string? Telefon { get; set; }
+        public string? Functie { get; set; }
+        public int? Ore { get; set; }
 
 
     }

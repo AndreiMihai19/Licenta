@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AdministratorApplication.Classes;
+using AdministratorApplication.Interfaces;
+using AdministratorApplication.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
 namespace AdministratorApplication.Pages
 {
@@ -20,9 +24,41 @@ namespace AdministratorApplication.Pages
     /// </summary>
     public partial class EmployeesPage : Page
     {
+        private IEmployeeslListing? employeesListing;
+
+        List<Employee> employees = new List<Employee>();
+
         public EmployeesPage()
         {
             InitializeComponent();
+
+            employeesListing= new EmployeesListingRepository();
+
+            employeesListing.AddEmployees(employees);
+
+            ListViewEmployees.ItemsSource = employees;
+
+            GroupBy.ItemsSource = new string[] { "None", "Functie", "Ore" };
+
+            
+        }
+
+        public void GroupEmployeesList()
+        {
+            ListViewEmployees.Items.GroupDescriptions.Clear();
+            var property = GroupBy.SelectedItem as string;
+
+            if (property == "None" ) 
+            {
+                return;
+            }
+
+            ListViewEmployees.Items.GroupDescriptions.Add(new PropertyGroupDescription(property));
+        }
+
+        private void GroupBy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            GroupEmployeesList();
         }
     }
 }

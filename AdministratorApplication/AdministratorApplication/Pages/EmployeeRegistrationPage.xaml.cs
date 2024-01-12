@@ -24,7 +24,7 @@ namespace AdministratorApplication.Pages
     /// </summary>
     public partial class EmployeeRegistrationPage : Page
     {
-        private IRegistration registration;
+        private IRegistration? registration;
         public EmployeeRegistrationPage()
         {
             InitializeComponent();
@@ -61,23 +61,20 @@ namespace AdministratorApplication.Pages
                 radioBtnSelected = radioBtn[2];
              }
 
-            
-
             Employee employee = new Employee()
             {
                 Id = idAngajat,
                 Email = txtEmail.Text,
-                Password = txtParola.Password,
-                FirstName = txtPrenume.Text,
-                LastName = txtNume.Text,
-                DateOfBirth= dataNastere,
+                Parola = txtParola.Password,
+                Prenume = txtPrenume.Text,
+                Nume = txtNume.Text,
+                DataNasterii = dataNastere,
                 CNP = txtCNP.Text,
-                PhoneNumber = txtTelefon.Text,
-                JobPosition = jobPosition,
-                Hours=radioBtnSelected
+                Telefon = txtTelefon.Text,
+                Functie = jobPosition,
+                Ore = radioBtnSelected
             };
             
-
             switch (registration.Register(employee))
             {
                 case RegistrationStatus.Success: MessageBox.Show("Inregistrare reusita!");

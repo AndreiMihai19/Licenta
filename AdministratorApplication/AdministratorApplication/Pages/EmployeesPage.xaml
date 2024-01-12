@@ -9,6 +9,36 @@
       Title="EmployeesPage">
 
     <Grid>
-        <TextBlock Text="Employees" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
+       
+        <ListView x:Name="ListViewEmployees" Margin="0,50,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"/>
+                        <GridViewColumn Header="Parola" DisplayMemberBinding="{Binding Parola}"/>
+                        <GridViewColumn Header="Nume" DisplayMemberBinding="{Binding Nume}"/>
+                        <GridViewColumn Header="Prenume" DisplayMemberBinding="{Binding Prenume}"/>
+                        <GridViewColumn Header="Data Nasterii" DisplayMemberBinding="{Binding DataNasterii}"/>
+                        <GridViewColumn Header="CNP" DisplayMemberBinding="{Binding CNP}"/>
+                        <GridViewColumn Header="Telefon" DisplayMemberBinding="{Binding Telefon}"/>
+                        <GridViewColumn Header="Functie" DisplayMemberBinding="{Binding Functie}"/>
+                        <GridViewColumn Header="Ore/zi" DisplayMemberBinding="{Binding Ore}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Name}" Background="#d0ebff" Foreground="#1971c2" BorderBrush="#1971c2" BorderThickness="1"/>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListView.GroupStyle>
+        </ListView>
+
+        <ComboBox Name="GroupBy" SelectedIndex="0" Margin="11,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" SelectionChanged="GroupBy_SelectionChanged"></ComboBox>
     </Grid>
 </Page>

@@ -17,7 +17,7 @@ namespace AdministratorApplication.Repositories
 
         public RegistrationStatus Register(Employee e) 
         {
-            if (e.Id < 0 || string.IsNullOrEmpty(e.Email) || string.IsNullOrEmpty(e.Password) || string.IsNullOrEmpty(e.FirstName) || string.IsNullOrEmpty(e.LastName) || string.IsNullOrEmpty(e.DateOfBirth) || string.IsNullOrEmpty(e.CNP) || string.IsNullOrEmpty(e.PhoneNumber) || string.IsNullOrEmpty(e.JobPosition) || e.Hours < 0)
+            if (e.Id < 0 || string.IsNullOrEmpty(e.Email) || string.IsNullOrEmpty(e.Parola) || string.IsNullOrEmpty(e.Prenume) || string.IsNullOrEmpty(e.Nume) || string.IsNullOrEmpty(e.DataNasterii) || string.IsNullOrEmpty(e.CNP) || string.IsNullOrEmpty(e.Telefon) || string.IsNullOrEmpty(e.Functie) || e.Ore < 0)
             {
                 return RegistrationStatus.InvalidCredentials;
             }
@@ -35,14 +35,14 @@ namespace AdministratorApplication.Repositories
 
                     command.Parameters.AddWithValue("id", e.Id);
                     command.Parameters.AddWithValue("@email", e.Email);
-                    command.Parameters.AddWithValue("@parola", e.Password);
-                    command.Parameters.AddWithValue("@nume", e.LastName);
-                    command.Parameters.AddWithValue("@prenume", e.FirstName);
-                    command.Parameters.AddWithValue("@data_nasterii", e.DateOfBirth);
-                    command.Parameters.AddWithValue("@telefon", e.PhoneNumber);
+                    command.Parameters.AddWithValue("@parola", e.Parola);
+                    command.Parameters.AddWithValue("@nume", e.Nume);
+                    command.Parameters.AddWithValue("@prenume", e.Prenume);
+                    command.Parameters.AddWithValue("@data_nasterii", e.DataNasterii);
+                    command.Parameters.AddWithValue("@telefon", e.Telefon);
                     command.Parameters.AddWithValue("@cnp", e.CNP);
-                    command.Parameters.AddWithValue("@functie", e.JobPosition);
-                    command.Parameters.AddWithValue("@ore", e.Hours);
+                    command.Parameters.AddWithValue("@functie", e.Functie);
+                    command.Parameters.AddWithValue("@ore", e.Ore);
                     command.ExecuteNonQuery();
 
                     return RegistrationStatus.Success;
