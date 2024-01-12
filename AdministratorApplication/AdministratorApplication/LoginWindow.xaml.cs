@@ -19,7 +19,7 @@ namespace AdministratorApplication
     /// </summary>
     public partial class MainWindow : Window
     {
-        private IAuthenticationManager authenticationManager;
+        private IAuthentication authenticationManager;
 
         public MainWindow()
         {
@@ -28,7 +28,8 @@ namespace AdministratorApplication
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            //  Authentication();
+           //   Authentication();
+            
             MessageBox.Show("Autentificare reusita!");
 
             MenuWindow menuWindow = new MenuWindow();
@@ -36,11 +37,12 @@ namespace AdministratorApplication
 
             this.IsEnabled = false;
             this.Close();
+            
         }
 
         private void Authentication()
         {
-            authenticationManager = new AuthenticationManager(txtboxEmail.Text, txtboxPassword.Password);
+            authenticationManager = new AuthenticationRepository(txtboxEmail.Text, txtboxPassword.Password);
 
             switch (authenticationManager.Authenticate()) 
             {

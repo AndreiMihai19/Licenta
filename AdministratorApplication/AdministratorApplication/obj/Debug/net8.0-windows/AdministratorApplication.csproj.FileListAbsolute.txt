@@ -40,3 +40,9 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Pages\EmployeesPage.g.cs
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Pages\EmployeeRegistrationPage.baml
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Pages\EmployeesPage.baml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
