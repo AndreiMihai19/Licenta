@@ -7,14 +7,18 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" 
         Title="Menu
-        " Height="700" Width="1200">
+        " Height="700" Width="1300">
+    
+
     <Grid>
-        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <Button Content="Angajati" MinWidth="100" Click="btnClickEmployees"/>
-            <Button Content="Adaugare angajat" MinWidth="100" Margin="10,0,0,0" Click="btnClickEmployeeAdd"/>
-            <Button Content="Status" MinWidth="100" Margin="10,0,0,0"/>
-            <Button Content="Iesire" MinWidth="100" Margin="10,0,0,0"/>
+        <StackPanel Orientation="Horizontal" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button Content="Angajati" MinWidth="200" Click="btnClickEmployees" FontSize="20"/>
+            <Button Content="Adaugare angajat" MinWidth="200" Margin="10,0,0,0" Click="btnClickEmployeeAdd" FontSize="20"/>
+            <Button Content="Status" MinWidth="200" Margin="10,0,0,0" FontSize="20"/>
+            <Button Content="Iesire" MinWidth="200" Margin="10,0,0,0" FontSize="20"/>
         </StackPanel>
-        <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="Main" Margin="0,50,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
+
+
 </Window>

@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace AdministratorApplication.Pages
 {
@@ -37,6 +38,9 @@ namespace AdministratorApplication.Pages
             employeesListing.AddEmployees(employees);
 
             ListViewEmployees.ItemsSource = employees;
+
+            ListViewEmployees.HorizontalContentAlignment = HorizontalAlignment.Center;
+            ListViewEmployees.HorizontalAlignment = HorizontalAlignment.Center;
 
             GroupBy.ItemsSource = new string[] { "None", "Functie", "Ore" };
 
@@ -60,5 +64,22 @@ namespace AdministratorApplication.Pages
         {
             GroupEmployeesList();
         }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            employeesListing = new EmployeesListingRepository();
+
+            if (ListViewEmployees.SelectedItem != null)
+            {
+                var selectedEmployee = (Employee)ListViewEmployees.SelectedItem;
+
+                employees.Remove(selectedEmployee);
+
+                employeesListing.RemoveEmployee(selectedEmployee);
+                
+                ListViewEmployees.Items.Refresh();
+            }
+        }
+
     }
 }

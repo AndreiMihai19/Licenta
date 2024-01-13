@@ -5,25 +5,39 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AdministratorApplication.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="1200"
       Title="EmployeesPage">
 
     <Grid>
-       
-        <ListView x:Name="ListViewEmployees" Margin="0,50,0,0">
+
+        <ListView x:Name="ListViewEmployees" Margin="10,50,10,0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
-                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"/>
-                        <GridViewColumn Header="Parola" DisplayMemberBinding="{Binding Parola}"/>
-                        <GridViewColumn Header="Nume" DisplayMemberBinding="{Binding Nume}"/>
-                        <GridViewColumn Header="Prenume" DisplayMemberBinding="{Binding Prenume}"/>
-                        <GridViewColumn Header="Data Nasterii" DisplayMemberBinding="{Binding DataNasterii}"/>
-                        <GridViewColumn Header="CNP" DisplayMemberBinding="{Binding CNP}"/>
-                        <GridViewColumn Header="Telefon" DisplayMemberBinding="{Binding Telefon}"/>
-                        <GridViewColumn Header="Functie" DisplayMemberBinding="{Binding Functie}"/>
-                        <GridViewColumn Header="Ore/zi" DisplayMemberBinding="{Binding Ore}"/>
+                        <GridViewColumn Width="50" Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Width="100" Header="Email" DisplayMemberBinding="{Binding Email}" />
+                        <GridViewColumn Width="100" Header="Parola" DisplayMemberBinding="{Binding Parola}"/>
+                        <GridViewColumn Width="100" Header="Nume" DisplayMemberBinding="{Binding Nume}"/>
+                        <GridViewColumn Width="100" Header="Prenume" DisplayMemberBinding="{Binding Prenume}" />
+                        <GridViewColumn Width="100" Header="Data Nasterii" DisplayMemberBinding="{Binding DataNasterii}" />
+                        <GridViewColumn Width="150" Header="CNP" DisplayMemberBinding="{Binding CNP}" />
+                        <GridViewColumn Width="100" Header="Telefon" DisplayMemberBinding="{Binding Telefon}" />
+                        <GridViewColumn Width="150" Header="Functie" DisplayMemberBinding="{Binding Functie}"/>
+                        <GridViewColumn Width="100" Header="Ore/zi" DisplayMemberBinding="{Binding Ore}"/>
+                        <GridViewColumn Width="auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Modifica" Background="#1F8C8C" Foreground="Black" Width="100"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Sterge" Background="#FF8C8C" Foreground="Black" Width="100"  Click="BtnDelete_Click"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>

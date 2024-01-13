@@ -54,7 +54,7 @@
 
 
         <Label Grid.Row="14" Content="Functie:"/>
-        <ComboBox Grid.Row="15" Name="cmbFunctie" Margin="5"  >
+        <ComboBox SelectedIndex="0" Grid.Row="15" Name="cmbFunctie" Margin="5"  >
             <ComboBoxItem Content="Mobile Developer"/>
             <ComboBoxItem Content="UX Designer"/>
             <ComboBoxItem Content="Tester de Software"/>

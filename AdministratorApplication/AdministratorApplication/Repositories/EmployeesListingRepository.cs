@@ -35,11 +35,11 @@ namespace AdministratorApplication.Repositories
                         int id = reader.GetInt32(0);
                         string email = reader.GetString(1);
                         string password = reader.GetString(2);
-                        string firstName = reader.GetString(3);
-                        string lastName = reader.GetString(4);
+                        string lastName = reader.GetString(3);
+                        string firstName = reader.GetString(4);
                         string dateOfBirth = reader.GetString(5);
-                        string CNP = reader.GetString(6);
-                        string phoneNumber = reader.GetString(7);
+                        string phoneNumber = reader.GetString(6);
+                        string CNP = reader.GetString(7);
                         string jobPosition = reader.GetString(8);
                         int hours = reader.GetInt32(9);
 
@@ -74,7 +74,31 @@ namespace AdministratorApplication.Repositories
 
         }
 
+        public void RemoveEmployee(Employee employee)
+        {
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
 
+                    string query = "DELETE FROM Angajati WHERE id=@id";
+
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@id", employee.Id);
+                    command.ExecuteNonQuery();
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
 
         //public Employee? GetEmployee(int id)
         //{

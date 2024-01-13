@@ -11,6 +11,8 @@ namespace AdministratorApplication.Interfaces
     {
         void AddEmployees(List<Employee> employees);
 
+        void RemoveEmployee(Employee employee);
+
        // Employee? GetEmployee(int id);
 
     }
