@@ -80,19 +80,6 @@ namespace AdministratorApplication.Pages
                     ListViewEmployees.Items.Refresh();
                 }
             }
-
-            /*
-            if (ListViewEmployees.SelectedItem != null)
-            {
-                var selectedEmployee = (Employee)ListViewEmployees.item;
-
-                employees.Remove(selectedEmployee);
-
-                employeesListing.RemoveEmployee(selectedEmployee);
-                
-                ListViewEmployees.Items.Refresh();
-            }
-            */
         }
 
     }
