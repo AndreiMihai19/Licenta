@@ -35,5 +35,14 @@ namespace AdministratorApplication
         {
             Main.Content = new EmployeeRegistrationPage();
         }
+
+        private void btnIesire(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow=new LoginWindow();
+            loginWindow.Show();
+
+            this.IsEnabled = false;
+            this.Close();
+        }
     }
 }

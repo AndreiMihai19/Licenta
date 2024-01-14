@@ -68,6 +68,7 @@ namespace AdministratorApplication.Pages
             employeesListing = new EmployeesListingRepository();
 
             var button = sender as Button;
+
             if (button != null)
             {
                 var employee = button.DataContext as Employee;
