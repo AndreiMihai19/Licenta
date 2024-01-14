@@ -34,7 +34,7 @@
                         <GridViewColumn Width="auto">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Sterge" Background="#FF8C8C" Foreground="Black" Width="100"  Click="BtnDelete_Click"/>
+                                    <Button Content="Sterge" Background="#FF8C8C" Foreground="Black" Width="100"  Click="BtnDelete_Click" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

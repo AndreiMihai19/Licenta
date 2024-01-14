@@ -43,8 +43,6 @@ namespace AdministratorApplication.Pages
             ListViewEmployees.HorizontalAlignment = HorizontalAlignment.Center;
 
             GroupBy.ItemsSource = new string[] { "None", "Functie", "Ore" };
-
-            
         }
 
         public void GroupEmployeesList()
@@ -69,9 +67,24 @@ namespace AdministratorApplication.Pages
         {
             employeesListing = new EmployeesListingRepository();
 
+            var button = sender as Button;
+            if (button != null)
+            {
+                var employee = button.DataContext as Employee;
+
+                if (employee != null)
+                {
+                    employees.Remove(employee);
+                    employeesListing.RemoveEmployee(employee);
+
+                    ListViewEmployees.Items.Refresh();
+                }
+            }
+
+            /*
             if (ListViewEmployees.SelectedItem != null)
             {
-                var selectedEmployee = (Employee)ListViewEmployees.SelectedItem;
+                var selectedEmployee = (Employee)ListViewEmployees.item;
 
                 employees.Remove(selectedEmployee);
 
@@ -79,6 +92,7 @@ namespace AdministratorApplication.Pages
                 
                 ListViewEmployees.Items.Refresh();
             }
+            */
         }
 
     }
