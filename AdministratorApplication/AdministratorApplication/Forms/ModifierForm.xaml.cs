@@ -13,6 +13,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
@@ -31,8 +32,19 @@ namespace AdministratorApplication.Forms
         {
             InitializeComponent();
 
+
+            foreach (ComboBoxItem item in cmbFunctie.Items)
+            {
+                if (item.Content.ToString() == jobPosition)
+                {
+                    cmbFunctie.SelectedItem = item;
+                    break; 
+                }
+            }
+
             this.id = id;
             this.currentJobPosition=jobPosition;
+
         }
 
         private void BtnModify_Click(object sender, RoutedEventArgs e)

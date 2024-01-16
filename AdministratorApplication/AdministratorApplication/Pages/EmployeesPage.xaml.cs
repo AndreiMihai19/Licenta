@@ -98,16 +98,18 @@ namespace AdministratorApplication.Pages
                 {
                  //   employees.Modify(employee);
                     id = employee.Id;
-                     jobPosition = employee.Functie;
+                    jobPosition = employee.Functie;
                 }
             }
 
+            
             ModifierForm modifierForm = new ModifierForm(id,jobPosition);
             modifierForm.InfoModified += (sender, args) =>
             {
                
             };
             modifierForm.ShowDialog();
+            
         }
     }
 }
