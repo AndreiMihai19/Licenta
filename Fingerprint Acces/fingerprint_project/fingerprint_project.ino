@@ -17,6 +17,7 @@ unsigned int option = -1;
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
 
 uint8_t id;
+String dataFromESP=" ";
 
 void setup()
 {
@@ -75,6 +76,13 @@ uint8_t readnumber(void) {
 void loop()                   
 {
   option = -1;
+
+
+ 
+  
+  dataFromESP = espSerial.readStringUntil('\n');
+  Serial.print("Date primite de la Arduino: ");
+  Serial.println(dataFromESP);
 
   Serial.println("");
   Serial.println("");
@@ -248,7 +256,7 @@ uint8_t getFingerprintEnroll() {
   if (p == FINGERPRINT_OK) {
     Serial.println("Stored!");
     // Trimite ID-ul la ESP8266
-espSerial.print(id);
+    espSerial.print("Enroll"+ String(id));
 
   } else if (p == FINGERPRINT_PACKETRECIEVEERR) {
     Serial.println("Communication error");
@@ -293,8 +301,6 @@ uint8_t getFingerprintID() {
   switch (p) {
     case FINGERPRINT_OK:
       Serial.println("Image converted");
-      Serial.print("getImage result: ");
-    Serial.println(p);
       break;
     case FINGERPRINT_IMAGEMESS:
       Serial.println("Image too messy");
@@ -330,6 +336,8 @@ uint8_t getFingerprintID() {
 
   // found a match!
 
+  id=finger.fingerID;
+  espSerial.print("Login"+ String(id));
 
   Serial.print("Found ID #"); Serial.print(finger.fingerID);
   Serial.print(" with confidence of "); Serial.println(finger.confidence);

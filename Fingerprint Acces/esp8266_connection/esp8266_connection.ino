@@ -63,24 +63,48 @@ else
 
 }
 
-String data=" ";
+String dataFromArduino=" ";
 int id=0;
 
 void loop(){
 
   if (espSerial.available() > 0) {
-    data = espSerial.readStringUntil('\n');
+    dataFromArduino = espSerial.readStringUntil('\n');
 
     Serial.print("Date primite de la Arduino: ");
-    Serial.println(data);
-    id=data.toInt();
-    updateIDIntoMySQL();
+    Serial.println(dataFromArduino);
+
+
+    int indexOfEnroll = dataFromArduino.indexOf("Enroll");
+    int indexOfLogin = dataFromArduino.indexOf("Login");
+
+    if (indexOfEnroll != -1)
+    {
+      int indexOfNumber = indexOfEnroll + 6;
+      String numberData = dataFromArduino.substring(indexOfNumber);
+      id = numberData.toInt();
+      UpdateIDIntoMySQL();
+      
+    }
+
+    if (indexOfLogin != -1)
+    {
+      int indexOfNumber = indexOfLogin + 5;
+      String numberData = dataFromArduino.substring(indexOfNumber);
+      id = numberData.toInt();
+      if (id != 0) 
+      {
+       // GetNameOfIDMySQL();
+      }
+    }
+     
   }
 
 }
 
 
-void updateIDIntoMySQL() {
+void UpdateIDIntoMySQL() 
+{
   Serial.println("Recording data into MySQL.");
   MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
 
@@ -89,5 +113,47 @@ void updateIDIntoMySQL() {
   cur_mem->execute(sqlCmd.c_str());
 
   delete cur_mem;
+}
+
+void GetNameOfIDMySQL()
+{
+    MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
+    char query[128];
+
+    sprintf(query, "SELECT nume FROM licenta.Angajati WHERE ID = '%d'", id);
+
+    cur_mem->execute(query);
+
+    // Citeste coloanele
+    column_names *columns = cur_mem->get_columns();
+
+    int numColumns = columns->num_fields;
+
+    // Verifică dacă există coloane
+    if (numColumns > 0)
+    {
+        row_values *row = NULL;
+
+        do
+        {
+            row = cur_mem->get_next_row();
+            if (row)
+            {
+                // Accesează valorile coloanelor
+                for (int i = 0; i < numColumns; i++)
+                {
+                    Serial.print(row->values[i]);
+                }
+            }
+        } while (row);
+    }
+    else
+    {
+        Serial.println("Nu s-au găsit coloane.");
+    }
+
+    // Eliberează resursele
+    delete columns;
+    delete cur_mem;
 }
 
