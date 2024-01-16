@@ -46,3 +46,7 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Pages\StatusPage.g.cs
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Pages\StatusPage.baml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Forms\ModifierForm.g.cs
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Forms\ModifierForm.baml

@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using AdministratorApplication.Forms;
 
 namespace AdministratorApplication.Pages
 {
@@ -83,5 +84,30 @@ namespace AdministratorApplication.Pages
             }
         }
 
+        private void BtnModify_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            int? id = 0;
+            string jobPosition = "";
+
+            if (button != null)
+            {
+                var employee = button.DataContext as Employee;
+
+                if (employee != null)
+                {
+                 //   employees.Modify(employee);
+                    id = employee.Id;
+                     jobPosition = employee.Functie;
+                }
+            }
+
+            ModifierForm modifierForm = new ModifierForm(id,jobPosition);
+            modifierForm.InfoModified += (sender, args) =>
+            {
+               
+            };
+            modifierForm.ShowDialog();
+        }
     }
 }

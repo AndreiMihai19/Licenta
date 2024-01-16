@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Forms\ModifierForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MenuWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -16,8 +19,14 @@
     <Compile Update="Pages\EmployeesPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\StatusPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Forms\ModifierForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -28,6 +37,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\EmployeesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\StatusPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

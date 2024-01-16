@@ -3,18 +3,22 @@ using AdministratorApplication.Interfaces;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows;
 
 namespace AdministratorApplication.Repositories
 {
     public class EmployeesListingRepository : IEmployeeslListing
     {
         private readonly MySqlConnection connection = new MySqlConnection("Server=34.118.79.104;Port=3306;database=licenta;User Id=root;Password=andreiandreiandrei191919");
-
+        private BackgroundWorker backgroundWorker;
+        private ProgressBar progressBar;
         public void AddEmployees(List<Employee> employees)
         {
 
@@ -29,6 +33,11 @@ namespace AdministratorApplication.Repositories
                     MySqlCommand command = new MySqlCommand(query, connection);
 
                     MySqlDataReader reader = command.ExecuteReader();
+
+                    backgroundWorker = new BackgroundWorker();
+                    backgroundWorker.DoWork += BackgroundWorker_DoWork;
+                    backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
+
 
                     while (reader.Read())
                     {
@@ -100,9 +109,33 @@ namespace AdministratorApplication.Repositories
 
         }
 
-        //public Employee? GetEmployee(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            // Operațiunea lungă (simulată prin așteptarea a 5 secunde)
+            Thread.Sleep(5000);
+        }
+
+        private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            // Finalizarea operațiunii, actualizare UI sau alte acțiuni
+            progressBar.Visibility = Visibility.Hidden;
+            MessageBox.Show("Operațiune finalizată!", "Finalizat", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void ButonInterogare_Click(object sender, RoutedEventArgs e)
+        {
+            progressBar = new ProgressBar
+            {
+                IsIndeterminate = true,
+                Visibility = Visibility.Visible
+            };
+
+            // Adăugare ProgressBar la grid (asumând că grid-ul se numește "gridPrincipal")
+            //gridPrincipal.Children.Add(progressBar);
+
+            // Pornirea BackgroundWorker-ului pentru a executa operațiunea în fundal
+            backgroundWorker.RunWorkerAsync();
+        }
+
     }
 }

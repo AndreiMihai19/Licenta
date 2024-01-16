@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\App.xaml
-4-1798013013
+61681577735
 
-18-995311117
+251204899464
 207-1420757076
-LoginWindow.xaml;MenuWindow.xaml;Pages\EmployeeRegistrationPage.xaml;Pages\EmployeesPage.xaml;
+Forms\ModifierForm.xaml;LoginWindow.xaml;MenuWindow.xaml;Pages\EmployeeRegistrationPage.xaml;Pages\EmployeesPage.xaml;Pages\StatusPage.xaml;
 
-True
+False
 

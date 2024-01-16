@@ -26,23 +26,28 @@ namespace AdministratorApplication
         }
 
 
-        private void btnClickEmployees(object sender, RoutedEventArgs e)
+        private void BtnEmployees_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new EmployeesPage();
         }
 
-        private void btnClickEmployeeAdd(object sender, RoutedEventArgs e)
+        private void BtnEmployeeAdd_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new EmployeeRegistrationPage();
         }
 
-        private void btnIesire(object sender, RoutedEventArgs e)
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow loginWindow=new LoginWindow();
+            LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
 
             this.IsEnabled = false;
             this.Close();
+        }
+
+        private void BtnStatus_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new StatusPage();
         }
     }
 }

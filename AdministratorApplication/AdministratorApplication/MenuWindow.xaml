@@ -12,10 +12,10 @@
 
     <Grid>
         <StackPanel Orientation="Horizontal" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top">
-            <Button Content="Angajati" MinWidth="200" Click="btnClickEmployees" FontSize="20"/>
-            <Button Content="Adaugare angajat" MinWidth="200" Margin="10,0,0,0" Click="btnClickEmployeeAdd" FontSize="20"/>
-            <Button Content="Status" MinWidth="200" Margin="10,0,0,0" FontSize="20"/>
-            <Button Content="Iesire" MinWidth="200" Margin="10,0,0,0" FontSize="20" Click="btnIesire"/>
+            <Button Content="Angajati" MinWidth="200" Click="BtnEmployees_Click" FontSize="20"/>
+            <Button Content="Adaugare angajat" MinWidth="200" Margin="10,0,0,0" Click="BtnEmployeeAdd_Click" FontSize="20"/>
+            <Button Content="Status" MinWidth="200" Margin="10,0,0,0" FontSize="20" Click="BtnStatus_Click"/>
+            <Button Content="Iesire" MinWidth="200" Margin="10,0,0,0" FontSize="20" Click="BtnExit_Click"/>
         </StackPanel>
         <Frame x:Name="Main" Margin="0,50,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>

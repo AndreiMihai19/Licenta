@@ -27,7 +27,7 @@
                         <GridViewColumn Width="auto">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Modifica" Background="#1F8C8C" Foreground="Black" Width="100"/>
+                                    <Button Content="Modifica" Background="#1F8C8C" Foreground="Black" Width="100" Click="BtnModify_Click"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
