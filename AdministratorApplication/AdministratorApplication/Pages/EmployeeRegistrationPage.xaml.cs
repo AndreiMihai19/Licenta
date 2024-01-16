@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,6 +34,7 @@ namespace AdministratorApplication.Pages
 
         private void BtnInregistrare_Click(object sender, RoutedEventArgs e)
         {
+            
             registration = new RegistrationRepository();
 
             Random random = new Random();
@@ -88,6 +91,26 @@ namespace AdministratorApplication.Pages
                 default:
                     break;
             }
+
+            
+            SendEmail();
+        }
+
+        private void SendEmail()
+        {
+            MailMessage registrationMessage=new MailMessage();
+            SmtpClient Smtp = new SmtpClient("smtp.gmail.com"); //smtp pentru google account
+
+            registrationMessage.From = new MailAddress("andrei.mihai190401@gmail.com");
+            registrationMessage.To.Add("robertcioltea@gmail.com");
+            registrationMessage.Subject = "Angajat";
+            registrationMessage.Body = "Ati fost adaugat in sistem!";
+
+            Smtp.Port = 587;
+            Smtp.EnableSsl = true;
+            Smtp.Credentials = new NetworkCredential("andrei.mihai190401@gmail.com", "Comedybox1!");
+            Smtp.Send(registrationMessage);
+            MessageBox.Show("Email sent", "Email sent", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

@@ -46,7 +46,8 @@ namespace AdministratorApplication.Repositories
                         string password = reader.GetString(2);
                         string lastName = reader.GetString(3);
                         string firstName = reader.GetString(4);
-                        string dateOfBirth = reader.GetString(5);
+                        DateTime? dateOfBirth = reader.GetDateTime(5).Date;
+                        string dataNastere = dateOfBirth.Value.ToString("dd-MM-yyyy");
                         string phoneNumber = reader.GetString(6);
                         string CNP = reader.GetString(7);
                         string jobPosition = reader.GetString(8);
@@ -60,7 +61,7 @@ namespace AdministratorApplication.Repositories
                             Parola = password,
                             Prenume = firstName,
                             Nume = lastName,
-                            DataNasterii = dateOfBirth,
+                            DataNasterii = dataNastere,
                             CNP = CNP,
                             Telefon = phoneNumber,
                             Functie = jobPosition,
