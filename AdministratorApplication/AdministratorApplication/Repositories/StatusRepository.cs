@@ -23,7 +23,7 @@ namespace AdministratorApplication.Repositories
                 {
                     connection.Open();
 
-                    string query = "SELECT id,email,parola,nume,prenume,data_nasterii,telefon,cnp,functie,ore FROM Angajati";
+                    string query = "SELECT id,email,nume,prenume,data_nasterii,telefon,cnp,functie,ore FROM Angajati";
 
                     MySqlCommand command = new MySqlCommand(query, connection);
 
@@ -33,21 +33,21 @@ namespace AdministratorApplication.Repositories
                     {
                         int id = reader.GetInt32(0);
                         string email = reader.GetString(1);
-                        string password = reader.GetString(2);
-                        string lastName = reader.GetString(3);
-                        string firstName = reader.GetString(4);
-                        string dateOfBirth = reader.GetString(5);
-                        string phoneNumber = reader.GetString(6);
-                        string CNP = reader.GetString(7);
-                        string jobPosition = reader.GetString(8);
-                        int hours = reader.GetInt32(9);
+                     //   string password = reader.GetString(2);
+                        string lastName = reader.GetString(2);
+                        string firstName = reader.GetString(3);
+                        string dateOfBirth = reader.GetString(4);
+                        string phoneNumber = reader.GetString(5);
+                        string CNP = reader.GetString(6);
+                        string jobPosition = reader.GetString(7);
+                        int hours = reader.GetInt32(8);
 
 
                         Employee employee = new Employee()
                         {
                             Id = id,
                             Email = email,
-                            Parola = password,
+                            //Parola = password,
                             Prenume = firstName,
                             Nume = lastName,
                             DataNasterii = dateOfBirth,

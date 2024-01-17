@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:AdministratorApplication.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="1200"
-      Title="EmployeesPage">
+      Title="EmployeesPage"
+      SizeChanged="Window_SizeChanged">
 
     <Grid>
 
@@ -14,24 +15,23 @@
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Width="50" Header="Id" DisplayMemberBinding="{Binding Id}"/>
-                        <GridViewColumn Width="100" Header="Email" DisplayMemberBinding="{Binding Email}" />
-                        <GridViewColumn Width="100" Header="Parola" DisplayMemberBinding="{Binding Parola}"/>
-                        <GridViewColumn Width="100" Header="Nume" DisplayMemberBinding="{Binding Nume}"/>
-                        <GridViewColumn Width="100" Header="Prenume" DisplayMemberBinding="{Binding Prenume}" />
-                        <GridViewColumn Width="100" Header="Data Nasterii" DisplayMemberBinding="{Binding DataNasterii}" />
-                        <GridViewColumn Width="150" Header="CNP" DisplayMemberBinding="{Binding CNP}" />
-                        <GridViewColumn Width="100" Header="Telefon" DisplayMemberBinding="{Binding Telefon}" />
-                        <GridViewColumn Width="150" Header="Functie" DisplayMemberBinding="{Binding Functie}"/>
-                        <GridViewColumn Width="100" Header="Ore/zi" DisplayMemberBinding="{Binding Ore}"/>
-                        <GridViewColumn Width="auto">
+                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" />
+                        <GridViewColumn Header="Nume" DisplayMemberBinding="{Binding Nume}"/>
+                        <GridViewColumn Header="Prenume" DisplayMemberBinding="{Binding Prenume}" />
+                        <GridViewColumn Header="Data Nasterii" DisplayMemberBinding="{Binding DataNasterii}" />
+                        <GridViewColumn Header="CNP" DisplayMemberBinding="{Binding CNP}" />
+                        <GridViewColumn Header="Telefon" DisplayMemberBinding="{Binding Telefon}" />
+                        <GridViewColumn Header="Functie" DisplayMemberBinding="{Binding Functie}"/>
+                        <GridViewColumn Header="Ore/zi" DisplayMemberBinding="{Binding Ore}"/>
+                        <GridViewColumn>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button Content="Modifica" Background="#1F8C8C" Foreground="Black" Width="100" Click="BtnModify_Click"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Width="auto">
+                        <GridViewColumn >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button Content="Sterge" Background="#FF8C8C" Foreground="Black" Width="100"  Click="BtnDelete_Click" />
@@ -39,6 +39,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                     </GridView.Columns>
+
                 </GridView>
             </ListView.View>
 

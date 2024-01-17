@@ -50,3 +50,5 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Pages\StatusPage.baml
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Forms\ModifierForm.g.cs
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Forms\ModifierForm.baml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll

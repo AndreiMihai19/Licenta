@@ -17,8 +17,6 @@ namespace AdministratorApplication.Repositories
     public class EmployeesListingRepository : IEmployeeslListing
     {
         private readonly MySqlConnection connection = new MySqlConnection("Server=34.118.79.104;Port=3306;database=licenta;User Id=root;Password=andreiandreiandrei191919");
-        private BackgroundWorker backgroundWorker;
-        private ProgressBar progressBar;
         public void AddEmployees(List<Employee> employees)
         {
 
@@ -28,37 +26,32 @@ namespace AdministratorApplication.Repositories
                 {
                     connection.Open();
 
-                    string query = "SELECT id,email,parola,nume,prenume,data_nasterii,telefon,cnp,functie,ore FROM Angajati";
+                    string query = "SELECT id,email,nume,prenume,data_nasterii,telefon,cnp,functie,ore FROM Angajati";
 
                     MySqlCommand command = new MySqlCommand(query, connection);
 
                     MySqlDataReader reader = command.ExecuteReader();
-
-                    backgroundWorker = new BackgroundWorker();
-                    backgroundWorker.DoWork += BackgroundWorker_DoWork;
-                    backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
 
 
                     while (reader.Read())
                     {
                         int id = reader.GetInt32(0);
                         string email = reader.GetString(1);
-                        string password = reader.GetString(2);
-                        string lastName = reader.GetString(3);
-                        string firstName = reader.GetString(4);
-                        DateTime? dateOfBirth = reader.GetDateTime(5).Date;
+                        string lastName = reader.GetString(2);
+                        string firstName = reader.GetString(3);
+                        DateTime? dateOfBirth = reader.GetDateTime(4).Date;
                         string dataNastere = dateOfBirth.Value.ToString("dd-MM-yyyy");
-                        string phoneNumber = reader.GetString(6);
-                        string CNP = reader.GetString(7);
-                        string jobPosition = reader.GetString(8);
-                        int hours = reader.GetInt32(9);
+                        string phoneNumber = reader.GetString(5);
+                        string CNP = reader.GetString(6);
+                        string jobPosition = reader.GetString(7);
+                        int hours = reader.GetInt32(8);
 
 
                         Employee employee = new Employee()
                         {
                             Id = id,
                             Email = email,
-                            Parola = password,
+                            //Parola = password,
                             Prenume = firstName,
                             Nume = lastName,
                             DataNasterii = dataNastere,
@@ -110,33 +103,6 @@ namespace AdministratorApplication.Repositories
 
         }
 
-        private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            // Operațiunea lungă (simulată prin așteptarea a 5 secunde)
-            Thread.Sleep(5000);
-        }
-
-        private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            // Finalizarea operațiunii, actualizare UI sau alte acțiuni
-            progressBar.Visibility = Visibility.Hidden;
-            MessageBox.Show("Operațiune finalizată!", "Finalizat", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-        private void ButonInterogare_Click(object sender, RoutedEventArgs e)
-        {
-            progressBar = new ProgressBar
-            {
-                IsIndeterminate = true,
-                Visibility = Visibility.Visible
-            };
-
-            // Adăugare ProgressBar la grid (asumând că grid-ul se numește "gridPrincipal")
-            //gridPrincipal.Children.Add(progressBar);
-
-            // Pornirea BackgroundWorker-ului pentru a executa operațiunea în fundal
-            backgroundWorker.RunWorkerAsync();
-        }
-
+      
     }
 }

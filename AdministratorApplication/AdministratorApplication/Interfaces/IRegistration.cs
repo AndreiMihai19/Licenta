@@ -9,6 +9,6 @@ namespace AdministratorApplication.Interfaces
 {
     public interface IRegistration
     {
-        RegistrationStatus Register(Employee employee);
+        RegistrationStatus Register(Employee employee, string password);
     }
 }

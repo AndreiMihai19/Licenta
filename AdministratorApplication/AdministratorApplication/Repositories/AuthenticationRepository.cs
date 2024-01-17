@@ -14,6 +14,7 @@ namespace AdministratorApplication.Classes
         private readonly MySqlConnection connection = new MySqlConnection("Server=34.118.79.104;Port=3306;database=licenta;User Id=root;Password=andreiandreiandrei191919");
         private string email;
         private string password;
+        private IPasswordEncryptor? passwordEncryptor;
 
         public AuthenticationRepository(string email, string password)
         {
@@ -36,8 +37,11 @@ namespace AdministratorApplication.Classes
                     {
                         connection.Open();
 
+                        passwordEncryptor = new PasswordEncryptor();
+                        string encryptedPassword = passwordEncryptor.EncryptPassword(this.email);
+
                         MySqlCommand cmdValidate = new MySqlCommand("SELECT COUNT(*) FROM Angajati WHERE email = @email AND parola = @password", connection);
-                        cmdValidate.Parameters.AddWithValue("@email", this.email);
+                        cmdValidate.Parameters.AddWithValue("@email", encryptedPassword);
                         cmdValidate.Parameters.AddWithValue("@password", this.password);
 
                         int count = Convert.ToInt32(cmdValidate.ExecuteScalar());

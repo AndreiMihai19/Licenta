@@ -111,5 +111,22 @@ namespace AdministratorApplication.Pages
             modifierForm.ShowDialog();
             
         }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            double availableWidth = e.NewSize.Width - 20;
+
+            if (ListViewEmployees.View is GridView gridView)
+            {
+                double columnWidth = availableWidth / gridView.Columns.Count;
+
+                foreach (var column in gridView.Columns)
+                {
+                    column.Width = columnWidth;
+                }
+            }
+        }
+
+     
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AdministratorApplication.Classes;
 using AdministratorApplication.Interfaces;
 using AdministratorApplication.Repositories;
+using Google.Protobuf.WellKnownTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace AdministratorApplication.Pages
             InitializeComponent();
         }
 
-        private void BtnInregistrare_Click(object sender, RoutedEventArgs e)
+        private async void BtnInregistrare_Click(object sender, RoutedEventArgs e)
         {
             
             registration = new RegistrationRepository();
@@ -42,6 +43,7 @@ namespace AdministratorApplication.Pages
             string stridAngajat = new string(Enumerable.Repeat("0123456789", 4).Select(s => s[random.Next(s.Length)]).ToArray());
             int idAngajat = int.Parse(stridAngajat);
 
+            string password = txtParola.Password;
 
             DateTime? selectedDate = dpDataNasterii.SelectedDate;
             string dataNastere = selectedDate.Value.ToString("yyyy-MM-dd");
@@ -68,7 +70,7 @@ namespace AdministratorApplication.Pages
             {
                 Id = idAngajat,
                 Email = txtEmail.Text,
-                Parola = txtParola.Password,
+             //   Parola = txtParola.Password,
                 Prenume = txtPrenume.Text,
                 Nume = txtNume.Text,
                 DataNasterii = dataNastere,
@@ -78,7 +80,7 @@ namespace AdministratorApplication.Pages
                 Ore = radioBtnSelected
             };
             
-            switch (registration.Register(employee))
+            switch (registration.Register(employee, password))
             {
                 case RegistrationStatus.Success: MessageBox.Show("Inregistrare reusita!");
                     break;
@@ -93,24 +95,39 @@ namespace AdministratorApplication.Pages
             }
 
             
-            SendEmail();
+           //await SendEmail();
         }
 
-        private void SendEmail()
-        {
-            MailMessage registrationMessage=new MailMessage();
-            SmtpClient Smtp = new SmtpClient("smtp.gmail.com"); //smtp pentru google account
+        /*
+        private async Task SendEmail()
+        { 
+            try
+            {
+                SmtpClient client = new SmtpClient("smtp.gmail.com");
 
-            registrationMessage.From = new MailAddress("andrei.mihai190401@gmail.com");
-            registrationMessage.To.Add("robertcioltea@gmail.com");
-            registrationMessage.Subject = "Angajat";
-            registrationMessage.Body = "Ati fost adaugat in sistem!";
+                client.Port = 587;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = false;
 
-            Smtp.Port = 587;
-            Smtp.EnableSsl = true;
-            Smtp.Credentials = new NetworkCredential("andrei.mihai190401@gmail.com", "Comedybox1!");
-            Smtp.Send(registrationMessage);
-            MessageBox.Show("Email sent", "Email sent", MessageBoxButton.OK, MessageBoxImage.Information);
+                System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("andrei.mihai190401@gmail.com", "Comedybox1!");
+                client.Credentials = credentials;
+                client.EnableSsl = true;
+                client.Timeout = 10000;
+
+                MailMessage message = new MailMessage("andrei.mihai190401@gmail.com", "andrei.mihai190401@gmail.com");
+
+                message.Body = "Ati fost adaugat in sistem!";
+                message.Subject = "Angajat";
+                message.IsBodyHtml = true;
+                message.DeliveryNotificationOptions = DeliveryNotificationOptions.None;
+
+                await client.SendMailAsync(message);
+            }
+            catch (Exception ex)
+            {
+            }
+
         }
+       */
     }
 }

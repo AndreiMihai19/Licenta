@@ -14,10 +14,11 @@ namespace AdministratorApplication.Repositories
     public class RegistrationRepository : IRegistration
     {
         private readonly MySqlConnection connection = new MySqlConnection("Server=34.118.79.104;Port=3306;database=licenta;User Id=root;Password=andreiandreiandrei191919");
+        private IPasswordEncryptor? passwordEncryptor;
 
-        public RegistrationStatus Register(Employee e) 
+        public RegistrationStatus Register(Employee e, string password) 
         {
-            if (e.Id < 0 || string.IsNullOrEmpty(e.Email) || string.IsNullOrEmpty(e.Parola) || string.IsNullOrEmpty(e.Prenume) || string.IsNullOrEmpty(e.Nume) || string.IsNullOrEmpty(e.DataNasterii) || string.IsNullOrEmpty(e.CNP) || string.IsNullOrEmpty(e.Telefon) || string.IsNullOrEmpty(e.Functie) || e.Ore < 0)
+            if (e.Id < 0 || string.IsNullOrEmpty(e.Email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(e.Prenume) || string.IsNullOrEmpty(e.Nume) || string.IsNullOrEmpty(e.DataNasterii) || string.IsNullOrEmpty(e.CNP) || string.IsNullOrEmpty(e.Telefon) || string.IsNullOrEmpty(e.Functie) || e.Ore < 0)
             {
                 return RegistrationStatus.InvalidCredentials;
             }
@@ -33,9 +34,12 @@ namespace AdministratorApplication.Repositories
 
                     MySqlCommand command = new MySqlCommand(query, connection);
 
+                    passwordEncryptor = new PasswordEncryptor();
+                    string encryptedPassword = passwordEncryptor.EncryptPassword(password);
+
                     command.Parameters.AddWithValue("id", e.Id);
                     command.Parameters.AddWithValue("@email", e.Email);
-                    command.Parameters.AddWithValue("@parola", e.Parola);
+                    command.Parameters.AddWithValue("@parola", encryptedPassword);
                     command.Parameters.AddWithValue("@nume", e.Nume);
                     command.Parameters.AddWithValue("@prenume", e.Prenume);
                     command.Parameters.AddWithValue("@data_nasterii", e.DataNasterii);
