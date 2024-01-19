@@ -77,7 +77,7 @@ namespace AdministratorApplication.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AdministratorApplication;component/pages/statuspage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Admin App;component/pages/statuspage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\StatusPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -44,10 +44,13 @@ namespace AdministratorApplication.Repositories
 
                         if (!string.IsNullOrEmpty(password))
                         {
+                            IPasswordEncryptor passwordEncryptor = new PasswordEncryptor();
+                            string encryptedPassword = passwordEncryptor.EncryptPassword(password);
+
                             string queryPasswordUp = "UPDATE Angajati SET parola=@parola WHERE id=@id";
                             MySqlCommand command = new MySqlCommand(queryPasswordUp, connection);
                             command.Parameters.AddWithValue("@id", id);
-                            command.Parameters.AddWithValue("@parola", password);
+                            command.Parameters.AddWithValue("@parola", encryptedPassword);
                             command.ExecuteNonQuery();
                             isModified = true;
                         }

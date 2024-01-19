@@ -122,6 +122,16 @@ while (option == -1)
       getFingerprintID();
       delay(50);
     }  
+    while (option == 2)
+    {
+      if (espSerial.available() > 0) {
+    
+    dataFromESP = espSerial.readStringUntil('\n');
+    Serial.print("Nume primit: ");
+    Serial.println(dataFromESP);
+    // Poți continua să tratezi numele în funcție de necesitățile tale
+  }
+    }
   }
 }
 
@@ -338,6 +348,10 @@ uint8_t getFingerprintID() {
 
   id=finger.fingerID;
   espSerial.print("Login"+ String(id));
+
+  delay(1000);
+
+   // Tratează numele primit de la ESP826
 
   Serial.print("Found ID #"); Serial.print(finger.fingerID);
   Serial.print(" with confidence of "); Serial.println(finger.confidence);

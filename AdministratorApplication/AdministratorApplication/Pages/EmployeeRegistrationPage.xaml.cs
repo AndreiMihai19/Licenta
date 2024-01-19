@@ -83,6 +83,8 @@ namespace AdministratorApplication.Pages
             switch (registration.Register(employee, password))
             {
                 case RegistrationStatus.Success: MessageBox.Show("Inregistrare reusita!");
+                     ISendMail sendMail = new SendMail();
+                     await sendMail.SendMailMethod(employee.Nume + " " + employee.Prenume, employee.Email);
                     break;
                 case RegistrationStatus.InvalidCredentials: MessageBox.Show("Completati toate campurile!");
                     break;
@@ -93,41 +95,6 @@ namespace AdministratorApplication.Pages
                 default:
                     break;
             }
-
-            
-           //await SendEmail();
         }
-
-        /*
-        private async Task SendEmail()
-        { 
-            try
-            {
-                SmtpClient client = new SmtpClient("smtp.gmail.com");
-
-                client.Port = 587;
-                client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.UseDefaultCredentials = false;
-
-                System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("andrei.mihai190401@gmail.com", "Comedybox1!");
-                client.Credentials = credentials;
-                client.EnableSsl = true;
-                client.Timeout = 10000;
-
-                MailMessage message = new MailMessage("andrei.mihai190401@gmail.com", "andrei.mihai190401@gmail.com");
-
-                message.Body = "Ati fost adaugat in sistem!";
-                message.Subject = "Angajat";
-                message.IsBodyHtml = true;
-                message.DeliveryNotificationOptions = DeliveryNotificationOptions.None;
-
-                await client.SendMailAsync(message);
-            }
-            catch (Exception ex)
-            {
-            }
-
-        }
-       */
     }
 }

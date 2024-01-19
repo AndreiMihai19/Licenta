@@ -30,6 +30,7 @@ namespace AdministratorApplication.Pages
 
         List<Employee> employees = new List<Employee>();
 
+        ModifierForm? modifierForm;
         public EmployeesPage()
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace AdministratorApplication.Pages
             ListViewEmployees.HorizontalAlignment = HorizontalAlignment.Center;
 
             GroupBy.ItemsSource = new string[] { "None", "Functie", "Ore" };
+
         }
 
         public void GroupEmployeesList()
@@ -96,20 +98,16 @@ namespace AdministratorApplication.Pages
 
                 if (employee != null)
                 {
-                 //   employees.Modify(employee);
                     id = employee.Id;
                     jobPosition = employee.Functie;
                 }
             }
 
-            
-            ModifierForm modifierForm = new ModifierForm(id,jobPosition);
-            modifierForm.InfoModified += (sender, args) =>
-            {
-               
-            };
+            modifierForm = new ModifierForm(id, jobPosition);
+            modifierForm.UpdateEmployeeList += (sender, args) => { ListViewEmployees.Items.Refresh(); };
+
             modifierForm.ShowDialog();
-            
+
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)

@@ -28,7 +28,11 @@ namespace AdministratorApplication.Forms
         string currentJobPosition;
         public event EventHandler InfoModified;
 
-        public ModifierForm(int ?id, string jobPosition)
+        public delegate void UpdateEmployeeListEventHandler(object sender, EventArgs e);
+
+        public event UpdateEmployeeListEventHandler UpdateEmployeeList;
+
+        public ModifierForm(int? id, string jobPosition)
         {
             InitializeComponent();
 
@@ -43,7 +47,7 @@ namespace AdministratorApplication.Forms
             }
 
             this.id = id;
-            this.currentJobPosition=jobPosition;
+            currentJobPosition=jobPosition;
 
         }
 
@@ -73,7 +77,8 @@ namespace AdministratorApplication.Forms
             switch (modifierEmployeeInfo.ModifyEmployeeInfo(id, currentJobPosition, txtEmail.Text, txtParola.Password, txtTelefon.Text, newJobPosition, radioBtnSelected))
             {
                 case ModifierStatus.Success:
-                    OnDataModified();
+                  //  OnDataModified();
+                    UpdateEmployeeList?.Invoke(this, EventArgs.Empty);
                     MessageBox.Show("Modificare reusita!");
                     break;
                 case ModifierStatus.Failure:
@@ -86,11 +91,6 @@ namespace AdministratorApplication.Forms
                     break;
             }
         }
-        protected virtual void OnDataModified()
-        {
-            InfoModified?.Invoke(this, EventArgs.Empty);
-        }
-
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {

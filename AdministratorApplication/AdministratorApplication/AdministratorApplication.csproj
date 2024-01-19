@@ -6,12 +6,31 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\icon1.ico</ApplicationIcon>
+    <AssemblyName>Admin App</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\InstrumentSerif-Italic.ttf" />
+    <None Remove="Fonts\Lexend-SemiBold.ttf" />
+    <None Remove="Resources\icon1.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\icon1.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="8.0.1" />
     <PackageReference Include="MySql.Data" Version="8.2.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\InstrumentSerif-Italic.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\Lexend-SemiBold.ttf" />
   </ItemGroup>
 
 </Project>

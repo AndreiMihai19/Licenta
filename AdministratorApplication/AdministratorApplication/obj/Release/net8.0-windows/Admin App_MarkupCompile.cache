@@ -1,0 +1,20 @@
+﻿Admin App
+
+
+winexe
+C#
+.cs
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\
+AdministratorApplication
+none
+false
+TRACE;RELEASE;NET;NET8_0;NETCOREAPP
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\App.xaml
+61681577735
+1-1028064001
+251336044742
+209-1824386329
+Forms\ModifierForm.xaml;LoginWindow.xaml;MenuWindow.xaml;Pages\EmployeeRegistrationPage.xaml;Pages\EmployeesPage.xaml;Pages\StatusPage.xaml;
+
+False
+

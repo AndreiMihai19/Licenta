@@ -3,36 +3,107 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AdministratorApplication"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" 
         WindowStyle="None"
         AllowsTransparency="True"
-        Title="LoginWindow" Height="500" Width="700">
-    <Grid HorizontalAlignment="Center" Width="690" Margin="0,19,0,10">
+        Title="LoginWindow" Height="500" Width="600"
+        Icon="./Resources/icon1.ico"
+        Foreground="#317773">
+    <Window.Template>
+        <ControlTemplate TargetType="Window">
+            <Border Background="#FCF6F5" BorderBrush="#FCF6F5" BorderThickness="2" CornerRadius="10">
+                <AdornerDecorator>
+                    <ContentPresenter/>
+                </AdornerDecorator>
+            </Border>
+        </ControlTemplate>
+    </Window.Template>
+    <Grid HorizontalAlignment="Center" Width="690" Margin="0,0,0,10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="61.682" />
             <RowDefinition Height="130.238"/>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Login" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" />
+        <Rectangle Grid.Row="0" Fill="#317773" Margin="47,0,46,30">
+            <Rectangle.Style>
+                <Style TargetType="Rectangle">
+                    <Setter Property="RadiusX" Value="10"/>
+                    <Setter Property="RadiusY" Value="10"/>
+                </Style>
+            </Rectangle.Style>
+        </Rectangle>
+
+        <TextBlock Text="Autentificare" Foreground="#FCF6F5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30"  FontFamily="./Fonts/#InstrumentSerif-Italic" RenderTransformOrigin="0.508,1.769" Margin="0,136,0,0"/>
 
         <StackPanel Grid.Row="1" Margin="10,10,10,10" Grid.RowSpan="2" Width="500">
-            <TextBlock Text="Email" Margin="0,0,0,5" />
-            <TextBox x:Name="txtboxEmail" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="30" Margin="0,0,0,20" />
+            <TextBlock Text="Email" Margin="0,0,0,5" FontWeight="Bold" />
+            <TextBox x:Name="txtboxEmail" HorizontalAlignment="Stretch" Margin="0,0,0,20" Padding="5,0,0,0" Height="22" Foreground="#317773">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Border BorderBrush="Gray" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                                        <ScrollViewer x:Name="PART_ContentHost"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsEnabled" Value="false">
+                                            <Setter Property="Background" Value="#317773"/>
+                                            <Setter Property="BorderBrush" Value="#F2AA4C"/>
+                                            <Setter Property="Foreground" Value="#ffffff"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
 
-            <TextBlock Text="Password" Margin="0,0,0,5" />
-            <PasswordBox x:Name="txtboxPassword" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="30" Margin="0,0,0,20" />
+            <TextBlock Text="Parola" Margin="0,0,0,5" FontWeight="Bold" />
+            <PasswordBox x:Name="txtboxPassword" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,0,20" Padding="5,0,0,0" Height="22" Foreground="#317773">
+                <PasswordBox.Style>
+                    <Style TargetType="PasswordBox">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="PasswordBox">
+                                    <Border BorderBrush="Gray" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                                        <ScrollViewer x:Name="PART_ContentHost"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsEnabled" Value="false">
+                                            <Setter Property="Background" Value="#f4f4f4"/>
+                                            <Setter Property="BorderBrush" Value="Gray"/>
+                                            <Setter Property="Foreground" Value="Black"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </PasswordBox.Style>
+            </PasswordBox>
 
-            <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Stretch" Height="30" Click="btnLogin_Click" />
+            <Button x:Name="btnLogin" Foreground="#FCF6F5" Content="Autentificare" HorizontalAlignment="Stretch" Height="30" Click="btnLogin_Click" Width="100" >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="#317773" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
 
-        <TextBlock Grid.Row="3" x:Name="ErrorMessage" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Grid.RowSpan="2" />
+        <TextBlock Grid.Row="2" x:Name="ErrorMessage" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" />
 
-        <TextBlock Grid.Row="4" Text="© 2024 Your Company" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" FontSize="10" />
+        <TextBlock Grid.Row="3" Text="© 2024 BiometricHub Acces" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" FontSize="10" />
     </Grid>
 </Window>

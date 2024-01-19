@@ -38,10 +38,6 @@ namespace AdministratorApplication
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow loginWindow = new LoginWindow();
-            loginWindow.Show();
-
-            this.IsEnabled = false;
             this.Close();
         }
 

@@ -141,7 +141,7 @@ namespace AdministratorApplication.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AdministratorApplication;component/pages/employeeregistrationpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Admin App;component/pages/employeeregistrationpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\EmployeeRegistrationPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

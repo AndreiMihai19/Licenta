@@ -38,11 +38,11 @@ namespace AdministratorApplication.Classes
                         connection.Open();
 
                         passwordEncryptor = new PasswordEncryptor();
-                        string encryptedPassword = passwordEncryptor.EncryptPassword(this.email);
+                        string encryptedPassword = passwordEncryptor.EncryptPassword(this.password);
 
                         MySqlCommand cmdValidate = new MySqlCommand("SELECT COUNT(*) FROM Angajati WHERE email = @email AND parola = @password", connection);
-                        cmdValidate.Parameters.AddWithValue("@email", encryptedPassword);
-                        cmdValidate.Parameters.AddWithValue("@password", this.password);
+                        cmdValidate.Parameters.AddWithValue("@email", this.email);
+                        cmdValidate.Parameters.AddWithValue("@password", encryptedPassword);
 
                         int count = Convert.ToInt32(cmdValidate.ExecuteScalar());
 

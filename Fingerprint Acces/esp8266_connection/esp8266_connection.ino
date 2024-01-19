@@ -5,6 +5,8 @@
 #include <ArduinoJson.h>
 
 #ifndef STASSID
+//#define STASSID "LinksysB019"
+//#define STAPSK "wm83y3fby4"
 #define STASSID "Sam IL Yei"
 #define STAPSK "camera503503camera"
 #endif
@@ -94,7 +96,7 @@ void loop(){
       id = numberData.toInt();
       if (id != 0) 
       {
-       // GetNameOfIDMySQL();
+        GetNameOfIDMySQL();
       }
     }
      
@@ -102,13 +104,24 @@ void loop(){
 
 }
 
-
 void UpdateIDIntoMySQL() 
 {
   Serial.println("Recording data into MySQL.");
   MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
 
   String sqlCmd = "UPDATE licenta.Angajati SET id='" + String(id) + "' ORDER BY id DESC LIMIT 1";
+
+  cur_mem->execute(sqlCmd.c_str());
+
+  delete cur_mem;
+}
+
+void InsertInTimeIntoMySQL()
+{
+  Serial.println("Recording data into MySQL.");
+  MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
+
+  String sqlCmd = "INSERT INTO licenta.Angajati VALUES id='" + String(id) + "'";
 
   cur_mem->execute(sqlCmd.c_str());
 
@@ -142,7 +155,7 @@ void GetNameOfIDMySQL()
                 // Accesează valorile coloanelor
                 for (int i = 0; i < numColumns; i++)
                 {
-                    Serial.print(row->values[i]);
+                    espSerial.print(String(row->values[i]));
                 }
             }
         } while (row);
@@ -153,7 +166,6 @@ void GetNameOfIDMySQL()
     }
 
     // Eliberează resursele
-    delete columns;
     delete cur_mem;
 }
 
