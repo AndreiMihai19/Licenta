@@ -122,16 +122,6 @@ while (option == -1)
       getFingerprintID();
       delay(50);
     }  
-    while (option == 2)
-    {
-      if (espSerial.available() > 0) {
-    
-    dataFromESP = espSerial.readStringUntil('\n');
-    Serial.print("Nume primit: ");
-    Serial.println(dataFromESP);
-    // Poți continua să tratezi numele în funcție de necesitățile tale
-  }
-    }
   }
 }
 

@@ -86,7 +86,8 @@ void loop(){
       String numberData = dataFromArduino.substring(indexOfNumber);
       id = numberData.toInt();
       UpdateIDIntoMySQL();
-      
+      InsertInTimeValueIntoMySQL();
+      InsertInStatusEmployeesIntoMySQL();
     }
 
     if (indexOfLogin != -1)
@@ -96,6 +97,7 @@ void loop(){
       id = numberData.toInt();
       if (id != 0) 
       {
+        UpdateTimeValueIntoMySQL();
         GetNameOfIDMySQL();
       }
     }
@@ -106,7 +108,6 @@ void loop(){
 
 void UpdateIDIntoMySQL() 
 {
-  Serial.println("Recording data into MySQL.");
   MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
 
   String sqlCmd = "UPDATE licenta.Angajati SET id='" + String(id) + "' ORDER BY id DESC LIMIT 1";
@@ -116,12 +117,33 @@ void UpdateIDIntoMySQL()
   delete cur_mem;
 }
 
-void InsertInTimeIntoMySQL()
+void UpdateTimeValueIntoMySQL() 
 {
-  Serial.println("Recording data into MySQL.");
   MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
 
-  String sqlCmd = "INSERT INTO licenta.Angajati VALUES id='" + String(id) + "'";
+  String sqlCmd = "UPDATE licenta.Valoare_timp SET valoare = CASE WHEN valoare < 4 THEN valoare + 1 ELSE 1 END WHERE id = '" + String(id) + "'";
+
+  cur_mem->execute(sqlCmd.c_str());
+
+  delete cur_mem;
+}
+
+void InsertInStatusEmployeesIntoMySQL()
+{
+  MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
+
+  String sqlCmd = "INSERT INTO licenta.Status_angajati (id) VALUES ('" + String(id) + "')";
+
+  cur_mem->execute(sqlCmd.c_str());
+
+  delete cur_mem;
+}
+
+void InsertInTimeValueIntoMySQL()
+{
+  MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
+
+  String sqlCmd = "INSERT INTO licenta.Valoare_timp (id,valoare) VALUES ('" + String(id) + "','" + String(0) + "')";
 
   cur_mem->execute(sqlCmd.c_str());
 
