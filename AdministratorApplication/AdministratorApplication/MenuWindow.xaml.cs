@@ -45,5 +45,7 @@ namespace AdministratorApplication
         {
             Main.Content = new StatusPage();
         }
+
+       
     }
 }

@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Employee Status\StatusCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\ModifierForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,6 +27,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Employee Status\StatusCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Forms\ModifierForm.xaml">
       <SubType>Designer</SubType>
     </Page>

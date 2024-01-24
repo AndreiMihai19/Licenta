@@ -9,8 +9,9 @@ namespace AdministratorApplication.Interfaces
 {
     interface IStatus
     {
-        void AddEmployees(List<Employee> employees);
+     //   void AddEmployees(List<Employee> employees);
 
-        int GetNumberOfEmployees(List<Employee> employees);
+     //   int GetNumberOfEmployees(List<Employee> employees);
+        int[] GetNumberOfEmployees();
     }
 }

@@ -84,7 +84,7 @@ namespace AdministratorApplication.Pages
             {
                 case RegistrationStatus.Success: MessageBox.Show("Inregistrare reusita!");
                      ISendMail sendMail = new SendMail();
-                     await sendMail.SendMailMethod(employee.Nume + " " + employee.Prenume, employee.Email);
+                     await sendMail.SendMailMethod(employee.Prenume, employee.Email);
                     break;
                 case RegistrationStatus.InvalidCredentials: MessageBox.Show("Completati toate campurile!");
                     break;

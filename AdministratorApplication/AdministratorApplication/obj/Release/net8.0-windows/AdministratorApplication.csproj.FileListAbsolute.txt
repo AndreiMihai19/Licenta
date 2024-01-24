@@ -53,3 +53,4 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\refint\Admin App.dll
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Admin App.pdb
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\ref\Admin App.dll
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\App.baml

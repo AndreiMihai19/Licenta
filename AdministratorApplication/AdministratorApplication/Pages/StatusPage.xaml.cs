@@ -1,4 +1,5 @@
 ﻿using AdministratorApplication.Classes;
+using AdministratorApplication.Employee_Status;
 using AdministratorApplication.Interfaces;
 using AdministratorApplication.Repositories;
 using MySql.Data.MySqlClient;
@@ -33,14 +34,14 @@ namespace AdministratorApplication.Pages
 
             status = new StatusRepository();
 
-            status.AddEmployees(employees);
+            int[] numbersArray = status.GetNumberOfEmployees();
 
-            UpdateNumberOfEmployees();
+            card1.Number = numbersArray[0].ToString();
+            card2.Number = numbersArray[1].ToString();
+            card3.Number = numbersArray[2].ToString();
+
+
         }
 
-        private void UpdateNumberOfEmployees()
-        {
-            nrOfEmployees.Text = status.GetNumberOfEmployees(employees).ToString();
-        }
     }
 }

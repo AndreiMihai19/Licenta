@@ -30,31 +30,31 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Content="Email:"/>
+        <Label Grid.Row="0" Content="Email:" Foreground="#317773" FontWeight="Bold"/>
         <TextBox Grid.Row="1" Name="txtEmail" Margin="5"/>
 
-        <Label Grid.Row="2" Content="Parola:"/>
+        <Label Grid.Row="2" Content="Parola:" Foreground="#317773" FontWeight="Bold"/>
         <PasswordBox Grid.Row="3" Name="txtParola" Margin="5"/>
 
-        <Label Grid.Row="4" Content="Nume:"/>
+        <Label Grid.Row="4" Content="Nume:" Foreground="#317773" FontWeight="Bold"/>
         <TextBox Grid.Row="5" Name="txtNume" Margin="5"/>
 
-        <Label Grid.Row="6" Content="Prenume:"/>
-        <TextBox Grid.Row="7" Name="txtPrenume" Margin="5"/>
+        <Label Grid.Row="6" Content="Prenume:" Foreground="#317773" FontWeight="Bold"/>
+        <TextBox Grid.Row="7" Name="txtPrenume" Margin="5" />
 
-        <Label Grid.Row="8" Content="Data nașterii:"/>
-        <DatePicker Grid.Row="9" Name="dpDataNasterii" Margin="5" />
+        <Label Grid.Row="8" Content="Data nașterii:" Foreground="#317773" FontWeight="Bold"/>
+        <DatePicker Grid.Row="9" Name="dpDataNasterii" Margin="5"  />
 
-        <Label Grid.Row="10" Content="CNP:"/>
+        <Label Grid.Row="10" Content="CNP:" Foreground="#317773" FontWeight="Bold"/>
         <TextBox Grid.Row="11" Name="txtCNP" Margin="5"/>
-        
-        <Label Grid.Row="12" Content="Telefon:"/>
-        <TextBox Grid.Row="13" Name="txtTelefon" Margin="5"/>
+
+        <Label Grid.Row="12" Content="Telefon:" Foreground="#317773" FontWeight="Bold"/>
+        <TextBox Grid.Row="13" Name="txtTelefon" Margin="5" />
 
 
 
-        <Label Grid.Row="14" Content="Functie:"/>
-        <ComboBox SelectedIndex="0" Grid.Row="15" Name="cmbFunctie" Margin="5"  >
+        <Label Grid.Row="14" Content="Functie:" Foreground="#317773" FontWeight="Bold"/>
+        <ComboBox SelectedIndex="0" Grid.Row="15" Name="cmbFunctie" Margin="5" >
             <ComboBoxItem Content="Mobile Developer"/>
             <ComboBoxItem Content="UX Designer"/>
             <ComboBoxItem Content="Tester de Software"/>
@@ -65,15 +65,15 @@
             <ComboBoxItem Content="Analyst Functional"/>
         </ComboBox>
 
-        <Label Grid.Row="16" Content="Ore:"/>
+        <Label Grid.Row="16" Content="Ore:" Foreground="#317773" FontWeight="Bold"/>
 
         <StackPanel Grid.Row="17" Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
-            <RadioButton Content="4 h" Name="radioOre1" Margin="5" GroupName="grupOre"/>
-            <RadioButton Content="6 h" Name="radioOre2" Margin="5" GroupName="grupOre"/>
-            <RadioButton Content="8 h" Name="radioOre3" Margin="5" GroupName="grupOre"/>
+            <RadioButton Content="4 h" Name="radioOre1" Margin="5" GroupName="grupOre" Foreground="#317773" FontWeight="Bold"/>
+            <RadioButton Content="6 h" Name="radioOre2" Margin="5" GroupName="grupOre" Foreground="#317773" FontWeight="Bold"/>
+            <RadioButton Content="8 h" Name="radioOre3" Margin="5" GroupName="grupOre" Foreground="#317773" FontWeight="Bold"/>
         </StackPanel>
 
 
-        <Button Grid.Row="18" Content="Inregistreaza" Margin="5,5,5,-38" Click="BtnInregistrare_Click"/>
+        <Button Grid.Row="18" Content="Inregistreaza" Margin="5,5,5,-38" Click="BtnInregistrare_Click" Background="#317773" Foreground="#FCF6F5" FontWeight="Bold"/>
     </Grid>
 </Page>

@@ -31,8 +31,8 @@ namespace AdministratorApplication
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            // Authentication();
-            
+            //   Authentication();
+
             MessageBox.Show("Autentificare reusita!");
 
             MenuWindow menuWindow = new MenuWindow();
@@ -40,8 +40,8 @@ namespace AdministratorApplication
 
             this.IsEnabled = false;
             this.Close();
-            
-            
+
+
         }
 
         private void Authentication()
@@ -69,38 +69,6 @@ namespace AdministratorApplication
                 default:
                     break;
             }
-        }
-
-        private async Task SendEmail(string toEmail)
-        {
-            try
-            {
-                SmtpClient client = new SmtpClient
-                {
-                    Host = "smtp.gmail.com",
-                    Port = 587,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    EnableSsl = true,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential
-                    {
-                        UserName = "andrei.mihai190401@gmail.com",
-                        Password = "bppq mjpz vziv aprr"
-                    }
-                };
-
-                MailMessage message = new MailMessage("andrei.mihai190401@gmail.com", toEmail);
-                message.Subject = "Inregistrare angajat";
-                message.Body = "Ati fost adaugat in sistem! Bine ati venit in compania noastra!";
-                message.DeliveryNotificationOptions = DeliveryNotificationOptions.None;
-
-                await client.SendMailAsync(message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
         }
     }
 
