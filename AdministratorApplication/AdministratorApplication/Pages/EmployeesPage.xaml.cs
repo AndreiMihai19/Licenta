@@ -112,7 +112,7 @@ namespace AdministratorApplication.Pages
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            double availableWidth = e.NewSize.Width - 20;
+            double availableWidth = e.NewSize.Width;
 
             if (ListViewEmployees.View is GridView gridView)
             {

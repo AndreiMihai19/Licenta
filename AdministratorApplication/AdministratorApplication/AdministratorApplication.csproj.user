@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Employee Status\Charts.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee Status\ListViewStatusControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Employee Status\StatusCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +33,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Employee Status\Charts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee Status\ListViewStatusControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Employee Status\StatusCard.xaml">
       <SubType>Designer</SubType>
     </Page>

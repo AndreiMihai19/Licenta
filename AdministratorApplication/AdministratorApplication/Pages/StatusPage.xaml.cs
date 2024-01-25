@@ -30,6 +30,7 @@ namespace AdministratorApplication.Pages
         List<Employee> employees = new List<Employee>();
         public StatusPage()
         {
+
             InitializeComponent();
 
             status = new StatusRepository();
@@ -40,8 +41,27 @@ namespace AdministratorApplication.Pages
             card2.Number = numbersArray[1].ToString();
             card3.Number = numbersArray[2].ToString();
 
-
+            tabStatus1.Content = new ListViewStatusControl();
         }
+
+        private void TabStatusControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+         
+            // Afișează UserControl-ul corespunzător tab-ului selectat
+            if (TabStatusControl.SelectedIndex == 0)
+            {
+                tabStatus1.Visibility = Visibility.Visible;
+            }
+            //else if (myTabControl.SelectedIndex == 1)
+            //{
+            //    userControl2.Visibility = Visibility.Visible;
+            //}
+            //else if (myTabControl.SelectedIndex == 2)
+            //{
+            //    userControl3.Visibility = Visibility.Visible;
+            //}
+        }
+
 
     }
 }

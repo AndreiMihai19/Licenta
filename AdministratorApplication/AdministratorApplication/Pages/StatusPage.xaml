@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:es="clr-namespace:AdministratorApplication.Employee_Status"
-      xmlns:local="clr-namespace:AdministratorApplication.Pages"
+      xmlns:local="clr-namespace:AdministratorApplication.Employee_Status"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="1200"
       Title="StatusPage">
@@ -33,7 +33,29 @@
 
         </Grid>
 
+        <TabControl Grid.Row="2" Margin="0,30,0,0" x:Name="TabStatusControl" SelectionChanged="TabStatusControl_SelectionChanged" Background="#317773" FontSize="15">
+            <TabItem Header="Status angajati" x:Name="tabStatus1" Background="#FCF6F5" >
+                <TabItem.Style>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Foreground" Value="#317773"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Background" Value="#FCF6F5"/>
 
+                    </Style>
+                </TabItem.Style>
+            </TabItem>
+            <TabItem Header="Grafice" x:Name="tabStatus2">
+                <TabItem.Style>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Foreground" Value="#317773"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Background" Value="#FCF6F5"/>
+                    </Style>
+                </TabItem.Style>
+            </TabItem>
+
+        </TabControl>
 
     </Grid>
+
 </Page>
