@@ -42,6 +42,7 @@ namespace AdministratorApplication.Pages
             card3.Number = numbersArray[2].ToString();
 
             tabStatus1.Content = new ListViewStatusControl();
+            tabStatus2.Content = new Charts();
         }
 
         private void TabStatusControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -52,10 +53,10 @@ namespace AdministratorApplication.Pages
             {
                 tabStatus1.Visibility = Visibility.Visible;
             }
-            //else if (myTabControl.SelectedIndex == 1)
-            //{
-            //    userControl2.Visibility = Visibility.Visible;
-            //}
+            else if (TabStatusControl.SelectedIndex == 1)
+            {
+                tabStatus2.Visibility = Visibility.Visible;
+            }
             //else if (myTabControl.SelectedIndex == 2)
             //{
             //    userControl3.Visibility = Visibility.Visible;

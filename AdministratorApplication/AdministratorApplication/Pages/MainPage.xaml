@@ -1,0 +1,33 @@
+﻿<Page x:Class="AdministratorApplication.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:clk="clr-namespace:AdministratorApplication.Cards"
+      xmlns:local="clr-namespace:AdministratorApplication.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1200"
+      Title="MainPage">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Content="BiometricHub" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="60" Foreground="#317773" FontFamily="Berlin Sans FB"/>
+                <Image Grid.Column="1" Source="/Resources/logo.png" Height="500" VerticalAlignment="Center"/>
+                <Label Grid.Column="2" Content="Access" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="60" Foreground="#317773" FontFamily="Berlin Sans FB"/>
+            </Grid>
+        </Grid>
+       
+           
+    </Grid>
+</Page>

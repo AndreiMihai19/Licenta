@@ -1,6 +1,9 @@
-﻿using System.Configuration;
+﻿using AdministratorApplication.Classes;
+using System.Configuration;
 using System.Data;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace AdministratorApplication
@@ -10,10 +13,7 @@ namespace AdministratorApplication
     /// </summary>
     public partial class App : Application
     {
-      
+       
     }
-
-
-
 
 }

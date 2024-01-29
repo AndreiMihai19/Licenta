@@ -7,6 +7,45 @@
       mc:Ignorable="d" d:DesignWidth="800"
       Title="EmployeeRegistrationPage" Height="550" Width="500">
 
+    <Page.Resources>
+        <SolidColorBrush x:Key="ButtonColor" Color="#317773"/>
+        <SolidColorBrush x:Key="ButtontTextColor" Color="White"/>
+        <SolidColorBrush x:Key="ButtonHoverColor" Color="#193b39"/>
+
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{DynamicResource ButtonColor}"/>
+            <Setter Property="BorderBrush" Value="#676b6b"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Foreground" Value="{DynamicResource ButtontTextColor}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="200"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="btnBorder" CornerRadius="15" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <ContentPresenter x:Name="ContentPresenter" Focusable="False" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              RecognizesAccessKey="True">
+                            </ContentPresenter>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="{DynamicResource ButtonHoverColor}"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Page.Resources>
+
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -74,6 +113,6 @@
         </StackPanel>
 
 
-        <Button Grid.Row="18" Content="Inregistreaza" Margin="5,5,5,-38" Click="BtnInregistrare_Click" Background="#317773" Foreground="#FCF6F5" FontWeight="Bold"/>
+        <Button Grid.Row="18" Content="Inregistreaza" Margin="5,5,5,-38" Click="BtnInregistrare_Click"  Style="{DynamicResource ButtonStyle}"/>
     </Grid>
 </Page>

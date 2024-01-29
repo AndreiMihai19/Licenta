@@ -8,10 +8,10 @@
         WindowStyle="SingleBorderWindow"
         ResizeMode="CanMinimize"
         Title="Autentificare" Height="500" Width="600"
-        Icon="./Resources/icon1.ico"
+        Icon="./Resources/icon.ico"
         Foreground="#317773"
         Background="#FCF6F5">
-
+    
     <Window.Resources>
         <SolidColorBrush x:Key="ButtonColor" Color="#317773"/>
         <SolidColorBrush x:Key="ButtontTextColor" Color="White"/>
@@ -50,6 +50,7 @@
             </Setter>
 
         </Style>
+
     </Window.Resources>
 
     <Grid HorizontalAlignment="Center" Width="690" Margin="0,0,0,10" Background="#FCF6F5">
@@ -65,10 +66,10 @@
            
         </Rectangle>
 
-        <TextBlock Text="Autentificare" FontWeight="Bold" Foreground="#FCF6F5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30"  FontFamily="./Fonts/#InstrumentSerif-Italic" RenderTransformOrigin="0.508,1.769" Margin="0,136,0,0"/>
+        <TextBlock Text="Autentificare" FontWeight="Bold" Foreground="#FCF6F5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30"  FontFamily="Tahoma" RenderTransformOrigin="0.508,1.769" Margin="0,136,0,0"/>
 
         <StackPanel Grid.Row="1" Margin="10,10,10,10" Grid.RowSpan="2" Width="500">
-            <TextBlock Text="Email" Margin="0,0,0,5" FontWeight="Bold" />
+            <TextBlock Text="Email" Margin="0,0,0,5" FontWeight="Bold" FontFamily="Tahoma"/>
             <TextBox x:Name="txtboxEmail" HorizontalAlignment="Stretch" Margin="0,0,0,20" Padding="5,0,0,0" Height="22">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
@@ -92,7 +93,7 @@
                 </TextBox.Style>
             </TextBox>
 
-            <TextBlock Text="Parola" Margin="0,0,0,5" FontWeight="Bold" />
+            <TextBlock Text="Parola" Margin="0,0,0,5" FontWeight="Bold" FontFamily="Tahoma"/>
             <PasswordBox x:Name="txtboxPassword" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,0,20" Padding="5,0,0,0" Height="22">
                 <PasswordBox.Style>
                     <Style TargetType="PasswordBox">
@@ -116,9 +117,9 @@
                 </PasswordBox.Style>
             </PasswordBox>
 
-            <Button x:Name="btnLogin" Style="{DynamicResource ButtonStyle}"  Content="Autentificare" HorizontalAlignment="Stretch" Click="btnLogin_Click"/>
+            <Button x:Name="btnLogin" Style="{DynamicResource ButtonStyle}"  Content="Autentificare" HorizontalAlignment="Stretch" FontFamily="Tahoma" Click="btnLogin_Click"/>
         </StackPanel>
 
-        <TextBlock Grid.Row="3" Text="© 2024 BiometricHub Acces" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" FontSize="10" />
+        <TextBlock Grid.Row="3" Text="© 2024 BiometricHub Access" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" FontSize="10" FontFamily="Tahoma"/>
     </Grid>
 </Window>

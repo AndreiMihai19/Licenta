@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using ZstdSharp.Unsafe;
 
 namespace AdministratorApplication
@@ -21,11 +22,12 @@ namespace AdministratorApplication
     /// Interaction logic for MenuWindow.xaml
     /// </summary>
     public partial class MenuWindow : Window
-    {
-      
+    { 
         public MenuWindow()
         {
             InitializeComponent();
+
+            Main.Content = new MainPage();
         }
 
 
@@ -54,8 +56,6 @@ namespace AdministratorApplication
 
             Dispatcher.Invoke(HidePageProgressBar);
 
-
-
         }
         private void ShowPageProgressBar()
         {
@@ -67,7 +67,11 @@ namespace AdministratorApplication
             PageProgressBar.Visibility = Visibility.Collapsed;
         }
 
+       
 
+        private void Main_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
 
+        }
     }
 }

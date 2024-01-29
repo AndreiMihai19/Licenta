@@ -6,18 +6,27 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>Resources\icon1.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
     <AssemblyName>Admin App</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Fonts\InstrumentSerif-Italic.ttf" />
+    <None Remove="Fonts\LCDM2B__.TTF" />
     <None Remove="Fonts\Lexend-SemiBold.ttf" />
+    <None Remove="Resources\icon.ico" />
     <None Remove="Resources\icon1.ico" />
+    <None Remove="Resources\logo.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\icon1.ico" />
+    <Resource Include="Fonts\LCDM2B__.TTF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\icon.ico" />
+    <Content Include="Resources\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -31,7 +40,7 @@
 
   <ItemGroup>
     <Resource Include="Fonts\InstrumentSerif-Italic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Fonts\Lexend-SemiBold.ttf" />
   </ItemGroup>

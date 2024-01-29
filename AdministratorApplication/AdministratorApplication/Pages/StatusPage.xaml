@@ -10,41 +10,36 @@
       Title="StatusPage">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="330"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="1" Margin="32,60,32,0" >
+        <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="137*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
 
-            <es:StatusCard Grid.Column="0" x:Name="card1" Title="Total angajati" Number="100" Background1="#3052b0"  Background2="#111a33" EllipseBackground1="#676b6b" EllipseBackground2="White" Margin="31,0,32,0" Grid.RowSpan="2"/>
-            <es:StatusCard Grid.Column="1" x:Name="card2" Title="Angajati activi" Number="100" Background1= "#193b39" Background2="#317773" EllipseBackground1="#676b6b" EllipseBackground2="White" Margin="31,0,31,0" Grid.RowSpan="2"/>
-            <es:StatusCard Grid.Column="2" x:Name="card3" Title="Angajati inactivi" Number="100" Background1="#ed3957" Background2="#54141f" EllipseBackground1="#676b6b" EllipseBackground2="White" Margin="32,0,31,0" Grid.RowSpan="2"/>
+            <es:StatusCard Grid.Row="0" x:Name="card1" Title="Total angajati" Number="100" Background1="#3052b0"  Background2="#111a33" EllipseBackground1="#676b6b" EllipseBackground2="White"  HorizontalAlignment="Left" Margin="20,0,0,0" FontFamily="Tahoma"/>
+            <es:StatusCard Grid.Row="1" x:Name="card2" Title="Angajati activi" Number="100" Background1= "#193b39" Background2="#317773" EllipseBackground1="#676b6b" EllipseBackground2="White" HorizontalAlignment="Left" Margin="20,0,0,0" FontFamily="Tahoma"/>
+            <es:StatusCard Grid.Row="2" x:Name="card3" Title="Angajati inactivi" Number="100" Background1="#ed3957" Background2="#54141f" EllipseBackground1="#676b6b" EllipseBackground2="White" HorizontalAlignment="Left" Margin="20,0,0,0" FontFamily="Tahoma"/>
 
         </Grid>
 
-        <TabControl Grid.Row="2" Margin="0,30,0,0" x:Name="TabStatusControl" SelectionChanged="TabStatusControl_SelectionChanged" Background="#317773" FontSize="15">
+        <TabControl Grid.Column="1" x:Name="TabStatusControl" SelectionChanged="TabStatusControl_SelectionChanged" Background="#317773" FontSize="15" FontFamily="Tahoma">
             <TabItem Header="Status angajati" x:Name="tabStatus1" Background="#FCF6F5" >
                 <TabItem.Style>
                     <Style TargetType="TabItem">
                         <Setter Property="Foreground" Value="#317773"/>
                         <Setter Property="FontWeight" Value="Bold"/>
                         <Setter Property="Background" Value="#FCF6F5"/>
-
+                        <Setter Property="FontFamily" Value="Tahoma"/>
                     </Style>
                 </TabItem.Style>
             </TabItem>
-            <TabItem Header="Grafice" x:Name="tabStatus2">
+            <TabItem Header="Grafic de prezenta" x:Name="tabStatus2">
                 <TabItem.Style>
                     <Style TargetType="TabItem">
                         <Setter Property="Foreground" Value="#317773"/>

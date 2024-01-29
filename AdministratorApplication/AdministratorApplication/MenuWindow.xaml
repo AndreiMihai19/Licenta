@@ -3,12 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:clk="clr-namespace:AdministratorApplication.Cards"
         xmlns:local="clr-namespace:AdministratorApplication"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" 
-        Title="Menu
-        " Height="700" Width="1300"
-        Icon="./Resources/icon1.ico" 
+        Title="Menu"
+        Height="700" Width="1300"
+        Icon="./Resources/icon.ico" 
         FontWeight="Bold">
 
     <Window.Resources>
@@ -49,13 +50,38 @@
     </Window.Resources>
 
     <Grid>
-        <StackPanel Orientation="Horizontal" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
-            <Button x:Name="BtnEmployees" Content="Angajati" Style="{DynamicResource ButtonStyle}" VerticalContentAlignment="Center" Click="BtnEmployees_Click" FontSize="20" IsEnabled="True"/>
-            <Button x:Name="BtnEmployeeAdd" Content="Adaugare angajat" Style="{DynamicResource ButtonStyle}"  Margin="10,0,0,0" Click="BtnEmployeeAdd_Click" FontSize="20"/>
-            <Button x:Name="BtnStatus" Content="Status" Style="{DynamicResource ButtonStyle}" VerticalContentAlignment="Center" Margin="10,0,0,0" FontSize="20" Click="BtnStatus_Click"/>
-            <Button x:Name="BtnExit" Content="Iesire" Style="{DynamicResource ButtonStyle}" Margin="10,0,0,0" FontSize="20" Click="BtnExit_Click"/>
-        </StackPanel>
-        <Frame x:Name="Main" Margin="0,50,0,0" NavigationUIVisibility="Hidden"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Source="/Resources/logo.png"/>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Height="50" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Button x:Name="BtnEmployees" Content="Angajati" Style="{DynamicResource ButtonStyle}" VerticalContentAlignment="Center" Click="BtnEmployees_Click" FontSize="20" IsEnabled="True" FontFamily="Tahoma"/>
+                    <Button x:Name="BtnEmployeeAdd" Content="Adaugare angajat" Style="{DynamicResource ButtonStyle}"  Margin="10,0,0,0" Click="BtnEmployeeAdd_Click" FontSize="20" FontFamily="Tahoma"/>
+                    <Button x:Name="BtnStatus" Content="Status" Style="{DynamicResource ButtonStyle}" VerticalContentAlignment="Center" Margin="10,0,0,0" FontSize="20" Click="BtnStatus_Click" FontFamily="Tahoma"/>
+                    <Button x:Name="BtnExit" Content="Iesire" Style="{DynamicResource ButtonStyle}" Margin="10,0,0,0" FontSize="20" Click="BtnExit_Click" FontFamily="Tahoma"/>
+                </StackPanel>
+
+                <clk:ClockControl x:Name="clock" Grid.Column="2" Margin="100,10,40,10"></clk:ClockControl>
+
+            </Grid>
+        </Grid>
+        
+   
+
+        <Frame x:Name="Main" Margin="0,100,0,0" NavigationUIVisibility="Hidden" Navigated="Main_Navigated" >
+        </Frame>
         <ProgressBar  x:Name="PageProgressBar" Background="red" IsIndeterminate="True" Visibility="Collapsed"  HorizontalAlignment="Left" Height="10" Margin="546,367,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 

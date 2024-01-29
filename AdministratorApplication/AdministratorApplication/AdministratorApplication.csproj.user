@@ -7,13 +7,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Employee Status\Charts.xaml.cs">
+    <Compile Update="Cards\Charts.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Employee Status\ListViewStatusControl.xaml.cs">
+    <Compile Update="Cards\ClockControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Employee Status\StatusCard.xaml.cs">
+    <Compile Update="Cards\ListViewStatusControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Cards\StatusCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Cards\TotalHoursCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\ModifierForm.xaml.cs">
@@ -28,18 +34,27 @@
     <Compile Update="Pages\EmployeesPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\StatusPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Employee Status\Charts.xaml">
+    <Page Update="Cards\Charts.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Employee Status\ListViewStatusControl.xaml">
+    <Page Update="Cards\ClockControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Employee Status\StatusCard.xaml">
+    <Page Update="Cards\ListViewStatusControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Cards\StatusCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Cards\TotalHoursCard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\ModifierForm.xaml">
@@ -55,6 +70,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\EmployeesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\StatusPage.xaml">

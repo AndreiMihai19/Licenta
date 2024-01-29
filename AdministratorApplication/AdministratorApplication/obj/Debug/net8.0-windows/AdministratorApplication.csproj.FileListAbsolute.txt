@@ -53,12 +53,7 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\refint\Admin App.dll
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Admin App.pdb
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\ref\Admin App.dll
-D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\App.baml
-D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Employee Status\StatusCard.baml
-D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Employee Status\StatusCard.g.cs
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
-D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Employee Status\ListViewStatusControl.g.cs
-D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Employee Status\ListViewStatusControl.baml
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.NET5.dll
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.NET5.dll
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.NET5.dll
@@ -152,5 +147,16 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.ServiceProcess.ServiceController.dll
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Speech.dll
-D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Employee Status\Charts.g.cs
-D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Employee Status\Charts.baml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Pages\MainPage.g.cs
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Pages\MainPage.baml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Debug\net8.0-windows\Resources\logo.png
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Cards\StatusCard.baml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Cards\Charts.g.cs
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Cards\ListViewStatusControl.g.cs
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Cards\StatusCard.g.cs
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Cards\TotalHoursCard.g.cs
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Cards\Charts.baml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Cards\ListViewStatusControl.baml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Cards\TotalHoursCard.baml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Cards\ClockControl.g.cs
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Debug\net8.0-windows\Cards\ClockControl.baml

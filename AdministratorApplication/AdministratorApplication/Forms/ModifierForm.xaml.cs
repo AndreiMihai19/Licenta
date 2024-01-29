@@ -26,7 +26,7 @@ namespace AdministratorApplication.Forms
     {
         int? id;
         string currentJobPosition;
-        public event EventHandler InfoModified;
+      //  public event EventHandler InfoModified;
 
         public delegate void UpdateEmployeeListEventHandler(object sender, EventArgs e);
 

@@ -10,13 +10,12 @@ using System.Threading.Tasks;
 
 namespace AdministratorApplication.Repositories
 {
-    public class EmployeesListingStatusRepository : IEmployeesListingStatusRepository
+    public class EmployeesListingStatusRepository : IEmployeesListingStatus
     {
         private readonly MySqlConnection connection = new MySqlConnection("Server=34.118.79.104;Port=3306;database=licenta;User Id=root;Password=andreiandreiandrei191919");
 
         public void AddStatus(List<Status> status)
         {
-
             try
             {
                 if (connection.State == ConnectionState.Closed)
