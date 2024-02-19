@@ -1,5 +1,10 @@
 #include <Adafruit_Fingerprint.h>
 #include <ArduinoJson.h>
+#include <SoftwareSerial.h>
+#include <LiquidCrystal.h>
+
+const int rs = 13, en = 12, d4 = 11, d5 = 10, d6 = 9, d7 = 8;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
 #if (defined(__AVR__) || defined(ESP8266)) && !defined(__AVR_ATmega2560__)
 
@@ -23,6 +28,7 @@ void setup()
 {
   Serial.begin(115200);
   espSerial.begin(9600);
+  lcd.begin(16, 2);
 
   pinMode(pinButtonRed, INPUT_PULLUP);  
   pinMode(pinButtonBlue, INPUT_PULLUP);
@@ -87,7 +93,7 @@ void loop()
   Serial.println("");
   Serial.println("");
   Serial.println("");
-  Serial.println("Enroll or Log In?");
+  lcd.println("Enroll or Log In");
   Serial.println("Enroll - Blue Button");
   Serial.println("Log In - Red Button");
 
@@ -95,12 +101,13 @@ while (option == -1)
 {
    if (digitalRead(pinButtonBlue) == LOW) {
     option = 0;
-    Serial.println("Enroll...");
+    lcd.clear();
+    lcd.println("Enroll...");
 
     delay(1000);  
 
       Serial.println("Ready to enroll a fingerprint!");
-      Serial.println("Introduceti id:");
+      lcd.println("Introduceti id:");
       id=readnumber();
       if (id == 0) {// ID #0 not allowed, try again!
         return;
@@ -113,15 +120,18 @@ while (option == -1)
 
   if (digitalRead(pinButtonRed) == LOW) {
     option = 1;
-    Serial.println("Log In...");
-
-    delay(1000);
+    lcd.clear();
+    lcd.println("Log In...       ");
 
     while(option==1)
     {
       getFingerprintID();
       delay(50);
     }  
+    lcd.clear();
+    lcd.println("All good!       ");
+    delay(5000);
+    lcd.clear();
   }
 }
 
