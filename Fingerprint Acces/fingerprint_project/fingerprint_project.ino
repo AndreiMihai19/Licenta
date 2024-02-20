@@ -6,9 +6,11 @@
 const int rs = 13, en = 12, d4 = 11, d5 = 10, d6 = 9, d7 = 8;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
-#if (defined(__AVR__) || defined(ESP8266)) && !defined(__AVR_ATmega2560__)
+const int buzzerPin = 3;
 
-SoftwareSerial mySerial(2, 3);
+#if (defined(__AVR__) || defined(ESP8266)) || defined(__AVR_ATmega2560__)
+
+SoftwareSerial mySerial(A1, A0);
 SoftwareSerial espSerial(6,7);
 
 #else
@@ -30,8 +32,10 @@ void setup()
   espSerial.begin(9600);
   lcd.begin(16, 2);
 
+
   pinMode(pinButtonRed, INPUT_PULLUP);  
   pinMode(pinButtonBlue, INPUT_PULLUP);
+  pinMode(buzzerPin, OUTPUT);
   
   while (!Serial);  
   Serial.println("\n\n SRL");
@@ -102,7 +106,7 @@ while (option == -1)
    if (digitalRead(pinButtonBlue) == LOW) {
     option = 0;
     lcd.clear();
-    lcd.println("Enroll...");
+    lcd.println("Enroll...       ");
 
     delay(1000);  
 
@@ -346,8 +350,11 @@ uint8_t getFingerprintID() {
 
   // found a match!
 
+
   id=finger.fingerID;
   espSerial.print("Login"+ String(id));
+
+  tone(buzzerPin, 300,1000); // activez buzzer ul timp de 1 sec
 
   delay(1000);
 
