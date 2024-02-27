@@ -5,8 +5,8 @@
 
 const int rs = 13, en = 12, d4 = 11, d5 = 10, d6 = 9, d7 = 8;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
-
 const int buzzerPin = 3;
+#define solenoidPin 2
 
 #if (defined(__AVR__) || defined(ESP8266)) || defined(__AVR_ATmega2560__)
 
@@ -36,6 +36,9 @@ void setup()
   pinMode(pinButtonRed, INPUT_PULLUP);  
   pinMode(pinButtonBlue, INPUT_PULLUP);
   pinMode(buzzerPin, OUTPUT);
+  pinMode(solenoidPin, OUTPUT);
+
+  digitalWrite(solenoidPin, HIGH);
   
   while (!Serial);  
   Serial.println("\n\n SRL");
@@ -87,9 +90,6 @@ void loop()
 {
   option = -1;
 
-
- 
-  
   dataFromESP = espSerial.readStringUntil('\n');
   Serial.print("Date primite de la Arduino: ");
   Serial.println(dataFromESP);
@@ -97,7 +97,10 @@ void loop()
   Serial.println("");
   Serial.println("");
   Serial.println("");
-  lcd.println("Enroll or Log In");
+  lcd.setCursor(0, 0);
+  lcd.print("R - Acces");
+  lcd.setCursor(0, 1);
+  lcd.print("B - Inregistrare");
   Serial.println("Enroll - Blue Button");
   Serial.println("Log In - Red Button");
 
@@ -125,17 +128,16 @@ while (option == -1)
   if (digitalRead(pinButtonRed) == LOW) {
     option = 1;
     lcd.clear();
-    lcd.println("Log In...       ");
+    lcd.setCursor(3, 0);
+    lcd.print("Apropiati");
+    lcd.setCursor(4, 1);
+    lcd.print("degetul");
 
     while(option==1)
     {
       getFingerprintID();
       delay(50);
     }  
-    lcd.clear();
-    lcd.println("All good!       ");
-    delay(5000);
-    lcd.clear();
   }
 }
 
@@ -270,7 +272,7 @@ uint8_t getFingerprintEnroll() {
   if (p == FINGERPRINT_OK) {
     Serial.println("Stored!");
     // Trimite ID-ul la ESP8266
-    espSerial.print("Enroll"+ String(id));
+   // espSerial.print("Enroll"+ String(id));
 
   } else if (p == FINGERPRINT_PACKETRECIEVEERR) {
     Serial.println("Communication error");
@@ -337,11 +339,31 @@ uint8_t getFingerprintID() {
   p = finger.fingerSearch();
   if (p == FINGERPRINT_OK) {
     Serial.println("Found a print match!");
+
+    tone(buzzerPin, 300,1000); // activez buzzer ul timp de 1 sec
+
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Bine ati venit!");
+
+    digitalWrite(solenoidPin, LOW);
+    delay(5000);
+    digitalWrite(solenoidPin, HIGH);
+
+    lcd.clear();
+
   } else if (p == FINGERPRINT_PACKETRECIEVEERR) {
     Serial.println("Communication error");
     return p;
   } else if (p == FINGERPRINT_NOTFOUND) {
-    Serial.println("Did not find a match");
+    option = 2;
+
+    lcd.clear();
+    lcd.setCursor(1, 0);
+    lcd.print("Acces respins!");
+    delay(2000);
+    lcd.clear();
+
     return p;
   } else {
     Serial.println("Unknown error");
@@ -352,13 +374,9 @@ uint8_t getFingerprintID() {
 
 
   id=finger.fingerID;
-  espSerial.print("Login"+ String(id));
+ // espSerial.print("Login"+ String(id));
 
-  tone(buzzerPin, 300,1000); // activez buzzer ul timp de 1 sec
-
-  delay(1000);
-
-   // Tratează numele primit de la ESP826
+  //delay(1000);
 
   Serial.print("Found ID #"); Serial.print(finger.fingerID);
   Serial.print(" with confidence of "); Serial.println(finger.confidence);
@@ -377,7 +395,7 @@ int getFingerprintIDez() {
 
   p = finger.fingerFastSearch();
   if (p != FINGERPRINT_OK)  return -1;
-
+ 
   // found a match!
   Serial.print("Found ID #"); Serial.print(finger.fingerID);
   Serial.print(" with confidence of "); Serial.println(finger.confidence);
