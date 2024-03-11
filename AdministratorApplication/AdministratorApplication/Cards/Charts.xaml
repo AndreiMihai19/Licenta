@@ -7,6 +7,7 @@
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -26,8 +27,8 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <es:TotalHoursCard Grid.Column="0" x:Name="totalHourscard1" Title="Total ore" Number="100" Background1="#3052b0"  Background2="#111a33" Margin="25,15,25,15" FontFamily="Tahoma"/>
-            
-              
+
+
             </Grid>
 
         </Grid>
@@ -46,12 +47,34 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <ComboBox Grid.Column="0" Name="CBNames" SelectedIndex="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="36" SelectionChanged="CBNames_SelectionChanged" Margin="18,32,18,32" FontSize="15" FontFamily="Tahoma"/>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Nume angajat" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Tahoma" Foreground="White"></TextBlock>
+                    <ComboBox Grid.Row="1" Name="CBNames" SelectedIndex="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="CBNames_SelectionChanged" Margin="22,10,22,12" FontSize="15" FontFamily="Tahoma"/>
+                    
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Luna" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Tahoma" Foreground="White"></TextBlock>
+                    <ComboBox Grid.Row="1" Name="CBMonths" SelectedIndex="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="20,10,22,12" FontSize="15" FontFamily="Tahoma" SelectionChanged="CBMonths_SelectionChanged" />
+
+
+                </Grid>
+
             </Grid>
 
             <lvc:CartesianChart Grid.Column="1" Series="{Binding SeriesCollection}" Background="Transparent">
                 <lvc:CartesianChart.AxisX>
-                    <lvc:Axis 
+                    <lvc:Axis Title="Ziua" 
                           Labels="{Binding Labels}"         
                           Foreground="white"
                           Separator="{x:Static lvc:DefaultAxes.CleanSeparator}" 

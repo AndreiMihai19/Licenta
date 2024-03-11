@@ -7,7 +7,7 @@
         WindowStartupLocation="CenterScreen" 
         WindowStyle="SingleBorderWindow"
         ResizeMode="CanMinimize"
-        Title="Autentificare" Height="500" Width="600"
+        Title="Autentificare" Height="450" Width="400"
         Icon="./Resources/icon.ico"
         Foreground="#317773"
         Background="#FCF6F5">
@@ -66,9 +66,9 @@
            
         </Rectangle>
 
-        <TextBlock Text="Autentificare" FontWeight="Bold" Foreground="#FCF6F5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30"  FontFamily="Tahoma" RenderTransformOrigin="0.508,1.769" Margin="0,136,0,0"/>
+        <TextBlock Text="Autentificare" FontWeight="Bold" Foreground="#FCF6F5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30"  FontFamily="Tahoma" RenderTransformOrigin="0.508,1.769" Margin="0,106,0,0"/>
 
-        <StackPanel Grid.Row="1" Margin="10,10,10,10" Grid.RowSpan="2" Width="500">
+        <StackPanel Grid.Row="1" Margin="10,10,10,10" Grid.RowSpan="2" Width="300">
             <TextBlock Text="Email" Margin="0,0,0,5" FontWeight="Bold" FontFamily="Tahoma"/>
             <TextBox x:Name="txtboxEmail" HorizontalAlignment="Stretch" Margin="0,0,0,20" Padding="5,0,0,0" Height="22">
                 <TextBox.Style>

@@ -15,7 +15,7 @@ namespace AdministratorApplication.Repositories
 {
     public class ChartsRepository : ICharts
     {
-        private readonly MySqlConnection connection = new MySqlConnection("Server=34.118.79.104;Port=3306;database=licenta;User Id=root;Password=andreiandreiandrei191919");
+        private readonly MySqlConnection connection = new MySqlConnection("Server=34.78.19.175;Port=3306;database=biometrichubaccess;User Id=root;Password=parolalicenta");
        
         public string[] GetNamesOfEmployees()
         {
@@ -70,7 +70,6 @@ namespace AdministratorApplication.Repositories
                         "Registru_ore_angajati ON Angajati.id=Registru_ore_angajati.id_angajat;";
 
                     MySqlCommand command = new MySqlCommand(query, connection);
-
                     MySqlDataReader reader = command.ExecuteReader();
 
 
@@ -79,7 +78,7 @@ namespace AdministratorApplication.Repositories
                         string lastName = reader.GetString(0);
                         string firstName = reader.GetString(1);
 
-                        DateTime? date = reader.GetDateTime(2);
+                        DateTime date = reader.GetDateTime(2);
 
                         DateTime? hourIn = reader.GetDateTime(3);
                         string _hourIn = $"{hourIn.Value.Hour:D2}.{hourIn.Value.Minute:D2}";
@@ -93,23 +92,69 @@ namespace AdministratorApplication.Repositories
                         DateTime? hourOut = reader.GetDateTime(6);
                         string _hourOut = $"{hourOut.Value.Hour:D2}.{hourOut.Value.Minute:D2}";
 
+                        int month = date.Month;
 
                         string numePrenume = lastName + " " + firstName;
                         double oraProgram1 = GetTime(_hourIn, _breakHourIn);
                         double oraPauza = GetTime(_breakHourIn, _breakHourOut);
                         double oraProgram2 = GetTime(_breakHourOut, _hourOut);
                         double totalOre = GetTotalHours(oraProgram1.ToString(), oraProgram2.ToString());
+                        string luna = string.Empty;
+
+                        switch (month)
+                        {
+                            case 1:
+                                luna = "ianuarie";
+                                break;
+                            case 2:
+                                luna = "februarie";
+                                break;
+                            case 3:
+                                luna = "martie";
+                                break;
+                            case 4:
+                                luna = "aprilie";
+                                break;
+                            case 5:
+                                luna = "mai";
+                                break;
+                            case 6:
+                                luna = "iunie";
+                                break;
+                            case 7:
+                                luna = "iulie";
+                                break;
+                            case 8:
+                                luna = "august";
+                                break;
+                            case 9:
+                                luna = "septembrie";
+                                break;
+                            case 10:
+                                luna = "octombrie";
+                                break;
+                            case 11:
+                                luna = "noiembrie";
+                                break;
+                            case 12:
+                                luna = "decembrie";
+                                break;
+                            default:
+                                luna = "invalid";
+                                break;
+                        }
 
 
 
                         RegistryChart registryChart = new RegistryChart
                         { 
                             NumePrenume = numePrenume,
-                            Data = date.Value.ToString("dd-MM-yyyy"),
+                            Data = date.ToString("dd-MM-yyyy"),
                             OraProgram1 = oraProgram1,
                             OraPauza = GetTime(_breakHourIn, _breakHourOut),
                             OraProgram2 = GetTime(_breakHourOut, _hourOut),
-                            TotalOre = totalOre
+                            TotalOre = totalOre,
+                            LunaCalendaristica = luna
                         };
 
                         chart.Add(registryChart);
@@ -152,13 +197,13 @@ namespace AdministratorApplication.Repositories
                 m = t2_min - t1_min;
             }
 
-            if (m < 9)
+            if (m < 10)
             {
-                return double.Parse(h.ToString() + ".0" + m.ToString());
+                return double.Parse(Math.Abs(h).ToString() + ".0" + m.ToString());
             }
             else
             {
-                return double.Parse(h.ToString() + "." + m.ToString());
+                return double.Parse(Math.Abs(h).ToString() + "." + m.ToString());
             }
 
         }
@@ -167,7 +212,6 @@ namespace AdministratorApplication.Repositories
         {
             int t1_hour, t1_min, t2_hour, t2_min;
             string t1_min_str, t2_min_str;
-            double t1_min_double, t2_min_double;
 
             if (time1.Contains('.'))
             {
@@ -185,8 +229,8 @@ namespace AdministratorApplication.Repositories
             }
             else
             {
-                t1_hour = 0;
-                t1_min = Convert.ToInt32(time1);
+                t1_hour = Convert.ToInt32(time1);
+                t1_min = 0;
             }
 
             if (time2.Contains('.'))
@@ -206,8 +250,8 @@ namespace AdministratorApplication.Repositories
             }
             else
             {
-                t2_hour = 0;
-                t2_min = Convert.ToInt32(time2);
+                t2_hour = Convert.ToInt32(time1);
+                t2_min = 0;
             }
 
 

@@ -21,6 +21,8 @@ using System.Text.RegularExpressions;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Drawing;
+using System.Globalization;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace AdministratorApplication.Employee_Status
@@ -32,7 +34,8 @@ namespace AdministratorApplication.Employee_Status
     {
         private List<RegistryChart> chart = new List<RegistryChart>();
         private ICharts chartInfo = new ChartsRepository();
-        private ObservableCollection<string> employeeNames;
+        string? selectedName, selectedMonth;
+
         public Charts()
         {
             InitializeComponent();
@@ -43,21 +46,25 @@ namespace AdministratorApplication.Employee_Status
 
             CBNames.ItemsSource= chartInfo.GetNamesOfEmployees();
 
-            string selectedValue = CBNames.SelectedItem.ToString();
+            CBMonths.ItemsSource = GetMonths();
+
+            selectedName = CBNames.SelectedItem.ToString();
+            selectedMonth = CBMonths.SelectedItem.ToString();
+
 
         }
 
-        public void RowChart(string name)
+        public void RowChart(string name, string month)
         {
 
             DataContext = null;
 
             double val = chart
-                            .Where(registryChart => registryChart.NumePrenume == name)
+                            .Where(registryChart => registryChart.NumePrenume == name && registryChart.LunaCalendaristica == month)
                             .Select(registryChart => registryChart.TotalOre ?? 0)
                             .Sum();
 
-            string[] time = val.ToString().Split(".");
+            string[] time = val.ToString("F2").Split(".");
 
             if (time[1].Length == 1)
             {
@@ -75,7 +82,7 @@ namespace AdministratorApplication.Employee_Status
             List<string> seriesNames = new List<string> { "Program 1", "Pauza", "Program 2" };
 
             List<string?> distinctDates = chart
-                         .Where(registryChart => registryChart.NumePrenume == name)
+                         .Where(registryChart => registryChart.NumePrenume == name && registryChart.LunaCalendaristica == month)
                          .Select(registryChart => registryChart.Data)
                          .Distinct()
                          .ToList();
@@ -86,7 +93,7 @@ namespace AdministratorApplication.Employee_Status
             foreach (string seriesName in seriesNames)
             {
                 List<double> times = chart
-                                        .Where(registryChart => registryChart.NumePrenume == name)
+                                        .Where(registryChart => registryChart.NumePrenume == name && registryChart.LunaCalendaristica == month)
                                         .Select(registryChart => GetHourValue(registryChart, seriesName))
                                         .ToList();
 
@@ -126,6 +133,7 @@ namespace AdministratorApplication.Employee_Status
         public string[] Labels { get; set; }
         public Func<double, string> Formatter { get; set; }
 
+
         /*
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -150,11 +158,30 @@ namespace AdministratorApplication.Employee_Status
 
         private void CBNames_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (CBNames.SelectedItem != null )
+            {
+                selectedName = CBNames.SelectedItem.ToString();
+                RowChart(selectedName, selectedMonth);
+            }
+        }
+
+        private void CBMonths_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
             if (CBNames.SelectedItem != null)
             {
-                string selectedValue = CBNames.SelectedItem.ToString();
-                RowChart(selectedValue);
+                selectedMonth = CBMonths.SelectedItem.ToString();
+                RowChart(selectedName, selectedMonth);
             }
+        }
+
+        private string[] GetMonths()
+        {
+            CultureInfo limbaRomana = new CultureInfo("ro-RO");
+
+            string[] months = limbaRomana.DateTimeFormat.MonthNames;
+            Array.Resize(ref months, months.Length - 1);
+
+            return months;
         }
     }
 }

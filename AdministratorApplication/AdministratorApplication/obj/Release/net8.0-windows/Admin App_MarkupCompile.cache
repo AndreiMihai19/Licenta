@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\App.xaml
-111598340801
+12-1004105272
 275778256
-381580458909
+39124010418
 2391409719160
-Cards\Charts.xaml;Cards\ListViewStatusControl.xaml;Cards\StatusCard.xaml;Cards\TotalHoursCard.xaml;Forms\ModifierForm.xaml;LoginWindow.xaml;MenuWindow.xaml;Pages\EmployeeRegistrationPage.xaml;Pages\EmployeesPage.xaml;Pages\MainPage.xaml;Pages\StatusPage.xaml;
+Cards\Charts.xaml;Cards\ClockControl.xaml;Cards\ListViewStatusControl.xaml;Cards\StatusCard.xaml;Cards\TotalHoursCard.xaml;Forms\ModifierForm.xaml;LoginWindow.xaml;MenuWindow.xaml;Pages\EmployeeRegistrationPage.xaml;Pages\EmployeesPage.xaml;Pages\MainPage.xaml;Pages\StatusPage.xaml;
 
 False
 

@@ -27,7 +27,8 @@ namespace AdministratorApplication
         {
             InitializeComponent();
 
-            Main.Content = new MainPage();
+            //Main.Content = new MainPage();
+            Main.Content = new StatusPage();
         }
 
 

@@ -16,7 +16,7 @@ namespace AdministratorApplication.Repositories
 {
     public class EmployeesListingRepository : IEmployeeslListing
     {
-        private readonly MySqlConnection connection = new MySqlConnection("Server=34.118.79.104;Port=3306;database=licenta;User Id=root;Password=andreiandreiandrei191919");
+        private readonly MySqlConnection connection = new MySqlConnection("Server=34.78.19.175;Port=3306;database=biometrichubaccess;User Id=root;Password=parolalicenta");
         public void AddEmployees(List<Employee> employees)
         {
 
@@ -85,11 +85,18 @@ namespace AdministratorApplication.Repositories
                 {
                     connection.Open();
 
+                    string insert = "INSERT INTO Angajati_stersi(id) VALUES (@id)";
+
+                    MySqlCommand commandInsert = new MySqlCommand(insert, connection);
+                    commandInsert.Parameters.AddWithValue("@id", employee.Id);
+                    commandInsert.ExecuteNonQuery();
+
+
                     string query = "DELETE FROM Angajati WHERE id=@id";
 
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@id", employee.Id);
-                    command.ExecuteNonQuery();
+                    MySqlCommand commandDelete = new MySqlCommand(query, connection);
+                    commandDelete.Parameters.AddWithValue("@id", employee.Id);
+                    commandDelete.ExecuteNonQuery();
                 }
 
             }

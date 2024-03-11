@@ -12,7 +12,7 @@ namespace AdministratorApplication.Repositories
 {
     public class EmployeesListingStatusRepository : IEmployeesListingStatus
     {
-        private readonly MySqlConnection connection = new MySqlConnection("Server=34.118.79.104;Port=3306;database=licenta;User Id=root;Password=andreiandreiandrei191919");
+        private readonly MySqlConnection connection = new MySqlConnection("Server=34.78.19.175;Port=3306;database=biometrichubaccess;User Id=root;Password=parolalicenta");
 
         public void AddStatus(List<Status> status)
         {
@@ -35,7 +35,8 @@ namespace AdministratorApplication.Repositories
                         int id = reader.GetInt32(0);
                         string lastName = reader.GetString(1);
                         string firstName = reader.GetString(2);
-                        DateTime? hourIn = reader.IsDBNull(3) ? (DateTime?)null : reader.GetDateTime(3);
+                        DateTime? hourIn = reader.IsDBNull(3) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(3), TimeZoneInfo.Local);
+
                         string _hourIn = "0";
 
                         if (hourIn.HasValue)
@@ -45,7 +46,7 @@ namespace AdministratorApplication.Repositories
                             _hourIn = $"{hour:D2}:{minutes:D2}";
                         }
 
-                        DateTime? breakHourIn = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime(4);
+                        DateTime? breakHourIn = reader.IsDBNull(4) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(4), TimeZoneInfo.Local);
                         string _breakHourIn = "0";
 
                         if (breakHourIn.HasValue)
@@ -55,7 +56,7 @@ namespace AdministratorApplication.Repositories
                             _breakHourIn = $"{hour:D2}:{minutes:D2}";
                         }
 
-                        DateTime? breakHourOut = reader.IsDBNull(5) ? (DateTime?)null : reader.GetDateTime(5);
+                        DateTime? breakHourOut = reader.IsDBNull(5) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(5), TimeZoneInfo.Local);
                         string _breakHourOut = "0";
 
                         if (breakHourOut.HasValue)
@@ -65,7 +66,7 @@ namespace AdministratorApplication.Repositories
                             _breakHourOut = $"{hour:D2}:{minutes:D2}";
                         }
 
-                        DateTime? hourOut = reader.IsDBNull(6) ? (DateTime?)null : reader.GetDateTime(6);
+                        DateTime? hourOut = reader.IsDBNull(6) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(6), TimeZoneInfo.Local);
                         string _hourOut = "0";
 
                         if (hourOut.HasValue)

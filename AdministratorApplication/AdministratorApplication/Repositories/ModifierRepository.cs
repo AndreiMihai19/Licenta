@@ -13,7 +13,7 @@ namespace AdministratorApplication.Repositories
 {
     public class ModifierRepository :  IModifier
     {
-        private readonly MySqlConnection connection = new MySqlConnection("Server=34.118.79.104;Port=3306;database=licenta;User Id=root;Password=andreiandreiandrei191919");
+        private readonly MySqlConnection connection = new MySqlConnection("Server=34.78.19.175;Port=3306;database=biometrichubaccess;User Id=root;Password=parolalicenta");
 
         bool isModified = false;
 

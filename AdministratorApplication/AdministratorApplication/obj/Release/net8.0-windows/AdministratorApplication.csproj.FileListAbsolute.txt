@@ -158,3 +158,5 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\Charts.baml
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\ListViewStatusControl.baml
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\TotalHoursCard.baml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\ClockControl.g.cs
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\ClockControl.baml
