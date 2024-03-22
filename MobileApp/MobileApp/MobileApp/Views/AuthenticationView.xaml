@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.Views.AuthenticationView"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Margin="0,30" Source="logoapp.png" Aspect="AspectFit" HeightRequest="220" WidthRequest="80"></Image>
+            <Frame Grid.Row="1" Margin="0,0,0,-40" BorderColor="#317773" HasShadow="True"  CornerRadius="50" HeightRequest="700">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,50,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="BiometricHub Access" FontSize="24" FontAttributes="Bold" TextColor="#317773" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1" Margin="0,-15,0,0" Text="Login in to account" TextColor="#000000"  HorizontalOptions="CenterAndExpand"></Label>
+                    <Entry Grid.Row="2" x:Name="entryEmail" Placeholder="Email" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PlaceholderColor="#317773"></Entry>
+                    <Entry Grid.Row="3" Placeholder="Password" x:Name="entryPassword" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PlaceholderColor="#317773"></Entry>
+                    <Button Grid.Row="4" Text="Login" BackgroundColor="#317773" CornerRadius="20" TextColor="White" Clicked="OnAuthenticationClicked"></Button>
+                    <Button Grid.Row="5" Text="Forgot password? Reset it now!" BackgroundColor="Transparent" FontSize="12" BorderWidth="0" Margin="0,-15,0,0" TextTransform="None" Clicked="OnForgotClick" />
+
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

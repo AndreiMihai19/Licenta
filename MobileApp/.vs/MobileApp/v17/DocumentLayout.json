@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\menuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\menuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\menuview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\menuview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\resetpasswordview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\resetpasswordview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\repositories\\resetpasswordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\repositories\\resetpasswordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\forgotpasswordview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\forgotpasswordview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\forgotpasswordview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\forgotpasswordview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\interfaces\\iresetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\interfaces\\iresetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 255,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuView.xaml.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T18:14:45.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuView.xaml",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAACrAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-22T18:14:44.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ForgotPasswordView.xaml.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\ForgotPasswordView.xaml.cs",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\ForgotPasswordView.xaml.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\ForgotPasswordView.xaml.cs",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\ForgotPasswordView.xaml.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAACcAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T17:55:43.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ResetPasswordView.xaml.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml.cs",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml.cs",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAABUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T15:16:46.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ForgotPasswordView.xaml",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\ForgotPasswordView.xaml",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\ForgotPasswordView.xaml",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\ForgotPasswordView.xaml",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\ForgotPasswordView.xaml",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwB0AAACTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-22T15:04:46.668Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IResetPassword.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Interfaces\\IResetPassword.cs",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Interfaces\\IResetPassword.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Interfaces\\IResetPassword.cs",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Interfaces\\IResetPassword.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T15:04:00.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ResetPasswordRepository.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Repositories\\ResetPasswordRepository.cs",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Repositories\\ResetPasswordRepository.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Repositories\\ResetPasswordRepository.cs",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Repositories\\ResetPasswordRepository.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAAAEAAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T14:06:47.008Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
