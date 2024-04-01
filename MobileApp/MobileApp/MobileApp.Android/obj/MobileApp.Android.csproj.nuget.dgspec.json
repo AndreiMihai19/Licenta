@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj": {}
+    "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj": {}
   },
   "projects": {
-    "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj": {
+    "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj",
+        "projectUniqueName": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj",
         "projectName": "MobileApp.Android",
-        "projectPath": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj",
+        "projectPath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj",
         "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp.Android\\obj\\",
+        "outputPath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid13.0": {
             "projectReferences": {
-              "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj": {
-                "projectPath": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj"
+              "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj": {
+                "projectPath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj"
               }
             }
           }
@@ -63,14 +63,14 @@
         }
       }
     },
-    "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj": {
+    "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj",
+        "projectUniqueName": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj",
         "projectName": "MobileApp",
-        "projectPath": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj",
+        "projectPath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj",
         "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp\\obj\\",
+        "outputPath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

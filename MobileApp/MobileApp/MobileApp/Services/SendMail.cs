@@ -80,7 +80,7 @@ namespace MobileApp.Services
                         <body>
                             <h2><b>Cod de resetare a parolei</b></h2>
                             <p>Buna ziua! Ati solicitat resetarea parolei.</p>
-                            <p>Codul pentru resetare: {ResetCodeModel.ResetCode}</p>
+                            <p>Codul pentru resetare: {ResetPasswordModel.ResetCode}</p>
                              Vă dorim o zi minunata!<br>
                              Cu drag,
                             <p><b>BiometricHub Access</b></p>

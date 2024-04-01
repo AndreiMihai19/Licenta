@@ -9,6 +9,5 @@ namespace AdministratorApplication.Interfaces
     public interface IAuthentication
     {
        AuthenticationStatus Authenticate();
-
     }
 }

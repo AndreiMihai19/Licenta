@@ -8,6 +8,7 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 const int buzzerPin = 3;
 #define solenoidPin 2
 
+
 #if (defined(__AVR__) || defined(ESP8266)) || defined(__AVR_ATmega2560__)
 
 SoftwareSerial mySerial(A1, A0);
@@ -24,26 +25,23 @@ unsigned int option = -1;
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
 
 uint8_t id;
-String dataFromESP=" ";
 
 void setup()
 {
-  Serial.begin(115200);
-  espSerial.begin(9600);
-  lcd.begin(16, 2);
-
-
   pinMode(pinButtonRed, INPUT_PULLUP);  
   pinMode(pinButtonBlue, INPUT_PULLUP);
   pinMode(buzzerPin, OUTPUT);
   pinMode(solenoidPin, OUTPUT);
-
   digitalWrite(solenoidPin, HIGH);
+
+  Serial.begin(9600);
+
+  lcd.begin(16, 2);
+
   
   while (!Serial);  
   Serial.println("\n\n SRL");
-
-  // set the data rate for the sensor serial port
+  espSerial.begin(9600);
   finger.begin(57600);
 
   if (finger.verifyPassword()) {
@@ -74,6 +72,7 @@ void setup()
         Serial.print("Sensor contains "); Serial.print(finger.templateCount); Serial.println(" templates");
     }
 
+ 
 }
 
 uint8_t readnumber(void) {
@@ -88,27 +87,24 @@ uint8_t readnumber(void) {
 
 void loop()                   
 {
-  option = -1;
 
-  dataFromESP = espSerial.readStringUntil('\n');
-  Serial.print("Date primite de la Arduino: ");
-  Serial.println(dataFromESP);
-
-  Serial.println("");
-  Serial.println("");
-  Serial.println("");
   lcd.setCursor(0, 0);
   lcd.print("R - Acces");
   lcd.setCursor(0, 1);
   lcd.print("B - Inregistrare");
-  Serial.println("Enroll - Blue Button");
-  Serial.println("Log In - Red Button");
+  
+ if (espSerial.available()) { // Verificare dacă datele sunt disponibile pentru citire de la ESP
+    char receivedChar = espSerial.read(); // Citirea caracterului de la ESP
 
-while (option == -1)
-{
-   if (digitalRead(pinButtonBlue) == LOW) {
-    option = 0;
+    // Afisarea caracterului primit pe portul serial al Arduino
+    Serial.print("Caracter primit de la ESP: ");
+    Serial.println(receivedChar);
+  }
+
+  if (digitalRead(pinButtonBlue) == LOW) {
     lcd.clear();
+    espSerial.end();
+    
     lcd.println("Enroll...       ");
 
     delay(1000);  
@@ -123,26 +119,22 @@ while (option == -1)
       Serial.println(id);
 
       while (!  getFingerprintEnroll() );
-    }
+  }
 
   if (digitalRead(pinButtonRed) == LOW) {
-    option = 1;
+    option = -1;
     lcd.clear();
     lcd.setCursor(3, 0);
     lcd.print("Apropiati");
     lcd.setCursor(4, 1);
     lcd.print("degetul");
 
-    while(option==1)
+    while(option!=1)
     {
       getFingerprintID();
       delay(50);
     }  
   }
-}
-
-
-option = -1;
   
 }
 
@@ -272,7 +264,7 @@ uint8_t getFingerprintEnroll() {
   if (p == FINGERPRINT_OK) {
     Serial.println("Stored!");
     // Trimite ID-ul la ESP8266
-   // espSerial.print("Enroll"+ String(id));
+     espSerial.print("Enroll"+ String(id));
 
   } else if (p == FINGERPRINT_PACKETRECIEVEERR) {
     Serial.println("Communication error");
@@ -352,11 +344,14 @@ uint8_t getFingerprintID() {
 
     lcd.clear();
 
+    option=1;
+
   } else if (p == FINGERPRINT_PACKETRECIEVEERR) {
     Serial.println("Communication error");
     return p;
   } else if (p == FINGERPRINT_NOTFOUND) {
-    option = 2;
+   
+    option = 1;
 
     lcd.clear();
     lcd.setCursor(1, 0);
@@ -372,15 +367,12 @@ uint8_t getFingerprintID() {
 
   // found a match!
 
-
   id=finger.fingerID;
- // espSerial.print("Login"+ String(id));
-
-  //delay(1000);
+  espSerial.print("Login"+ String(id));
 
   Serial.print("Found ID #"); Serial.print(finger.fingerID);
   Serial.print(" with confidence of "); Serial.println(finger.confidence);
-  option = 2;
+  //option = 1;
 
   return finger.fingerID;
 }

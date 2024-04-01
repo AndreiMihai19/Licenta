@@ -5531,11 +5531,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj",
+      "projectUniqueName": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj",
       "projectName": "MobileApp.Android",
-      "projectPath": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj",
+      "projectPath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj",
       "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-      "outputPath": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp.Android\\obj\\",
+      "outputPath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -5556,8 +5556,8 @@
       "frameworks": {
         "monoandroid13.0": {
           "projectReferences": {
-            "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj": {
-              "projectPath": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj"
+            "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj": {
+              "projectPath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\MobileApp.csproj"
             }
           }
         }
@@ -5575,21 +5575,9 @@
             "target": "Package",
             "version": "[2.3.5, )"
           },
-          "MySqlConnector": {
-            "target": "Package",
-            "version": "[2.3.5, )"
-          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.8.1, )"
-          },
-          "Xamarin.Essentials": {
-            "target": "Package",
-            "version": "[1.8.1, )"
-          },
-          "Xamarin.Forms": {
-            "target": "Package",
-            "version": "[5.0.0.2622, )"
           },
           "Xamarin.Forms": {
             "target": "Package",

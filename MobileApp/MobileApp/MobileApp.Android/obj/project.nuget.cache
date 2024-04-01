@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/u9UmTTmw59VVPyCMyWrM4IA7xTd/2Tam+KHnwqyVMbOo3r1G6btKwjXqMrPiXwIdD1QRTxBc35qJTCW98G0DA==",
+  "dgSpecHash": "mxrClLik7oWc3OLWpOt1hsk4u7N4XIgd5YLB7Q86vBFTgOO2OK+9CauhhwZ+gf4FQGyHMR9xVyPdAk6J+6gjMw==",
   "success": true,
-  "projectFilePath": "D:\\XamarinFormsApp\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj",
+  "projectFilePath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp.Android\\MobileApp.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andre\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",

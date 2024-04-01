@@ -1,0 +1,250 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\repositories\\modifierrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\repositories\\modifierrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\repositories\\employeeslistingstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\repositories\\employeeslistingstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\repositories\\employeeslistingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\repositories\\employeeslistingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\repositories\\authenticationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\repositories\\authenticationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\pages\\employeeregistrationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\pages\\employeeregistrationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\pages\\employeeregistrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\pages\\employeeregistrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\classes\\sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\classes\\sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\interfaces\\isendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\interfaces\\isendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\pages\\statuspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\pages\\statuspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\interfaces\\ipasswordencryptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\interfaces\\ipasswordencryptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\classes\\passwordencryptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\classes\\passwordencryptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\classes\\authenticationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\classes\\authenticationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 255,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ModifierRepository.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\ModifierRepository.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Repositories\\ModifierRepository.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\ModifierRepository.cs",
+              "RelativeToolTip": "AdministratorApplication\\Repositories\\ModifierRepository.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAADcAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T19:25:51.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeesListingStatusRepository.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\EmployeesListingStatusRepository.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Repositories\\EmployeesListingStatusRepository.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\EmployeesListingStatusRepository.cs",
+              "RelativeToolTip": "AdministratorApplication\\Repositories\\EmployeesListingStatusRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T19:25:47.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeesListingRepository.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "RelativeToolTip": "AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T19:25:39.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmployeeRegistrationPage.xaml.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Pages\\EmployeeRegistrationPage.xaml.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Pages\\EmployeeRegistrationPage.xaml.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Pages\\EmployeeRegistrationPage.xaml.cs",
+              "RelativeToolTip": "AdministratorApplication\\Pages\\EmployeeRegistrationPage.xaml.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAAAFUAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T16:38:05.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmployeeRegistrationPage.xaml",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Pages\\EmployeeRegistrationPage.xaml",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Pages\\EmployeeRegistrationPage.xaml",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Pages\\EmployeeRegistrationPage.xaml",
+              "RelativeToolTip": "AdministratorApplication\\Pages\\EmployeeRegistrationPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-22T16:37:50.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ISendMail.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Interfaces\\ISendMail.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Interfaces\\ISendMail.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Interfaces\\ISendMail.cs",
+              "RelativeToolTip": "AdministratorApplication\\Interfaces\\ISendMail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T15:37:44.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SendMail.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Classes\\SendMail.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Classes\\SendMail.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Classes\\SendMail.cs",
+              "RelativeToolTip": "AdministratorApplication\\Classes\\SendMail.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAADsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T15:28:48.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StatusPage.xaml",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Pages\\StatusPage.xaml",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Pages\\StatusPage.xaml",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Pages\\StatusPage.xaml",
+              "RelativeToolTip": "AdministratorApplication\\Pages\\StatusPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-14T21:48:41.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\LoginWindow.xaml.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "AdministratorApplication\\LoginWindow.xaml.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAAEIAAACGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T19:01:25.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IPasswordEncryptor.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Interfaces\\IPasswordEncryptor.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Interfaces\\IPasswordEncryptor.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Interfaces\\IPasswordEncryptor.cs",
+              "RelativeToolTip": "AdministratorApplication\\Interfaces\\IPasswordEncryptor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T18:48:59.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PasswordEncryptor.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Classes\\PasswordEncryptor.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Classes\\PasswordEncryptor.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Classes\\PasswordEncryptor.cs",
+              "RelativeToolTip": "AdministratorApplication\\Classes\\PasswordEncryptor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T18:47:47.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "AdministratorApplication\\LoginWindow.xaml",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\LoginWindow.xaml",
+              "RelativeToolTip": "AdministratorApplication\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-13T18:12:38.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthenticationRepository.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\AuthenticationRepository.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Repositories\\AuthenticationRepository.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\AuthenticationRepository.cs",
+              "RelativeToolTip": "AdministratorApplication\\Repositories\\AuthenticationRepository.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAC4AAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T17:22:19.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AuthenticationStatus.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Classes\\AuthenticationStatus.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Classes\\AuthenticationStatus.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Classes\\AuthenticationStatus.cs",
+              "RelativeToolTip": "AdministratorApplication\\Classes\\AuthenticationStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T17:18:56.139Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -36,11 +36,12 @@ namespace MobileApp.Views
                 case SendEmailStatus.Success:
                     await DisplayAlert("Mesaj", "O sa primiti un cod pentru resetarea parolei. Verificati inbox-ul sau spam-ul!", "OK");
 
-                    ResetCodeModel.ResetCode = resetPassword.GenerateResetCode();
-                    ResetCodeModel.ExpirationTime = DateTime.Now.AddMinutes(5);
+                    ResetPasswordModel.ResetCode = resetPassword.GenerateResetCode();
+                    ResetPasswordModel.ExpirationTime = DateTime.Now.AddMinutes(5);
+                    ResetPasswordModel.UserEmail = entryEmail.Text;
 
                     ISendMail sendMail = new SendMail();
-                    await sendMail.SendResetCodeMethod(ResetCodeModel.ResetCode, entryEmail.Text);
+                    await sendMail.SendResetCodeMethod(ResetPasswordModel.ResetCode, entryEmail.Text);
 
                     ResetPasswordView resetPasswordView = new ResetPasswordView();
                     await Navigation.PushAsync(resetPasswordView);
