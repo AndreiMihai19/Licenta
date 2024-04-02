@@ -8,10 +8,10 @@
         <ScrollView>
             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" >
 
-            <Frame BackgroundColor="#317773" CornerRadius="20" Margin="0,-15,0,0" HeightRequest="80" Grid.Row="0">
+            <Frame BackgroundColor="#317773" CornerRadius="20" Margin="0,-20,0,0" HeightRequest="80" Grid.Row="0">
                 <Grid ColumnDefinitions="*,Auto" VerticalOptions="CenterAndExpand">
-                        <Label Grid.Column="0" Grid.Row="0" Text="BiometricHub Access" FontAttributes="Bold" FontSize="20" TextColor="White" ></Label>
-                        <Label Grid.Column="0" Grid.Row="1" Text="Data" TextColor="White"  ></Label>
+                        <Label Grid.Column="0" Grid.Row="0" Text="BiometricHub Access" Margin="0,8,0,0" FontAttributes="Bold" FontSize="20" TextColor="White" ></Label>
+                        <Label Grid.Column="0" Grid.Row="1" x:Name="lblDateTime" Text="Data" Margin="0,8,0,0" TextColor="White"  ></Label>
                         <Button Grid.Column="1" Grid.Row="0" Text="Log out" BackgroundColor="#317773" CornerRadius="20" TextColor="White"  Margin="0,0,0,0" Clicked="OnLogOutClicked"></Button>
                     
                 </Grid>
@@ -20,26 +20,49 @@
             <Frame CornerRadius="10" Grid.Row="1" BackgroundColor="White" Margin="10,10,10,0">
                 <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*" RowSpacing="10">
                     <Label Grid.Row="0" Grid.Column="0" Text="Nume" TextColor="#317773" FontSize="15"></Label>
-                    <Label Grid.Row="0" Grid.Column="1" Text="Nume" TextColor="#202020"></Label>
+                    <Label Grid.Row="0" Grid.Column="1" x:Name="lblLastName" Text="Nume" TextColor="#202020"></Label>
                     <Label Grid.Row="1" Grid.Column="0" Text="Prenume" TextColor="#317773" FontSize="15"  ></Label>
-                    <Label Grid.Row="1" Grid.Column="1" Text="Prenume" TextColor="#202020"></Label>
+                    <Label Grid.Row="1" Grid.Column="1" x:Name="lblFirstName" Text="Prenume" TextColor="#202020"></Label>
                     <Label Grid.Row="2" Grid.Column="0" Text="Email" TextColor="#317773"  FontSize="15"  ></Label>
-                    <Label Grid.Row="2" Grid.Column="1" Text="Email" TextColor="#202020"></Label>
-                    <Label Grid.Row="3" Grid.Column="0" Text="Functie" TextColor="#317773"  FontSize="15"  ></Label>
-                    <Label Grid.Row="3" Grid.Column="1" Text="Functie" TextColor="#202020"></Label>
+                    <Label Grid.Row="2" Grid.Column="1" x:Name="lblEmail" Text="Email" TextColor="#202020"></Label>
+                    <Label Grid.Row="3" Grid.Column="0"  Text="Functie" TextColor="#317773"  FontSize="15"  ></Label>
+                    <Label Grid.Row="3" Grid.Column="1" x:Name="lblJob" Text="Functie" TextColor="#202020"></Label>
                     <Label Grid.Row="4" Grid.Column="0" Text="Ore/zi" TextColor="#317773"  FontSize="15"  ></Label>
-                    <Label Grid.Row="4" Grid.Column="1" Text="Ore/zi" TextColor="#202020"></Label>
+                    <Label Grid.Row="4" Grid.Column="1" x:Name="lblDailyHours" Text="Ore/zi" TextColor="#202020"></Label>
                 </Grid>
             </Frame>
 
             <Grid Margin="10" Grid.Row="2" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*" RowSpacing="10">
-                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="White" HasShadow="True" CornerRadius="10" HeightRequest="50">
-                    <StackLayout>
-                        <Label Text="Luna" FontSize="15" TextColor="Black" />
-                        <Label Text="Aprilie" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
-                    </StackLayout>
-                </Frame>
-                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
+                    <Frame x:Name="monthFrame" Grid.Row="0" Grid.Column="0" BackgroundColor="White" HasShadow="True" CornerRadius="10" HeightRequest="50">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="FrameTapped"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout>
+                            <Label Text="Luna" FontSize="15" TextColor="Black" />
+                            <Label x:Name="lblMonth" Text="Aprilie" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+
+                            <Picker x:Name="monthPicker" SelectedIndexChanged="MonthPicker_SelectedIndexChanged" IsVisible="False">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Ianuarie</x:String>
+                                        <x:String>Februarie</x:String>
+                                        <x:String>Martie</x:String>
+                                        <x:String>Aprilie</x:String>
+                                        <x:String>Mai</x:String>
+                                        <x:String>Iunie</x:String>
+                                        <x:String>Iulie</x:String>
+                                        <x:String>August</x:String>
+                                        <x:String>Septembrie</x:String>
+                                        <x:String>Octombrie</x:String>
+                                        <x:String>Noiembrie</x:String>
+                                        <x:String>Decembrie</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
                     <StackLayout>
                         <Label Text="Ore lucrate" FontSize="15" TextColor="White" />
                         <Label Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>
@@ -76,15 +99,15 @@
                 <Frame Grid.Row="3" Margin="10" CornerRadius="10" BackgroundColor="#317773">
                     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,Auto" RowSpacing="2">
                         <Label Grid.Row="0" Grid.Column="0" Text="Ora In" TextColor="#ffffff"></Label>
-                        <Label Grid.Row="0" Grid.Column="1" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
+                        <Label Grid.Row="0" Grid.Column="1" x:Name="lblClockIn" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
                         <Label Grid.Row="1" Grid.Column="0" Text="Pauza In" TextColor="#ffffff"></Label>
-                        <Label Grid.Row="1" Grid.Column="1" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
+                        <Label Grid.Row="1" Grid.Column="1" x:Name="lblStartBreak" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
                         <Label Grid.Row="2" Grid.Column="0" Text="Pauza Out" TextColor="#ffffff"></Label>
-                        <Label Grid.Row="2" Grid.Column="1" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
+                        <Label Grid.Row="2" Grid.Column="1" x:Name="lblEndBreak" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
                         <Label Grid.Row="3" Grid.Column="0" Text="Ora Out" TextColor="#ffffff"></Label>
-                        <Label Grid.Row="3" Grid.Column="1" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
+                        <Label Grid.Row="3" Grid.Column="1" x:Name="lblClockOut" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
                         <Label Grid.Row="4" Grid.Column="0" Text="Total ore lucrate" TextColor="#ffffff" FontAttributes="Bold"></Label>
-                        <Label Grid.Row="4" Grid.Column="1" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
+                        <Label Grid.Row="4" Grid.Column="1" x:Name="lblTotalHours" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
                     </Grid>
                 </Frame>
             </Grid>

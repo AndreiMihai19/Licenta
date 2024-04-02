@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\authenticationview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
-      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\authenticationview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\menuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\menuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\resetpasswordview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\resetpasswordview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\menuview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\menuview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\repositories\\resetpasswordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\repositories\\resetpasswordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\models\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\models\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\resetpasswordview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
-      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\resetpasswordview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\repositories\\dashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\repositories\\dashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\models\\resetcodemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\models\\resetcodemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\services\\sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\services\\sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\interfaces\\idashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\interfaces\\idashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 255,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,76 +38,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthenticationView.xaml",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\AuthenticationView.xaml",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\AuthenticationView.xaml",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\AuthenticationView.xaml",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\AuthenticationView.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAABVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-01T19:59:04.879Z",
+              "DocumentIndex": 3,
+              "Title": "DashboardRepository.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAowCcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T12:58:19.291Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SendMail.cs",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Services\\SendMail.cs",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Services\\SendMail.cs",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Services\\SendMail.cs",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Services\\SendMail.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAswFIAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T19:41:49.781Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ResetCodeModel.cs",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Models\\ResetCodeModel.cs",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Models\\ResetCodeModel.cs",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Models\\ResetCodeModel.cs",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Models\\ResetCodeModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Title": "IDashboard.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Interfaces\\IDashboard.cs",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Interfaces\\IDashboard.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Interfaces\\IDashboard.cs",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Interfaces\\IDashboard.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T19:37:59.489Z"
+              "WhenOpened": "2024-04-02T12:58:04.521Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ResetPasswordRepository.cs",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Repositories\\ResetPasswordRepository.cs",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Repositories\\ResetPasswordRepository.cs",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Repositories\\ResetPasswordRepository.cs",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Repositories\\ResetPasswordRepository.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAmwGYAAAAZAAAA",
+              "DocumentIndex": 0,
+              "Title": "MenuView.xaml.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAcwD4AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T18:55:08.613Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ResetPasswordView.xaml",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAUwCYAAAB3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-01T18:03:14.698Z"
+              "WhenOpened": "2024-04-02T12:55:35.31Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ResetPasswordView.xaml.cs",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml.cs",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml.cs",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\ResetPasswordView.xaml.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAD4AAABuAAAA",
+              "Title": "MenuView.xaml",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAcwCsAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-02T12:55:27.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeModel.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Models\\EmployeeModel.cs",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Models\\EmployeeModel.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Models\\EmployeeModel.cs",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Models\\EmployeeModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T15:16:46.063Z"
+              "WhenOpened": "2024-04-02T12:57:24.519Z",
+              "EditorCaption": ""
             }
           ]
         }

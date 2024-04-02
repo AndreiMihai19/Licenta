@@ -35,6 +35,8 @@ namespace MobileApp.Views
                 case AuthenticationStatus.Success:
                     await DisplayAlert("Mesaj", "Autentificare reusita!", "OK");
 
+                    DashboardModel.Email=entryEmail.Text;   
+
                     MenuView menuView = new MenuView();
 
                     await Navigation.PushAsync(menuView);
