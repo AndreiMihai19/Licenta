@@ -8,5 +8,6 @@ namespace MobileApp.Interfaces
     public interface IAuthentication
     {
         Task<AuthenticationStatus> Authenticate();
+        Task<int> GetEmployeeId();
     }
 }

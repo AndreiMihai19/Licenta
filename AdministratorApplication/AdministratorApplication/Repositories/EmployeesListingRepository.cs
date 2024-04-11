@@ -92,11 +92,24 @@ namespace AdministratorApplication.Repositories
                     commandInsert.ExecuteNonQuery();
 
 
-                    string query = "DELETE FROM Angajati WHERE id=@id";
+                    string delete = "DELETE FROM Angajati WHERE id=@id";
 
-                    MySqlCommand commandDelete = new MySqlCommand(query, connection);
+                    MySqlCommand commandDelete = new MySqlCommand(delete, connection);
                     commandDelete.Parameters.AddWithValue("@id", employee.Id);
                     commandDelete.ExecuteNonQuery();
+
+                    string  deleteStatus= "DELETE FROM Status_angajati WHERE id=@id";
+
+                    MySqlCommand commandDeleteFromStatus = new MySqlCommand(deleteStatus, connection);
+                    commandDelete.Parameters.AddWithValue("@id", employee.Id);
+                    commandDelete.ExecuteNonQuery();
+
+                    string deleteTimeValue = "DELETE FROM Valoare_timp WHERE id=@id";
+
+                    MySqlCommand commandDeleteValueTime = new MySqlCommand(deleteTimeValue, connection);
+                    commandDelete.Parameters.AddWithValue("@id", employee.Id);
+                    commandDelete.ExecuteNonQuery();
+
                 }
 
             }

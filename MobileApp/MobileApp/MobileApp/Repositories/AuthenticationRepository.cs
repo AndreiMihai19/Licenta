@@ -1,10 +1,12 @@
 ﻿using MobileApp.Interfaces;
+using MobileApp.Models;
 using MobileApp.Services;
 using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace MobileApp.Repositories
 {
@@ -44,6 +46,7 @@ namespace MobileApp.Repositories
                         cmdValidate.Parameters.AddWithValue("@email", this.email);
                         cmdValidate.Parameters.AddWithValue("@password", encryptedPassword);
 
+
                         int count = Convert.ToInt32(cmdValidate.ExecuteScalar());
 
                         if (count > 0)
@@ -56,7 +59,7 @@ namespace MobileApp.Repositories
                         }
 
                     }
-                    catch
+                    catch(Exception ex) 
                     {
                         return AuthenticationStatus.DataBaseConnectionProblem;
                     }
@@ -65,6 +68,41 @@ namespace MobileApp.Repositories
                         connection.Close();
                     }
                 }
+            }
+        }
+
+        public async Task<int> GetEmployeeId()
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    await Task.Run(() => connection.Open());
+
+                    MySqlCommand cmdGetId = new MySqlCommand("SELECT id FROM Angajati where email = @email", connection);
+                    cmdGetId.Parameters.AddWithValue("@email", this.email);
+
+                    MySqlDataReader reader = cmdGetId.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        return reader.GetInt32(0);
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    return 0;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
             }
         }
     }

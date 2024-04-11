@@ -4,6 +4,7 @@ using MobileApp.Repositories;
 using Mysqlx.Notice;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,9 @@ namespace MobileApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuView : ContentPage
     {
-        private IDashboard employeeInfo;
-        EmployeeModel employee;
+        private IDashboard employeeInfo = new DashboardRepository(DashboardModel.Email, DashboardModel.Id);
+        private string selectedMonth = "";
+        private EmployeeModel employee;
 
         public MenuView()
         {
@@ -28,7 +30,11 @@ namespace MobileApp.Views
                 lblDateTime.Text = DateTime.Now.ToString();
 
                 return true;
-            }); 
+            });
+
+            SetCurrentMonth();
+
+           // selectedMonth = monthPicker.SelectedItem.ToString();
 
             SetEmployeeInfo();
 
@@ -36,14 +42,19 @@ namespace MobileApp.Views
 
         private async Task GetEmployeeInfo()
         {
-            employeeInfo = new DashboardRepository(DashboardModel.Email);
 
             employee = await employeeInfo.GetEmployeeInfo();
+
+         //   DashboardModel.Email = null;
+          //  DashboardModel.Id = 0;
         }
 
         private async void SetEmployeeInfo()
         {
-           await GetEmployeeInfo();
+            await GetEmployeeInfo();
+
+           // lblHoursByMonth.Text = (await employeeInfo.GetHoursByMonth(DashboardModel.Id,GetIndexOfMonth(monthPicker.SelectedItem.ToString()))).ToString();
+          //  lblHoursByMonth.Text = (await employeeInfo.GetHoursByMonth(DashboardModel.Id,GetIndexOfMonth("Ianuarie"))).ToString();
 
             lblLastName.Text = employee.Nume;
             lblFirstName.Text = employee.Prenume;
@@ -51,8 +62,8 @@ namespace MobileApp.Views
             lblJob.Text = employee.Functie;
             lblDailyHours.Text = employee.OreZi.ToString();
             lblClockIn.Text = employee.OraIn.ToString();
-            lblStartBreak.Text = employee.OraOut.ToString();
-            lblEndBreak.Text = employee.PauzaIn.ToString();
+            lblStartBreak.Text = employee.PauzaIn.ToString();
+            lblEndBreak.Text = employee.PauzaOut.ToString();
             lblClockOut.Text = employee.OraOut.ToString(); 
             lblTotalHours.Text = employee.TotalOreLucrate.ToString();
 
@@ -68,10 +79,29 @@ namespace MobileApp.Views
             await Navigation.PopAsync();
         }
 
-        private void MonthPicker_SelectedIndexChanged(object sender, EventArgs e)
+        private async void MonthPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedMonth = monthPicker.SelectedItem as string;
-            lblMonth.Text = selectedMonth;  
+            if (monthPicker.SelectedIndex != -1 ) 
+            {
+                selectedMonth = monthPicker.SelectedItem as string;
+                lblMonth.Text = selectedMonth;
+                lblHoursByMonth.Text = (await employeeInfo.GetHoursByMonth(DashboardModel.Id, GetIndexOfMonth(selectedMonth))).ToString();
+            }
+            
         }
+
+        private int GetIndexOfMonth(string month)
+        {
+            CultureInfo culture = new CultureInfo("ro-RO");
+            DateTimeFormatInfo dtfi = culture.DateTimeFormat;
+
+            return DateTime.ParseExact(month, "MMMM", culture).Month;
+        }
+        private void SetCurrentMonth()
+        {
+            int currentMonthIndex = DateTime.Now.Month - 1;
+            monthPicker.SelectedIndex = currentMonthIndex;
+        }
+
     }
 }

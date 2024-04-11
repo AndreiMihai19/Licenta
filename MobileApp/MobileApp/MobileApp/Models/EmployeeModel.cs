@@ -6,7 +6,7 @@ namespace MobileApp.Models
 {
     public class EmployeeModel
     {
-        public DateTime DateTime { get; set; }
+        public int EmployeeId { get; set; }
 
         public string Nume { get; set; }    
 
@@ -26,7 +26,7 @@ namespace MobileApp.Models
 
         public string OraOut { get; set; }
 
-        public double TotalOreLucrate {  get; set; }    
+        public string TotalOreLucrate {  get; set; }    
 
     }
 }

@@ -60,7 +60,7 @@ namespace AdministratorApplication.Employee_Status {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Admin App;V1.0.0.0;component/cards/statuscard.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Admin App;component/cards/statuscard.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Cards\StatusCard.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

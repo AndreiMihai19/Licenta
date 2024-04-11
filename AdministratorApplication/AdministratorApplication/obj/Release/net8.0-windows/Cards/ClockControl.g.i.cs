@@ -61,7 +61,7 @@ namespace AdministratorApplication.Cards {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Admin App;V1.0.0.0;component/cards/clockcontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Admin App;component/cards/clockcontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Cards\ClockControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -7,8 +7,10 @@
 #ifndef STASSID
 //#define STASSID "LinksysB019"
 //#define STAPSK "wm83y3fby4"
-#define STASSID "Sam IL Yei"
-#define STAPSK "camera503503camera"
+//#define STASSID "Sam IL Yei"
+//#define STAPSK "camera503503camera"
+#define STASSID "DIGI-6888"
+#define STAPSK "7JpqVMzk"
 #endif
 
 //SoftwareSerial s(D7,D6);

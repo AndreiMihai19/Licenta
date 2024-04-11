@@ -1,6 +1,7 @@
 ﻿using MobileApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,5 +11,10 @@ namespace MobileApp.Interfaces
     {
         Task<EmployeeModel> GetEmployeeInfo();
 
+        string GetTime(string time1, string time2);
+
+        string GetTotalHours(string time1, string time2);
+
+        Task<string> GetHoursByMonth(int id, int month);
     }
 }

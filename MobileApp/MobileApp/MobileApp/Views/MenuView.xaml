@@ -41,7 +41,7 @@
                             <Label Text="Luna" FontSize="15" TextColor="Black" />
                             <Label x:Name="lblMonth" Text="Aprilie" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
 
-                            <Picker x:Name="monthPicker" SelectedIndexChanged="MonthPicker_SelectedIndexChanged" IsVisible="False">
+                            <Picker x:Name="monthPicker" SelectedIndex="0" SelectedIndexChanged="MonthPicker_SelectedIndexChanged" IsVisible="False">
                                 <Picker.ItemsSource>
                                     <x:Array Type="{x:Type x:String}">
                                         <x:String>Ianuarie</x:String>
@@ -65,7 +65,7 @@
                     <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
                     <StackLayout>
                         <Label Text="Ore lucrate" FontSize="15" TextColor="White" />
-                        <Label Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>
+                        <Label x:Name="lblHoursByMonth" Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>
                     </StackLayout>
                 </Frame>
 

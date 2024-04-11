@@ -14,15 +14,18 @@ namespace MobileApp.Repositories
     {
         private readonly string connectionString = "Server=34.78.19.175;Database=biometrichubaccess;Uid=root;Pwd=parolalicenta;";
         private readonly string email;
-        private EmployeeModel employee;
+        private readonly int id;
+        public EmployeeModel employee;
 
-        public DashboardRepository(string email) 
+        public DashboardRepository(string email, int id) 
         {
             this.email = email;
+            this.id = id;
         }
 
         public async Task<EmployeeModel> GetEmployeeInfo()
         {
+
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
@@ -86,15 +89,19 @@ namespace MobileApp.Repositories
                             _hourOut = $"{hour:D2}:{minutes:D2}";
                         }
 
-                        double totalHours;
+                        string totalHours;
 
                         if (_hourIn != "0" && _breakHourIn != "0" && _breakHourOut != "0" && _hourOut != "0")
-                            totalHours = GetTotalHours(GetTime(_hourIn.ToString(), _breakHourIn.ToString()).ToString(), GetTime(_breakHourOut.ToString(), _hourOut.ToString()).ToString());
+                            totalHours = GetTotalHours(GetTime(_hourIn.ToString(), _breakHourIn.ToString()), GetTime(_breakHourOut.ToString(), _hourOut.ToString()));
                         else
-                            totalHours = 0;
+                            totalHours = "0";
+
+                        if (totalHours == "0:0")
+                            totalHours = "0";
 
                         employee = new EmployeeModel()
                         {
+                            EmployeeId = this.id,
                             Prenume = firstName,
                             Nume = lastName,
                             Email = email,
@@ -114,6 +121,7 @@ namespace MobileApp.Repositories
                 {
                     employee = new EmployeeModel()
                     {
+                        EmployeeId = 0,
                         Prenume = "",
                         Nume = "",
                         Email = "",
@@ -123,7 +131,7 @@ namespace MobileApp.Repositories
                         PauzaIn = "",
                         PauzaOut = "",
                         OraOut = "",
-                        TotalOreLucrate = 0,
+                        TotalOreLucrate = "0",
                     };
 
                     return employee;
@@ -137,10 +145,11 @@ namespace MobileApp.Repositories
             }
         }
 
-        public double GetTime(string time1, string time2)
+        
+        public string GetTime(string time1, string time2)
         {
-            string[] _time1 = time1.Split('.');
-            string[] _time2 = time2.Split('.');
+            string[] _time1 = time1.Split(':');
+            string[] _time2 = time2.Split(':');
 
             int t1_hour = Convert.ToInt32(_time1[0]);
             int t1_min = Convert.ToInt32(_time1[1]);
@@ -164,23 +173,24 @@ namespace MobileApp.Repositories
 
             if (m < 10)
             {
-                return double.Parse(Math.Abs(h).ToString() + ".0" + m.ToString());
+                return Math.Abs(h).ToString() + ":0" + m.ToString();
             }
             else
             {
-                return double.Parse(Math.Abs(h).ToString() + "." + m.ToString());
+                return Math.Abs(h).ToString() + ":" + m.ToString();
             }
 
         }
+        
 
-        public double GetTotalHours(string time1, string time2)
+        public string GetTotalHours(string time1, string time2)
         {
             int t1_hour, t1_min, t2_hour, t2_min;
             string t1_min_str, t2_min_str;
 
-            if (time1.Contains('.'))
+            if (time1.Contains(':'))
             {
-                string[] _time1 = time1.Split('.');
+                string[] _time1 = time1.Split(':');
                 t1_hour = Convert.ToInt32(_time1[0]);
                 t1_min_str = _time1[1];
 
@@ -198,9 +208,9 @@ namespace MobileApp.Repositories
                 t1_min = 0;
             }
 
-            if (time2.Contains('.'))
+            if (time2.Contains(':'))
             {
-                string[] _time2 = time2.Split('.');
+                string[] _time2 = time2.Split(':');
                 t2_hour = Convert.ToInt32(_time2[0]);
                 t2_min_str = _time2[1];
 
@@ -232,10 +242,97 @@ namespace MobileApp.Repositories
 
             m %= 60;
 
+            if (m<10)
+            {
+                return h.ToString() + ":0" + m.ToString();
+            }
+            else
+            {
+                return h.ToString() + ":" + m.ToString();
+            }
 
-            return double.Parse(h.ToString() + "." + m.ToString());
+        }
 
 
+
+        public async Task<string> GetHoursByMonth(int id, int month)
+        {
+            string _hoursByMonth = "", hoursByMonth = "00:00";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    await Task.Run(() => connection.Open());
+
+                    string query = "SELECT ora_in,ora_pauza_in, ora_pauza_out,ora_out FROM Registru_ore_angajati WHERE id_angajat=@id AND MONTH(data) = @month;";
+
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@month", month);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                    
+                        DateTime? clockIn = reader.IsDBNull(0) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(0), TimeZoneInfo.Local);
+
+                        string _clockIn = "0";
+
+                        if (clockIn.HasValue)
+                        {
+                            int hour = clockIn.Value.Hour;
+                            int minutes = clockIn.Value.Minute;
+                            _clockIn = $"{hour:D2}:{minutes:D2}";
+                        }
+
+                        DateTime? startBreak = reader.IsDBNull(1) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(1), TimeZoneInfo.Local);
+                        string _startBreak = "0";
+
+                        if (startBreak.HasValue)
+                        {
+                            int hour = startBreak.Value.Hour;
+                            int minutes = startBreak.Value.Minute;
+                            _startBreak = $"{hour:D2}:{minutes:D2}";
+                        }
+
+                        DateTime? endBreak = reader.IsDBNull(2) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(2), TimeZoneInfo.Local);
+                        string _endBreak = "0";
+
+                        if (endBreak.HasValue)
+                        {
+                            int hour = endBreak.Value.Hour;
+                            int minutes = endBreak.Value.Minute;
+                            _endBreak = $"{hour:D2}:{minutes:D2}";
+                        }
+
+                        DateTime? clockOut = reader.IsDBNull(3) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(3), TimeZoneInfo.Local);
+                        string _clockOut = "0";
+
+                        if (clockOut.HasValue)
+                        {
+                            int hour = clockOut.Value.Hour;
+                            int minutes = clockOut.Value.Minute;
+                            _clockOut = $"{hour:D2}:{minutes:D2}";
+                        }
+
+
+                        _hoursByMonth = GetTotalHours(GetTime(_clockIn, _startBreak), GetTime(_endBreak, _clockOut));
+                        hoursByMonth = GetTotalHours(_hoursByMonth, hoursByMonth);
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    hoursByMonth = "00:00";
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+                return hoursByMonth;
+            }
         }
     }
 }

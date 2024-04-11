@@ -38,7 +38,6 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\AdministratorApplication.AssemblyInfo.cs
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\AdministratorApplication.csproj.CoreCompileInputs.cache
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\AdministratorApplication.sourcelink.json
-D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\AdministratorApplication.csproj.CopyComplete
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\AdministratorApplication.genruntimeconfig.cache
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Release\net8.0-windows\Admin App.exe
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Release\net8.0-windows\Admin App.deps.json
@@ -160,3 +159,4 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\TotalHoursCard.baml
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\ClockControl.g.cs
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\ClockControl.baml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Administ.A2169969.Up2Date
