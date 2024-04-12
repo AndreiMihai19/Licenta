@@ -17,7 +17,7 @@ namespace MobileApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AuthenticationView: ContentPage
     {
-    //    public Command AuthenticationCommand { get; set; }
+
         private IAuthentication authenticationManager;
 
         public AuthenticationView()
@@ -36,8 +36,11 @@ namespace MobileApp.Views
                     await DisplayAlert("Mesaj", "Autentificare reusita!", "OK");
 
                     DashboardModel.Email=entryEmail.Text;
-                    DashboardModel.Id = await authenticationManager.GetEmployeeId();
-                   // DashboardModel.Id = 1;
+
+                    string[] workDetails = (await authenticationManager.GetEmployeeWorkDetails()).Split('|');
+
+                    DashboardModel.Id = Convert.ToInt32(workDetails[0]);
+                    DashboardModel.DailyHours = Convert.ToInt32(workDetails[1]);
 
                     MenuView menuView = new MenuView();
 

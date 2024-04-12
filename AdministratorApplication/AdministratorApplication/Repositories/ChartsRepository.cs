@@ -92,55 +92,56 @@ namespace AdministratorApplication.Repositories
                         DateTime? hourOut = reader.GetDateTime(6);
                         string _hourOut = $"{hourOut.Value.Hour:D2}.{hourOut.Value.Minute:D2}";
 
-                        int month = date.Month;
+                        int _month = date.Month;
+                        int year = date.Year;
 
                         string numePrenume = lastName + " " + firstName;
                         double oraProgram1 = GetTime(_hourIn, _breakHourIn);
                         double oraPauza = GetTime(_breakHourIn, _breakHourOut);
                         double oraProgram2 = GetTime(_breakHourOut, _hourOut);
                         double totalOre = GetTotalHours(oraProgram1.ToString(), oraProgram2.ToString());
-                        string luna = string.Empty;
+                        string month = string.Empty;
 
-                        switch (month)
+                        switch (_month)
                         {
                             case 1:
-                                luna = "ianuarie";
+                                month = "ianuarie";
                                 break;
                             case 2:
-                                luna = "februarie";
+                                month = "februarie";
                                 break;
                             case 3:
-                                luna = "martie";
+                                month = "martie";
                                 break;
                             case 4:
-                                luna = "aprilie";
+                                month = "aprilie";
                                 break;
                             case 5:
-                                luna = "mai";
+                                month = "mai";
                                 break;
                             case 6:
-                                luna = "iunie";
+                                month = "iunie";
                                 break;
                             case 7:
-                                luna = "iulie";
+                                month = "iulie";
                                 break;
                             case 8:
-                                luna = "august";
+                                month = "august";
                                 break;
                             case 9:
-                                luna = "septembrie";
+                                month = "septembrie";
                                 break;
                             case 10:
-                                luna = "octombrie";
+                                month = "octombrie";
                                 break;
                             case 11:
-                                luna = "noiembrie";
+                                month = "noiembrie";
                                 break;
                             case 12:
-                                luna = "decembrie";
+                                month = "decembrie";
                                 break;
                             default:
-                                luna = "invalid";
+                                month = "invalid";
                                 break;
                         }
 
@@ -154,7 +155,8 @@ namespace AdministratorApplication.Repositories
                             OraPauza = GetTime(_breakHourIn, _breakHourOut),
                             OraProgram2 = GetTime(_breakHourOut, _hourOut),
                             TotalOre = totalOre,
-                            LunaCalendaristica = luna
+                            LunaCalendaristica = month,
+                            Anul = year
                         };
 
                         chart.Add(registryChart);
@@ -250,7 +252,7 @@ namespace AdministratorApplication.Repositories
             }
             else
             {
-                t2_hour = Convert.ToInt32(time1);
+                t2_hour = Convert.ToInt32(time2);
                 t2_min = 0;
             }
 

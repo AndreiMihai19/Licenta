@@ -71,7 +71,7 @@ namespace MobileApp.Repositories
             }
         }
 
-        public async Task<int> GetEmployeeId()
+        public async Task<string> GetEmployeeWorkDetails()
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -79,24 +79,24 @@ namespace MobileApp.Repositories
                 {
                     await Task.Run(() => connection.Open());
 
-                    MySqlCommand cmdGetId = new MySqlCommand("SELECT id FROM Angajati where email = @email", connection);
+                    MySqlCommand cmdGetId = new MySqlCommand("SELECT id, ore FROM Angajati where email = @email", connection);
                     cmdGetId.Parameters.AddWithValue("@email", this.email);
 
                     MySqlDataReader reader = cmdGetId.ExecuteReader();
 
                     if (reader.Read())
                     {
-                        return reader.GetInt32(0);
+                        return reader.GetInt32(0) + "|" + reader.GetInt32(1);
                     }
                     else
                     {
-                        return 0;
+                        return "";
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    return 0;
+                    return "";
                 }
                 finally
                 {
@@ -106,4 +106,5 @@ namespace MobileApp.Repositories
             }
         }
     }
+
 }

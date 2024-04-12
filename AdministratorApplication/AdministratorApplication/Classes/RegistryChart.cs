@@ -15,5 +15,6 @@ namespace AdministratorApplication.Classes
         public double? OraProgram2 { get; set; }
         public double? TotalOre { get; set; }
         public string? LunaCalendaristica {  get; set; }
+        public int? Anul {  get; set; }
     }
 }

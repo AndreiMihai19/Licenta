@@ -45,7 +45,7 @@
                                 <Picker.ItemsSource>
                                     <x:Array Type="{x:Type x:String}">
                                         <x:String>Ianuarie</x:String>
-                                        <x:String>Februarie</x:String>
+                                        <x:String>Februarie</x:String> 
                                         <x:String>Martie</x:String>
                                         <x:String>Aprilie</x:String>
                                         <x:String>Mai</x:String>
@@ -62,7 +62,7 @@
                         </StackLayout>
                     </Frame>
 
-                    <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
+                    <Frame x:Name="frmHoursByMonth" Grid.Row="0" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
                     <StackLayout>
                         <Label Text="Ore lucrate" FontSize="15" TextColor="White" />
                         <Label x:Name="lblHoursByMonth" Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>

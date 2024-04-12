@@ -15,12 +15,14 @@ namespace MobileApp.Repositories
         private readonly string connectionString = "Server=34.78.19.175;Database=biometrichubaccess;Uid=root;Pwd=parolalicenta;";
         private readonly string email;
         private readonly int id;
+        private readonly int dailyHours;
         public EmployeeModel employee;
 
-        public DashboardRepository(string email, int id) 
+        public DashboardRepository(string email, int id, int dailyHours) 
         {
             this.email = email;
             this.id = id;
+            this.dailyHours = dailyHours;
         }
 
         public async Task<EmployeeModel> GetEmployeeInfo()

@@ -52,7 +52,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.4, )"
             },
             "MySql.Data": {
               "target": "Package",
@@ -60,7 +60,7 @@
             },
             "MySqlConnector": {
               "target": "Package",
-              "version": "[2.3.5, )"
+              "version": "[2.3.6, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -74,7 +74,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2622, )"
+              "version": "[5.0.0.2662, )"
             }
           },
           "imports": [

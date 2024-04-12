@@ -8,5 +8,6 @@ namespace MobileApp.Models
     {
         public static string Email { get; set; }
         public static int Id {  get; set; } 
+        public static int DailyHours {  get; set; }
     }
 }

@@ -17,13 +17,16 @@ namespace MobileApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuView : ContentPage
     {
-        private IDashboard employeeInfo = new DashboardRepository(DashboardModel.Email, DashboardModel.Id);
+        private IDashboard employeeInfo = new DashboardRepository(DashboardModel.Email, DashboardModel.Id, DashboardModel.DailyHours);
         private string selectedMonth = "";
         private EmployeeModel employee;
+        private int workingDays;
 
         public MenuView()
         {
             InitializeComponent();
+
+        //    GetEmployeeInfo();
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
@@ -33,8 +36,6 @@ namespace MobileApp.Views
             });
 
             SetCurrentMonth();
-
-           // selectedMonth = monthPicker.SelectedItem.ToString();
 
             SetEmployeeInfo();
 
@@ -52,9 +53,6 @@ namespace MobileApp.Views
         private async void SetEmployeeInfo()
         {
             await GetEmployeeInfo();
-
-           // lblHoursByMonth.Text = (await employeeInfo.GetHoursByMonth(DashboardModel.Id,GetIndexOfMonth(monthPicker.SelectedItem.ToString()))).ToString();
-          //  lblHoursByMonth.Text = (await employeeInfo.GetHoursByMonth(DashboardModel.Id,GetIndexOfMonth("Ianuarie"))).ToString();
 
             lblLastName.Text = employee.Nume;
             lblFirstName.Text = employee.Prenume;
@@ -86,7 +84,21 @@ namespace MobileApp.Views
                 selectedMonth = monthPicker.SelectedItem as string;
                 lblMonth.Text = selectedMonth;
                 lblHoursByMonth.Text = (await employeeInfo.GetHoursByMonth(DashboardModel.Id, GetIndexOfMonth(selectedMonth))).ToString();
+                workingDays = SetWorkingDays(GetIndexOfMonth(selectedMonth));
             }
+
+            string[] _workedHours=lblHoursByMonth.Text.Split(':');
+            int workedHours = Convert.ToInt32(_workedHours[0]);
+
+            if (workedHours >= workingDays * DashboardModel.DailyHours)
+            {
+                frmHoursByMonth.BackgroundColor = Color.FromHex("#317773");
+            }
+            else
+            {
+                frmHoursByMonth.BackgroundColor = Color.FromHex("#ed3957");
+            }
+
             
         }
 
@@ -101,6 +113,24 @@ namespace MobileApp.Views
         {
             int currentMonthIndex = DateTime.Now.Month - 1;
             monthPicker.SelectedIndex = currentMonthIndex;
+        }
+
+        private int SetWorkingDays(int month)
+        {
+            int workingDays = 0;
+            int daysInMonth = DateTime.DaysInMonth(DateTime.Today.Year, month);
+
+            for (int day = 1; day <= daysInMonth; day++)
+            {
+                DateTime date = new DateTime(DateTime.Today.Year, month, day);
+
+                if (date.DayOfWeek != DayOfWeek.Saturday && date.DayOfWeek != DayOfWeek.Sunday)
+                {
+                    workingDays++;
+                }
+            }
+
+            return workingDays;
         }
 
     }

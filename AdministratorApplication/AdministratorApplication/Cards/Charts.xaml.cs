@@ -34,7 +34,9 @@ namespace AdministratorApplication.Employee_Status
     {
         private List<RegistryChart> chart = new List<RegistryChart>();
         private ICharts chartInfo = new ChartsRepository();
-        string? selectedName, selectedMonth;
+        private string? selectedName;
+        private string? selectedMonth;
+        private string? selectedYear;
 
         public Charts()
         {
@@ -48,19 +50,22 @@ namespace AdministratorApplication.Employee_Status
 
             CBMonths.ItemsSource = GetMonths();
 
+            CBYears.ItemsSource = GetYears();
+
             selectedName = CBNames.SelectedItem.ToString();
             selectedMonth = CBMonths.SelectedItem.ToString();
+            selectedYear = CBYears.SelectedItem.ToString();
 
 
         }
 
-        public void RowChart(string name, string month)
+        public void RowChart(string name, string month, string year)
         {
 
             DataContext = null;
 
             double val = chart
-                            .Where(registryChart => registryChart.NumePrenume == name && registryChart.LunaCalendaristica == month)
+                            .Where(registryChart => registryChart.NumePrenume == name && registryChart.LunaCalendaristica == month && registryChart.Anul.ToString()  == year)
                             .Select(registryChart => registryChart.TotalOre ?? 0)
                             .Sum();
 
@@ -82,7 +87,7 @@ namespace AdministratorApplication.Employee_Status
             List<string> seriesNames = new List<string> { "Program 1", "Pauza", "Program 2" };
 
             List<string?> distinctDates = chart
-                         .Where(registryChart => registryChart.NumePrenume == name && registryChart.LunaCalendaristica == month)
+                         .Where(registryChart => registryChart.NumePrenume == name && registryChart.LunaCalendaristica == month && registryChart.Anul.ToString() == year)
                          .Select(registryChart => registryChart.Data)
                          .Distinct()
                          .ToList();
@@ -93,7 +98,7 @@ namespace AdministratorApplication.Employee_Status
             foreach (string seriesName in seriesNames)
             {
                 List<double> times = chart
-                                        .Where(registryChart => registryChart.NumePrenume == name && registryChart.LunaCalendaristica == month)
+                                        .Where(registryChart => registryChart.NumePrenume == name && registryChart.LunaCalendaristica == month && registryChart.Anul.ToString() == year)
                                         .Select(registryChart => GetHourValue(registryChart, seriesName))
                                         .ToList();
 
@@ -134,34 +139,12 @@ namespace AdministratorApplication.Employee_Status
         public Func<double, string> Formatter { get; set; }
 
 
-        /*
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public ObservableCollection<string> EmployeeNames
-        {
-            get { return employeeNames; }
-            set
-            {
-                if (employeeNames != value)
-                {
-                    employeeNames = value;
-                    OnPropertyChanged(nameof(EmployeeNames));
-                }
-            }
-        }
-        */
-
         private void CBNames_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (CBNames.SelectedItem != null )
             {
                 selectedName = CBNames.SelectedItem.ToString();
-                RowChart(selectedName, selectedMonth);
+                RowChart(selectedName, selectedMonth, selectedYear);
             }
         }
 
@@ -170,7 +153,16 @@ namespace AdministratorApplication.Employee_Status
             if (CBNames.SelectedItem != null)
             {
                 selectedMonth = CBMonths.SelectedItem.ToString();
-                RowChart(selectedName, selectedMonth);
+                RowChart(selectedName, selectedMonth, selectedYear);
+            }
+        }
+
+        private void CBYears_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CBNames.SelectedItem != null)
+            {
+                selectedYear = CBYears.SelectedItem.ToString();
+                RowChart(selectedName, selectedMonth, selectedYear);
             }
         }
 
@@ -182,6 +174,19 @@ namespace AdministratorApplication.Employee_Status
             Array.Resize(ref months, months.Length - 1);
 
             return months;
+        }
+
+        private ObservableCollection<string> GetYears()
+        {
+            ObservableCollection<string> years = new ObservableCollection<string>();
+
+            int currentYear = DateTime.Now.Year;
+            for (int year = 2000; year <= currentYear; year++)
+            {
+                years.Add(year.ToString());
+            }
+
+            return years;
         }
     }
 }

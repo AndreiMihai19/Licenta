@@ -66,6 +66,16 @@
 
                     <TextBlock Text="Luna" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Tahoma" Foreground="White"></TextBlock>
                     <ComboBox Grid.Row="1" Name="CBMonths" SelectedIndex="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="20,10,22,12" FontSize="15" FontFamily="Tahoma" SelectionChanged="CBMonths_SelectionChanged" />
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Anul" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Tahoma" Foreground="White"></TextBlock>
+                    <ComboBox Grid.Row="1" Name="CBYears" SelectedIndex="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="20,10,22,12" FontSize="15" FontFamily="Tahoma" SelectionChanged="CBYears_SelectionChanged" />
 
 
                 </Grid>
