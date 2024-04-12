@@ -4,6 +4,7 @@ using MobileApp.Repositories;
 using Mysqlx.Notice;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace MobileApp.Views
     {
         private IDashboard employeeInfo = new DashboardRepository(DashboardModel.Email, DashboardModel.Id, DashboardModel.DailyHours);
         private string selectedMonth = "";
+        private string selectedYear = "";
         private EmployeeModel employee;
         private int workingDays;
 
@@ -26,14 +28,14 @@ namespace MobileApp.Views
         {
             InitializeComponent();
 
-        //    GetEmployeeInfo();
-
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 lblDateTime.Text = DateTime.Now.ToString();
 
                 return true;
             });
+
+            GetYears();
 
             SetCurrentMonth();
 
@@ -67,10 +69,16 @@ namespace MobileApp.Views
 
         }
 
-        private void FrameTapped(object sender, EventArgs e)
+        private void YearFrameTapped(object sender, EventArgs e)
+        {
+            yearPicker.Focus();
+        }
+
+        private void MonthFrameTapped(object sender, EventArgs e)
         {
             monthPicker.Focus();
         }
+
 
         private async void OnLogOutClicked(object sender, EventArgs e)
         {
@@ -102,6 +110,17 @@ namespace MobileApp.Views
             
         }
 
+
+        private void YearPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (yearPicker.SelectedIndex != -1)
+            {
+                selectedYear = yearPicker.SelectedItem as string;
+                lblYear.Text = selectedYear;
+            }
+
+        }
+
         private int GetIndexOfMonth(string month)
         {
             CultureInfo culture = new CultureInfo("ro-RO");
@@ -131,6 +150,22 @@ namespace MobileApp.Views
             }
 
             return workingDays;
+        }
+
+
+        private void GetYears()
+        {
+            int currentYear = DateTime.Now.Year;
+            int firstYear = 2000;
+            int yearIndex = currentYear - firstYear - 5;
+
+            yearPicker.SelectedIndex = yearIndex;
+            lblYear.Text = currentYear.ToString();
+
+            for (int year = firstYear; year <= currentYear; year++)
+            {
+                yearPicker.Items.Add(year.ToString());
+            }
         }
 
     }

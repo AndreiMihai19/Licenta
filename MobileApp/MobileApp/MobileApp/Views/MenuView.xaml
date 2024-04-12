@@ -33,9 +33,29 @@
             </Frame>
 
             <Grid Margin="10" Grid.Row="2" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*" RowSpacing="10">
-                    <Frame x:Name="monthFrame" Grid.Row="0" Grid.Column="0" BackgroundColor="White" HasShadow="True" CornerRadius="10" HeightRequest="50">
+
+                    <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="White" HasShadow="True" CornerRadius="10" HeightRequest="50">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="FrameTapped"/>
+                            <TapGestureRecognizer Tapped="YearFrameTapped"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout>
+                            <Label Text="Anul" FontSize="15" TextColor="Black" />
+                            <Label x:Name="lblYear" Text="2024" TextColor="Black" FontSize="25" FontAttributes="Bold"/>
+
+                            <Picker x:Name="yearPicker" SelectedIndexChanged="YearPicker_SelectedIndexChanged" IsVisible="False"/>
+                        </StackLayout> 
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#3052b0" HasShadow="True" CornerRadius="10" HeightRequest="50">
+                        <StackLayout>
+                            <Label Text="Total ore" FontSize="15" TextColor="White" />
+                            <Label Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Frame>
+
+
+                    <Frame x:Name="monthFrame" Grid.Row="1" Grid.Column="0" BackgroundColor="White" HasShadow="True" CornerRadius="10" HeightRequest="50">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="MonthFrameTapped"/>
                         </Frame.GestureRecognizers>
                         <StackLayout>
                             <Label Text="Luna" FontSize="15" TextColor="Black" />
@@ -62,37 +82,26 @@
                         </StackLayout>
                     </Frame>
 
-                    <Frame x:Name="frmHoursByMonth" Grid.Row="0" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
+                    <Frame x:Name="frmHoursByMonth" Grid.Row="1" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
                     <StackLayout>
                         <Label Text="Ore lucrate" FontSize="15" TextColor="White" />
                         <Label x:Name="lblHoursByMonth" Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>
                     </StackLayout>
                 </Frame>
 
-                <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="White" HasShadow="True" CornerRadius="10" HeightRequest="50">
+                <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="White" HasShadow="True" CornerRadius="10" HeightRequest="50">
                     <StackLayout>
                         <Label Text="Saptamana" FontSize="15" TextColor="Black" />
                         <Label Text="7-13" TextColor="Black" FontSize="25" FontAttributes="Bold"/>
                     </StackLayout>
                 </Frame>
-                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
+                <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
                     <StackLayout>
                         <Label Text="Ore lucrate" FontSize="15" TextColor="White" />
                         <Label Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>
                     </StackLayout>
                 </Frame>
-                <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="#3052b0" HasShadow="True" CornerRadius="10" HeightRequest="50">
-                    <StackLayout>
-                        <Label Text="Total ore" FontSize="15" TextColor="White" />
-                        <Label Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>
-                    </StackLayout>
-                </Frame>
-                <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
-                    <StackLayout>
-                        <Label Text="Total ore lucrate" FontSize="15" TextColor="White" />
-                        <Label Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>
-                    </StackLayout>
-                </Frame>
+               
             </Grid>
 
 
