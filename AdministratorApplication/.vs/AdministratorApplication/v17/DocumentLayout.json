@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\cards\\charts.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\cards\\charts.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\cards\\charts.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\cards\\totalhourscard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\cards\\totalhourscard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -40,7 +36,7 @@
               "RelativeDocumentMoniker": "AdministratorApplication\\Cards\\Charts.xaml.cs",
               "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Cards\\Charts.xaml.cs",
               "RelativeToolTip": "AdministratorApplication\\Cards\\Charts.xaml.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAcwMAAAAAAAAAA",
+              "ViewState": "AQIAAJ0AAAAAAAAAAAAqwLsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-12T14:10:25.312Z",
               "EditorCaption": ""
@@ -48,17 +44,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Charts.xaml",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Cards\\Charts.xaml",
-              "RelativeDocumentMoniker": "AdministratorApplication\\Cards\\Charts.xaml",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Cards\\Charts.xaml",
-              "RelativeToolTip": "AdministratorApplication\\Cards\\Charts.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-12T14:10:22.364Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "TotalHoursCard.xaml",
               "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Cards\\TotalHoursCard.xaml",
               "RelativeDocumentMoniker": "AdministratorApplication\\Cards\\TotalHoursCard.xaml",
@@ -69,7 +54,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "StatusPage.xaml",
               "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Pages\\StatusPage.xaml",
               "RelativeDocumentMoniker": "AdministratorApplication\\Pages\\StatusPage.xaml",

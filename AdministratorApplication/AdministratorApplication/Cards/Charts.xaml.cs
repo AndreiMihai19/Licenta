@@ -181,7 +181,7 @@ namespace AdministratorApplication.Employee_Status
             ObservableCollection<string> years = new ObservableCollection<string>();
 
             int currentYear = DateTime.Now.Year;
-            for (int year = 2000; year <= currentYear; year++)
+            for (int year = currentYear; year >= 2000; year--)
             {
                 years.Add(year.ToString());
             }
