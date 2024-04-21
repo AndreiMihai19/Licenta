@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\repositories\\employeeslistingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\repositories\\employeeslistingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\cards\\charts.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\cards\\charts.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EmployeesListingRepository.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "RelativeToolTip": "AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAQwFQAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T16:31:43.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Charts.xaml.cs",
               "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Cards\\Charts.xaml.cs",
               "RelativeDocumentMoniker": "AdministratorApplication\\Cards\\Charts.xaml.cs",
@@ -43,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TotalHoursCard.xaml",
               "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Cards\\TotalHoursCard.xaml",
               "RelativeDocumentMoniker": "AdministratorApplication\\Cards\\TotalHoursCard.xaml",
@@ -54,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "StatusPage.xaml",
               "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Pages\\StatusPage.xaml",
               "RelativeDocumentMoniker": "AdministratorApplication\\Pages\\StatusPage.xaml",

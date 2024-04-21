@@ -15,6 +15,8 @@ namespace MobileApp.Interfaces
 
         string GetTotalHours(string time1, string time2);
 
-        Task<string> GetHoursByMonth(int id, int month);
+        Task<string> GetHoursByMonth(int id, int month, int year);
+        
+       // Task<string> GetHoursByWeek(int id, int month, int year, int week);
     }
 }

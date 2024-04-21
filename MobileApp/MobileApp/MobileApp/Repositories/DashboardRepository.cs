@@ -257,7 +257,7 @@ namespace MobileApp.Repositories
 
 
 
-        public async Task<string> GetHoursByMonth(int id, int month)
+        public async Task<string> GetHoursByMonth(int id, int month, int year)
         {
             string _hoursByMonth = "", hoursByMonth = "00:00";
 
@@ -267,11 +267,13 @@ namespace MobileApp.Repositories
                 {
                     await Task.Run(() => connection.Open());
 
-                    string query = "SELECT ora_in,ora_pauza_in, ora_pauza_out,ora_out FROM Registru_ore_angajati WHERE id_angajat=@id AND MONTH(data) = @month;";
+                    string query = "SELECT ora_in,ora_pauza_in, ora_pauza_out,ora_out FROM Registru_ore_angajati WHERE id_angajat=@id AND MONTH(data) = @month AND YEAR(data) = @year;";
+                   // string query = "SELECT ora_in,ora_pauza_in, ora_pauza_out,ora_out FROM Registru_ore_angajati WHERE id_angajat=@id AND MONTH(data) = @month";
 
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@id", id);
                     command.Parameters.AddWithValue("@month", month);
+                    command.Parameters.AddWithValue("@year", year);
 
                     MySqlDataReader reader = command.ExecuteReader();
 
@@ -336,5 +338,88 @@ namespace MobileApp.Repositories
                 return hoursByMonth;
             }
         }
+
+
+        //public async Task<string> GetHoursByWeek(int id, int month, int year, int week)
+        //{
+        //    string _hoursByMonth = "", hoursByMonth = "00:00";
+
+        //    using (MySqlConnection connection = new MySqlConnection(connectionString))
+        //    {
+        //        try
+        //        {
+        //            await Task.Run(() => connection.Open());
+
+        //            string query = "SELECT ora_in,ora_pauza_in, ora_pauza_out,ora_out FROM Registru_ore_angajati WHERE id_angajat=@id AND MONTH(data) = @month AND YEAR(data) = @year;";
+        //            // string query = "SELECT ora_in,ora_pauza_in, ora_pauza_out,ora_out FROM Registru_ore_angajati WHERE id_angajat=@id AND MONTH(data) = @month";
+
+        //            MySqlCommand command = new MySqlCommand(query, connection);
+        //            command.Parameters.AddWithValue("@id", id);
+        //            command.Parameters.AddWithValue("@month", month);
+        //            command.Parameters.AddWithValue("@year", year);
+
+        //            MySqlDataReader reader = command.ExecuteReader();
+
+        //            while (reader.Read())
+        //            {
+
+        //                DateTime? clockIn = reader.IsDBNull(0) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(0), TimeZoneInfo.Local);
+
+        //                string _clockIn = "0";
+
+        //                if (clockIn.HasValue)
+        //                {
+        //                    int hour = clockIn.Value.Hour;
+        //                    int minutes = clockIn.Value.Minute;
+        //                    _clockIn = $"{hour:D2}:{minutes:D2}";
+        //                }
+
+        //                DateTime? startBreak = reader.IsDBNull(1) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(1), TimeZoneInfo.Local);
+        //                string _startBreak = "0";
+
+        //                if (startBreak.HasValue)
+        //                {
+        //                    int hour = startBreak.Value.Hour;
+        //                    int minutes = startBreak.Value.Minute;
+        //                    _startBreak = $"{hour:D2}:{minutes:D2}";
+        //                }
+
+        //                DateTime? endBreak = reader.IsDBNull(2) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(2), TimeZoneInfo.Local);
+        //                string _endBreak = "0";
+
+        //                if (endBreak.HasValue)
+        //                {
+        //                    int hour = endBreak.Value.Hour;
+        //                    int minutes = endBreak.Value.Minute;
+        //                    _endBreak = $"{hour:D2}:{minutes:D2}";
+        //                }
+
+        //                DateTime? clockOut = reader.IsDBNull(3) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(3), TimeZoneInfo.Local);
+        //                string _clockOut = "0";
+
+        //                if (clockOut.HasValue)
+        //                {
+        //                    int hour = clockOut.Value.Hour;
+        //                    int minutes = clockOut.Value.Minute;
+        //                    _clockOut = $"{hour:D2}:{minutes:D2}";
+        //                }
+
+
+        //                _hoursByMonth = GetTotalHours(GetTime(_clockIn, _startBreak), GetTime(_endBreak, _clockOut));
+        //                hoursByMonth = GetTotalHours(_hoursByMonth, hoursByMonth);
+        //            }
+        //        }
+        //        catch (MySqlException ex)
+        //        {
+        //            hoursByMonth = "00:00";
+        //        }
+        //        finally
+        //        {
+        //            connection.Close();
+        //        }
+
+        //        return hoursByMonth;
+        //    }
+        //}
     }
 }

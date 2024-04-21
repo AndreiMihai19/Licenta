@@ -41,8 +41,7 @@
                         <StackLayout>
                             <Label Text="Anul" FontSize="15" TextColor="Black" />
                             <Label x:Name="lblYear" Text="2024" TextColor="Black" FontSize="25" FontAttributes="Bold"/>
-
-                            <Picker x:Name="yearPicker" SelectedIndexChanged="YearPicker_SelectedIndexChanged" IsVisible="False"/>
+                            <Picker x:Name="yearPicker" SelectedIndex="0" SelectedIndexChanged="YearPicker_SelectedIndexChanged" IsVisible="False"/>
                         </StackLayout> 
                     </Frame>
                     <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#3052b0" HasShadow="True" CornerRadius="10" HeightRequest="50">
@@ -83,17 +82,21 @@
                     </Frame>
 
                     <Frame x:Name="frmHoursByMonth" Grid.Row="1" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
-                    <StackLayout>
+                        <StackLayout>
                         <Label Text="Ore lucrate" FontSize="15" TextColor="White" />
                         <Label x:Name="lblHoursByMonth" Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>
                     </StackLayout>
-                </Frame>
+                    </Frame>
 
                 <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="White" HasShadow="True" CornerRadius="10" HeightRequest="50">
-                    <StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="WeekFrameTapped"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout>
                         <Label Text="Saptamana" FontSize="15" TextColor="Black" />
-                        <Label Text="7-13" TextColor="Black" FontSize="25" FontAttributes="Bold"/>
-                    </StackLayout>
+                        <Label x:Name="lblWeek" Text="7-13" TextColor="Black" FontSize="25" FontAttributes="Bold"/>
+                        <Picker x:Name="weeksPicker" SelectedIndexChanged="WeekPicker_SelectedIndexChanged" IsVisible="False"/>
+                        </StackLayout>
                 </Frame>
                 <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
                     <StackLayout>
@@ -107,13 +110,13 @@
 
                 <Frame Grid.Row="3" Margin="10" CornerRadius="10" BackgroundColor="#317773">
                     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,Auto" RowSpacing="2">
-                        <Label Grid.Row="0" Grid.Column="0" Text="Ora In" TextColor="#ffffff"></Label>
+                        <Label Grid.Row="0" Grid.Column="0" Text="Intrare" TextColor="#ffffff"></Label>
                         <Label Grid.Row="0" Grid.Column="1" x:Name="lblClockIn" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
-                        <Label Grid.Row="1" Grid.Column="0" Text="Pauza In" TextColor="#ffffff"></Label>
+                        <Label Grid.Row="1" Grid.Column="0" Text="Inceputul pauzei" TextColor="#ffffff"></Label>
                         <Label Grid.Row="1" Grid.Column="1" x:Name="lblStartBreak" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
-                        <Label Grid.Row="2" Grid.Column="0" Text="Pauza Out" TextColor="#ffffff"></Label>
+                        <Label Grid.Row="2" Grid.Column="0" Text="Sfarsitul pauzei" TextColor="#ffffff"></Label>
                         <Label Grid.Row="2" Grid.Column="1" x:Name="lblEndBreak" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
-                        <Label Grid.Row="3" Grid.Column="0" Text="Ora Out" TextColor="#ffffff"></Label>
+                        <Label Grid.Row="3" Grid.Column="0" Text="Iesire" TextColor="#ffffff"></Label>
                         <Label Grid.Row="3" Grid.Column="1" x:Name="lblClockOut" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>
                         <Label Grid.Row="4" Grid.Column="0" Text="Total ore lucrate" TextColor="#ffffff" FontAttributes="Bold"></Label>
                         <Label Grid.Row="4" Grid.Column="1" x:Name="lblTotalHours" Text="00:00" FontAttributes="Bold" TextColor="#ffffff"></Label>

@@ -5,18 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\menuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\menuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\menuview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
-      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\menuview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\models\\dashboardmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\models\\dashboardmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\models\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\models\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,47 +14,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 255,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EmployeeModel.cs",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Models\\EmployeeModel.cs",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Models\\EmployeeModel.cs",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Models\\EmployeeModel.cs",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Models\\EmployeeModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T08:49:36.895Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DashboardModel.cs",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Models\\DashboardModel.cs",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Models\\DashboardModel.cs",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Models\\DashboardModel.cs",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Models\\DashboardModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T08:49:25.232Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MenuView.xaml",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\MenuView.xaml",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\MenuView.xaml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACwAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-11T21:03:14.282Z"
             },
             {
               "$type": "Document",
@@ -76,7 +28,7 @@
               "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
               "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
               "RelativeToolTip": "MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
-              "ViewState": "AQIAAIYAAAAAAAAAAAAgwH0AAAA7AAAA",
+              "ViewState": "AQIAAI4AAAAAAAAAAAAAAKEAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-11T18:30:58.441Z",
               "EditorCaption": ""
