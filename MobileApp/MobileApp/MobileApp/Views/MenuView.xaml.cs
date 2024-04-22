@@ -24,7 +24,8 @@ namespace MobileApp.Views
         private string selectedYear = "";
         private string selectedWeek = "";
         private EmployeeModel employee;
-        private int workingDays;
+        private int workingDaysOfMonth;
+        private int workingDaysOfWeek;
 
         public MenuView()
         {
@@ -104,9 +105,34 @@ namespace MobileApp.Views
                 lblYear.Text = selectedYear;
                 lblHoursByMonth.Text = (await employeeInfo.GetHoursByMonth(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear))).ToString();
                 AddWeeksToPicker(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth));
+                workingDaysOfMonth = SetWorkingDaysOfMonth(Convert.ToInt32(selectedYear),GetIndexOfMonth(selectedMonth));
+
+                //if (GetIndexOfMonth(selectedMonth) == DateTime.Now.Month)
+                //{
+                //    SetCurrentMonth();
+                //    SetCurrentWeek();
+                //}
+                //else
+                //{
+                    //string firstWeek = GetFirstWeekOfMonth(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth));
+                    //string[] _firstWeek = firstWeek.Split('-');
+
+                    //DateTime firsDayOfWeek = DateTime.ParseExact(_firstWeek[0], "dd/MM/yyyy", new System.Globalization.CultureInfo("ro-RO"));
+                    //DateTime lastDayOfWeek = DateTime.ParseExact(_firstWeek[1], "dd/MM/yyyy", new System.Globalization.CultureInfo("ro-RO"));
+
+                    //string week = firsDayOfWeek.Day.ToString() + "-" + lastDayOfWeek.Day.ToString();
+                    //lblWeek.Text = week;
+
+                    //lblHoursByWeek.Text = (await employeeInfo.GetHoursByWeek(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear), week)).ToString();
+
+                    ChangeFieldColor(lblHoursByWeek, frmHoursByWeek, workingDaysOfWeek);
+            //    }
+
+
+                ChangeFieldColor(lblHoursByMonth, frmHoursByMonth,workingDaysOfMonth);
             }
 
-            ChangeFieldColor();
+            //ChangeFieldColor(lblHoursByMonth, frmHoursByMonth);
         }
 
         private async void MonthPicker_SelectedIndexChanged(object sender, EventArgs e)
@@ -117,25 +143,60 @@ namespace MobileApp.Views
                 selectedYear = yearPicker.SelectedItem as string;
                 lblMonth.Text = selectedMonth;
                 lblHoursByMonth.Text = (await employeeInfo.GetHoursByMonth(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear))).ToString();
-                workingDays = SetWorkingDays(GetIndexOfMonth(selectedMonth));
+                workingDaysOfMonth = SetWorkingDaysOfMonth(Convert.ToInt32(selectedYear),GetIndexOfMonth(selectedMonth));
                 AddWeeksToPicker(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth));
+
+                //if (GetIndexOfMonth(selectedMonth) == DateTime.Now.Month)
+                //{
+                //    SetCurrentMonth();
+                //    SetCurrentWeek();
+                //}
+                //else
+                //{
+                    //string firstWeek = GetFirstWeekOfMonth(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth)); 
+                    //string[] _firstWeek = firstWeek.Split('-');
+
+                    //DateTime firsDayOfWeek = DateTime.ParseExact(_firstWeek[0], "dd/MM/yyyy", new System.Globalization.CultureInfo("ro-RO"));
+                    //DateTime lastDayOfWeek = DateTime.ParseExact(_firstWeek[1], "dd/MM/yyyy", new System.Globalization.CultureInfo("ro-RO"));
+
+                    //string week = firsDayOfWeek.Day.ToString() + "-" + lastDayOfWeek.Day.ToString();
+                    //lblWeek.Text = week;
+
+                    //lblHoursByWeek.Text = (await employeeInfo.GetHoursByWeek(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear), week)).ToString();
+
+                    ChangeFieldColor(lblHoursByWeek, frmHoursByWeek, workingDaysOfWeek);
+               // }
+
+
+                ChangeFieldColor(lblHoursByMonth, frmHoursByMonth, workingDaysOfMonth);
+
             }
 
-            ChangeFieldColor();
+            //ChangeFieldColor(lblHoursByMonth,frmHoursByMonth);
         }
 
-        private void WeekPicker_SelectedIndexChanged(object sender, EventArgs e)
+        private async void WeekPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (weeksPicker.SelectedIndex != -1)
             {
+                selectedMonth = monthPicker.SelectedItem as string;
+                selectedYear = yearPicker.SelectedItem as string;
                 selectedWeek = weeksPicker.SelectedItem as string;
                 string[] _selectedWeek = selectedWeek.Split('-');
 
                 DateTime firsDayOfWeek = DateTime.ParseExact(_selectedWeek[0], "dd/MM/yyyy", new System.Globalization.CultureInfo("ro-RO"));
                 DateTime lastDayOfWeek = DateTime.ParseExact(_selectedWeek[1], "dd/MM/yyyy", new System.Globalization.CultureInfo("ro-RO"));
 
-                lblWeek.Text = firsDayOfWeek.Day.ToString() + "-" + lastDayOfWeek.Day.ToString();
+                string week = firsDayOfWeek.Day.ToString() + "-" + lastDayOfWeek.Day.ToString();
+                lblWeek.Text = week;
+                lblHoursByWeek.Text = (await employeeInfo.GetHoursByWeek(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear), week)).ToString();
+
+                workingDaysOfWeek = SetWorkingDaysOfWeek(Convert.ToInt32(selectedYear),GetIndexOfMonth(selectedMonth),week);
+
+                ChangeFieldColor(lblHoursByWeek, frmHoursByWeek,workingDaysOfWeek);
             }
+
+           // ChangeFieldColor(lblHoursByWeek, frmHoursByWeek);
         }
 
         private int GetIndexOfMonth(string month)
@@ -158,20 +219,20 @@ namespace MobileApp.Views
             DateTime firstDayOfCurrentWeek= currentDate.AddDays(-(int)currentDate.DayOfWeek + (int)DayOfWeek.Monday);
 
             DateTime lastDayOfCurrentWeek = firstDayOfCurrentWeek.AddDays(6);
-
+ 
             string week = $"{firstDayOfCurrentWeek.Day}-{lastDayOfCurrentWeek.Day}";
 
             lblWeek.Text = week;
         }
 
-        private int SetWorkingDays(int month)
+        private int SetWorkingDaysOfMonth(int year,int month)
         {
             int workingDays = 0;
-            int daysInMonth = DateTime.DaysInMonth(DateTime.Today.Year, month);
+            int daysInMonth = DateTime.DaysInMonth(year, month);
 
             for (int day = 1; day <= daysInMonth; day++)
             {
-                DateTime date = new DateTime(DateTime.Today.Year, month, day);
+                DateTime date = new DateTime(year, month, day);
 
                 if (date.DayOfWeek != DayOfWeek.Saturday && date.DayOfWeek != DayOfWeek.Sunday)
                 {
@@ -180,6 +241,32 @@ namespace MobileApp.Views
             }
 
             return workingDays;
+        }
+
+        private int SetWorkingDaysOfWeek(int year, int month,string week)
+        {
+            int workingDaysOfWeek = 0;
+            string[] _week = week.Split('-');
+
+            int firstDay = Convert.ToInt32(_week[0]);
+            int lastDay = Convert.ToInt32(_week[1]);
+
+            if (firstDay > lastDay)
+            {
+                lastDay = DateTime.DaysInMonth(year, month);
+            }
+
+            for (int day = firstDay; day <= lastDay; day++)
+            {
+                DateTime date = new DateTime(year, month, day);
+
+                if (date.DayOfWeek != DayOfWeek.Saturday && date.DayOfWeek != DayOfWeek.Sunday)
+                {
+                    workingDaysOfWeek++;
+                }
+            }
+
+            return workingDaysOfWeek;
         }
 
         private void GetYears()
@@ -219,6 +306,22 @@ namespace MobileApp.Views
             return weeks;
         }
 
+        private string GetFirstWeekOfMonth(int year, int month)
+        {
+
+            DateTime firstDayOfMonth = new DateTime(year, month, 1);
+            DateTime firstDayOfWeek = firstDayOfMonth.AddDays(-(int)firstDayOfMonth.DayOfWeek);
+            if (firstDayOfWeek.DayOfWeek != DayOfWeek.Monday)
+            {
+                firstDayOfWeek = firstDayOfWeek.AddDays(1);
+            }
+
+            DateTime lastDayOfWeek = firstDayOfWeek.AddDays(6);
+
+            return firstDayOfWeek.ToString("dd/MM/yyyy") + "-" + lastDayOfWeek.ToString("dd/MM/yyyy");
+
+        }
+
         private async void AddWeeksToPicker(int year, int month)
         {
             weeksPicker.Items.Clear();
@@ -232,18 +335,18 @@ namespace MobileApp.Views
             }
         }
 
-        private void ChangeFieldColor()
+        private void ChangeFieldColor(Label label, Xamarin.Forms.Frame frame, int workingDays)
         {
-            string[] _workedHours = lblHoursByMonth.Text.Split(':');
+            string[] _workedHours = label.Text.Split(':');
             int workedHours = Convert.ToInt32(_workedHours[0]);
 
             if (workedHours >= workingDays * DashboardModel.DailyHours)
             {
-                frmHoursByMonth.BackgroundColor = Color.FromHex("#317773");
+                frame.BackgroundColor = Color.FromHex("#317773");
             }
             else
             {
-                frmHoursByMonth.BackgroundColor = Color.FromHex("#ed3957");
+                frame.BackgroundColor = Color.FromHex("#ed3957");
             }
         }
 

@@ -340,86 +340,97 @@ namespace MobileApp.Repositories
         }
 
 
-        //public async Task<string> GetHoursByWeek(int id, int month, int year, int week)
-        //{
-        //    string _hoursByMonth = "", hoursByMonth = "00:00";
+        public async Task<string> GetHoursByWeek(int id, int month, int year, string week)
+        {
+            string _hoursByWeek = "", hoursByWeek = "00:00";
 
-        //    using (MySqlConnection connection = new MySqlConnection(connectionString))
-        //    {
-        //        try
-        //        {
-        //            await Task.Run(() => connection.Open());
+            string[] _week = week.Split('-');
 
-        //            string query = "SELECT ora_in,ora_pauza_in, ora_pauza_out,ora_out FROM Registru_ore_angajati WHERE id_angajat=@id AND MONTH(data) = @month AND YEAR(data) = @year;";
-        //            // string query = "SELECT ora_in,ora_pauza_in, ora_pauza_out,ora_out FROM Registru_ore_angajati WHERE id_angajat=@id AND MONTH(data) = @month";
+            int firstDay = Convert.ToInt32(_week[0]);
+            int lastDay = Convert.ToInt32(_week[1]);
 
-        //            MySqlCommand command = new MySqlCommand(query, connection);
-        //            command.Parameters.AddWithValue("@id", id);
-        //            command.Parameters.AddWithValue("@month", month);
-        //            command.Parameters.AddWithValue("@year", year);
+            if (firstDay > lastDay)
+            {
+                lastDay = DateTime.DaysInMonth(year, month);
+            }
 
-        //            MySqlDataReader reader = command.ExecuteReader();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    await Task.Run(() => connection.Open());
 
-        //            while (reader.Read())
-        //            {
+                    string query = "SELECT ora_in,ora_pauza_in, ora_pauza_out,ora_out FROM Registru_ore_angajati WHERE id_angajat=@id AND MONTH(data) = @month AND YEAR(data) = @year AND DAY(data) BETWEEN @firstDay AND @lastDay;";
 
-        //                DateTime? clockIn = reader.IsDBNull(0) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(0), TimeZoneInfo.Local);
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@month", month);
+                    command.Parameters.AddWithValue("@year", year);
+                    command.Parameters.AddWithValue("@firstDay", firstDay);
+                    command.Parameters.AddWithValue("@lastDay", lastDay);
 
-        //                string _clockIn = "0";
+                    MySqlDataReader reader = command.ExecuteReader();
 
-        //                if (clockIn.HasValue)
-        //                {
-        //                    int hour = clockIn.Value.Hour;
-        //                    int minutes = clockIn.Value.Minute;
-        //                    _clockIn = $"{hour:D2}:{minutes:D2}";
-        //                }
+                    while (reader.Read())
+                    {
 
-        //                DateTime? startBreak = reader.IsDBNull(1) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(1), TimeZoneInfo.Local);
-        //                string _startBreak = "0";
+                        DateTime? clockIn = reader.IsDBNull(0) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(0), TimeZoneInfo.Local);
 
-        //                if (startBreak.HasValue)
-        //                {
-        //                    int hour = startBreak.Value.Hour;
-        //                    int minutes = startBreak.Value.Minute;
-        //                    _startBreak = $"{hour:D2}:{minutes:D2}";
-        //                }
+                        string _clockIn = "0";
 
-        //                DateTime? endBreak = reader.IsDBNull(2) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(2), TimeZoneInfo.Local);
-        //                string _endBreak = "0";
+                        if (clockIn.HasValue)
+                        {
+                            int hour = clockIn.Value.Hour;
+                            int minutes = clockIn.Value.Minute;
+                            _clockIn = $"{hour:D2}:{minutes:D2}";
+                        }
 
-        //                if (endBreak.HasValue)
-        //                {
-        //                    int hour = endBreak.Value.Hour;
-        //                    int minutes = endBreak.Value.Minute;
-        //                    _endBreak = $"{hour:D2}:{minutes:D2}";
-        //                }
+                        DateTime? startBreak = reader.IsDBNull(1) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(1), TimeZoneInfo.Local);
+                        string _startBreak = "0";
 
-        //                DateTime? clockOut = reader.IsDBNull(3) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(3), TimeZoneInfo.Local);
-        //                string _clockOut = "0";
+                        if (startBreak.HasValue)
+                        {
+                            int hour = startBreak.Value.Hour;
+                            int minutes = startBreak.Value.Minute;
+                            _startBreak = $"{hour:D2}:{minutes:D2}";
+                        }
 
-        //                if (clockOut.HasValue)
-        //                {
-        //                    int hour = clockOut.Value.Hour;
-        //                    int minutes = clockOut.Value.Minute;
-        //                    _clockOut = $"{hour:D2}:{minutes:D2}";
-        //                }
+                        DateTime? endBreak = reader.IsDBNull(2) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(2), TimeZoneInfo.Local);
+                        string _endBreak = "0";
+
+                        if (endBreak.HasValue)
+                        {
+                            int hour = endBreak.Value.Hour;
+                            int minutes = endBreak.Value.Minute;
+                            _endBreak = $"{hour:D2}:{minutes:D2}";
+                        }
+
+                        DateTime? clockOut = reader.IsDBNull(3) ? (DateTime?)null : TimeZoneInfo.ConvertTimeFromUtc(reader.GetDateTime(3), TimeZoneInfo.Local);
+                        string _clockOut = "0";
+
+                        if (clockOut.HasValue)
+                        {
+                            int hour = clockOut.Value.Hour;
+                            int minutes = clockOut.Value.Minute;
+                            _clockOut = $"{hour:D2}:{minutes:D2}";
+                        }
 
 
-        //                _hoursByMonth = GetTotalHours(GetTime(_clockIn, _startBreak), GetTime(_endBreak, _clockOut));
-        //                hoursByMonth = GetTotalHours(_hoursByMonth, hoursByMonth);
-        //            }
-        //        }
-        //        catch (MySqlException ex)
-        //        {
-        //            hoursByMonth = "00:00";
-        //        }
-        //        finally
-        //        {
-        //            connection.Close();
-        //        }
+                        _hoursByWeek = GetTotalHours(GetTime(_clockIn, _startBreak), GetTime(_endBreak, _clockOut));
+                        hoursByWeek = GetTotalHours(_hoursByWeek, hoursByWeek);
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    hoursByWeek = "00:00";
+                }
+                finally
+                {
+                    connection.Close();
+                }
 
-        //        return hoursByMonth;
-        //    }
-        //}
+                return hoursByWeek;
+            }
+        }
     }
 }

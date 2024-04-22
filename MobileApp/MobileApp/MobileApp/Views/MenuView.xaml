@@ -98,10 +98,10 @@
                         <Picker x:Name="weeksPicker" SelectedIndexChanged="WeekPicker_SelectedIndexChanged" IsVisible="False"/>
                         </StackLayout>
                 </Frame>
-                <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
+                    <Frame x:Name="frmHoursByWeek" Grid.Row="2" Grid.Column="1" BackgroundColor="#ed3957" HasShadow="True" CornerRadius="10" HeightRequest="50">
                     <StackLayout>
                         <Label Text="Ore lucrate" FontSize="15" TextColor="White" />
-                        <Label Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>
+                        <Label x:Name="lblHoursByWeek" Text="00:00" TextColor="White" FontSize="25" FontAttributes="Bold"/>
                     </StackLayout>
                 </Frame>
                
