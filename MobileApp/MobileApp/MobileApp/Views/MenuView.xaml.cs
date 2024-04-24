@@ -33,7 +33,8 @@ namespace MobileApp.Views
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                lblDateTime.Text = DateTime.Now.ToString();
+                lblDate.Text = DateTime.Now.Date.ToShortDateString();
+                lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
 
                 return true;
             });
@@ -106,6 +107,7 @@ namespace MobileApp.Views
                 selectedYear = yearPicker.SelectedItem as string;
                 lblYear.Text = selectedYear;
                 lblHoursByMonth.Text = (await employeeInfo.GetHoursByMonth(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear))).ToString();
+                lblHoursByYear.Text = (await employeeInfo.GetHoursByYear(DashboardModel.Id, Convert.ToInt32(selectedYear))).ToString();
                 workingDaysOfMonth = SetWorkingDaysOfMonth(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth));
                 AddWeeksToPicker(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth));
                 

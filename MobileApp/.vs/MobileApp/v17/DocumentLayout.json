@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\menuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\repositories\\dashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\repositories\\dashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\menuview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
       "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\views\\menuview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
     }
@@ -22,37 +18,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 255,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DashboardRepository.cs",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
-              "ViewState": "AQIAAE8BAAAAAAAAAAASwGABAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T17:10:22.431Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MenuView.xaml",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\MenuView.xaml",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\MenuView.xaml",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAAAGQAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-22T18:54:02.514Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -62,9 +32,22 @@
               "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
               "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
               "RelativeToolTip": "MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
-              "ViewState": "AQIAAFIAAAAAAAAAAAASwIEAAAANAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACQAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T18:30:58.441Z",
+              "WhenOpened": "2024-04-24T19:35:00.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuView.xaml",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Views\\MenuView.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-24T19:18:43.284Z",
               "EditorCaption": ""
             }
           ]

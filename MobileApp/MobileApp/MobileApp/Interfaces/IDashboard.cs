@@ -18,5 +18,7 @@ namespace MobileApp.Interfaces
         Task<string> GetHoursByMonth(int id, int month, int year);
         
         Task<string> GetHoursByWeek(int id, int month, int year, string week);
+
+        Task<string> GetHoursByYear(int id, int year);
     }
 }
