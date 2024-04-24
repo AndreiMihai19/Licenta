@@ -106,7 +106,8 @@ namespace MobileApp.Views
                 selectedMonth = monthPicker.SelectedItem as string;
                 selectedYear = yearPicker.SelectedItem as string;
                 lblYear.Text = selectedYear;
-                lblHoursByMonth.Text = (await employeeInfo.GetHoursByMonth(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear))).ToString();
+                string workedHoursByMonth = (await employeeInfo.GetHoursByMonth(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear))).ToString();
+                lblHoursByMonth.Text = workedHoursByMonth;
                 lblHoursByYear.Text = (await employeeInfo.GetHoursByYear(DashboardModel.Id, Convert.ToInt32(selectedYear))).ToString();
                 workingDaysOfMonth = SetWorkingDaysOfMonth(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth));
                 AddWeeksToPicker(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth));
@@ -127,6 +128,9 @@ namespace MobileApp.Views
                 lblHoursByWeek.Text = (await employeeInfo.GetHoursByWeek(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear), interval)).ToString();
                 workingDaysOfWeek = SetWorkingDaysOfWeek(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth), interval);
 
+                lblOvertime.Text = employeeInfo.SetOvertime(workedHoursByMonth, DashboardModel.DailyHours, workingDaysOfMonth);
+
+
                 ChangeFieldColor(lblHoursByWeek, frmHoursByWeek, workingDaysOfWeek);
                 ChangeFieldColor(lblHoursByMonth, frmHoursByMonth,workingDaysOfMonth);
             }
@@ -141,7 +145,8 @@ namespace MobileApp.Views
                 selectedMonth = monthPicker.SelectedItem as string;
                 selectedYear = yearPicker.SelectedItem as string;
                 lblMonth.Text = selectedMonth;
-                lblHoursByMonth.Text = (await employeeInfo.GetHoursByMonth(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear))).ToString();
+                string workedHoursByMonth = (await employeeInfo.GetHoursByMonth(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear))).ToString();
+                lblHoursByMonth.Text = workedHoursByMonth;
                 workingDaysOfMonth = SetWorkingDaysOfMonth(Convert.ToInt32(selectedYear),GetIndexOfMonth(selectedMonth));
                 AddWeeksToPicker(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth));
                 
@@ -160,7 +165,11 @@ namespace MobileApp.Views
                 }
 
                 lblHoursByWeek.Text = (await employeeInfo.GetHoursByWeek(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear), interval)).ToString();
+                
+
                 workingDaysOfWeek = SetWorkingDaysOfWeek(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth), interval);
+
+                lblOvertime.Text = employeeInfo.SetOvertime(workedHoursByMonth, DashboardModel.DailyHours, workingDaysOfMonth);
 
                 ChangeFieldColor(lblHoursByWeek, frmHoursByWeek, workingDaysOfWeek);
                 ChangeFieldColor(lblHoursByMonth, frmHoursByMonth, workingDaysOfMonth);
@@ -180,7 +189,7 @@ namespace MobileApp.Views
                 string interval = SetIntervalOfWeek(Convert.ToInt32(selectedYear), GetIndexOfMonth(selectedMonth),week);
 
                 lblWeek.Text = week;
-                lblHoursByWeek.Text = (await employeeInfo.GetHoursByWeek(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear), week)).ToString();
+                lblHoursByWeek.Text = (await employeeInfo.GetHoursByWeek(DashboardModel.Id, GetIndexOfMonth(selectedMonth), Convert.ToInt32(selectedYear), interval)).ToString();
 
                 workingDaysOfWeek = SetWorkingDaysOfWeek(Convert.ToInt32(selectedYear),GetIndexOfMonth(selectedMonth),interval);
 

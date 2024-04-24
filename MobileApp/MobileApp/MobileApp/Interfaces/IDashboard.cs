@@ -20,5 +20,7 @@ namespace MobileApp.Interfaces
         Task<string> GetHoursByWeek(int id, int month, int year, string week);
 
         Task<string> GetHoursByYear(int id, int year);
+
+        string SetOvertime(string workedHours, int dailyHours, int workingDaysOfMonth);
     }
 }

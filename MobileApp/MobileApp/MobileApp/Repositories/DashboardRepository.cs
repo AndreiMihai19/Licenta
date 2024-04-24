@@ -511,5 +511,17 @@ namespace MobileApp.Repositories
                 return hoursByMonth;
             }
         }
+
+        public string SetOvertime(string workedHours, int dailyHours, int workingDaysOfMonth)
+        {
+            string overtime = "00:00";
+            string[] _workedHours = workedHours.Split(':');
+            string hoursToWork = (dailyHours * workingDaysOfMonth) + ":00";
+
+            if (dailyHours * workingDaysOfMonth < Convert.ToInt32(_workedHours[0]))
+                overtime = GetTime(hoursToWork, workedHours);
+
+            return overtime;
+        }
     }
 }
