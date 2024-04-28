@@ -18,6 +18,8 @@ namespace AdministratorApplication.Repositories
 
         public RegistrationStatus Register(Employee e, string password) 
         {
+            DateTime currentTime = DateTime.Today;
+
             if (e.Id < 0 || string.IsNullOrEmpty(e.Email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(e.Prenume) || string.IsNullOrEmpty(e.Nume) || string.IsNullOrEmpty(e.DataNasterii) || string.IsNullOrEmpty(e.CNP) || string.IsNullOrEmpty(e.Telefon) || string.IsNullOrEmpty(e.Functie) || e.Ore < 0)
             {
                 return RegistrationStatus.InvalidCredentials;
@@ -30,24 +32,29 @@ namespace AdministratorApplication.Repositories
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO Angajati(id,email,parola,nume,prenume,data_nasterii,telefon,cnp,functie,ore) VALUES (@id,@email,@parola,@nume,@prenume,@data_nasterii,@telefon,@cnp,@functie,@ore)";
-
-                    MySqlCommand command = new MySqlCommand(query, connection);
+                    string insertEmployee = "INSERT INTO Angajati(id,email,parola,nume,prenume,data_nasterii,telefon,cnp,functie,ore) VALUES (@id,@email,@parola,@nume,@prenume,@data_nasterii,@telefon,@cnp,@functie,@ore)";
+                    string insertEmployeeStatus = "INSERT INTO Status_angajati(id,ora_in,ora_pauza_in,ora_pauza_out,ora_out) VALUES (@id,@currentTime,@currentTime,@currentTime,@currentTime)";
+                    MySqlCommand commandInsertEmployee = new MySqlCommand(insertEmployee, connection);
+                    MySqlCommand commandInsertEmployeeStatus = new MySqlCommand(insertEmployeeStatus, connection);
 
                     passwordEncryptor = new PasswordEncryptor();
                     string encryptedPassword = passwordEncryptor.EncryptPassword(password);
 
-                    command.Parameters.AddWithValue("id", e.Id);
-                    command.Parameters.AddWithValue("@email", e.Email);
-                    command.Parameters.AddWithValue("@parola", encryptedPassword);
-                    command.Parameters.AddWithValue("@nume", e.Nume);
-                    command.Parameters.AddWithValue("@prenume", e.Prenume);
-                    command.Parameters.AddWithValue("@data_nasterii", e.DataNasterii);
-                    command.Parameters.AddWithValue("@telefon", e.Telefon);
-                    command.Parameters.AddWithValue("@cnp", e.CNP);
-                    command.Parameters.AddWithValue("@functie", e.Functie);
-                    command.Parameters.AddWithValue("@ore", e.Ore);
-                    command.ExecuteNonQuery();
+                    commandInsertEmployee.Parameters.AddWithValue("@id", e.Id);
+                    commandInsertEmployee.Parameters.AddWithValue("@email", e.Email);
+                    commandInsertEmployee.Parameters.AddWithValue("@parola", encryptedPassword);
+                    commandInsertEmployee.Parameters.AddWithValue("@nume", e.Nume);
+                    commandInsertEmployee.Parameters.AddWithValue("@prenume", e.Prenume);
+                    commandInsertEmployee.Parameters.AddWithValue("@data_nasterii", e.DataNasterii);
+                    commandInsertEmployee.Parameters.AddWithValue("@telefon", e.Telefon);
+                    commandInsertEmployee.Parameters.AddWithValue("@cnp", e.CNP);
+                    commandInsertEmployee.Parameters.AddWithValue("@functie", e.Functie);
+                    commandInsertEmployee.Parameters.AddWithValue("@ore", e.Ore);
+                    commandInsertEmployee.ExecuteNonQuery();
+
+                    commandInsertEmployeeStatus.Parameters.AddWithValue("@id", e.Id);
+                    commandInsertEmployeeStatus.Parameters.AddWithValue("@currentTime", currentTime);
+                    commandInsertEmployeeStatus.ExecuteNonQuery();
 
                     return RegistrationStatus.Success;
                 }

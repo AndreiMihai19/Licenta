@@ -27,7 +27,7 @@ namespace AdministratorApplication.Classes
                     Credentials = new NetworkCredential
                     {
                         UserName = "andrei.mihai190401@gmail.com",
-                        Password = "bppq mjpz vziv aprr"
+                        Password = "ceqw fhko rktr tkvu"
                     }
                 };
 

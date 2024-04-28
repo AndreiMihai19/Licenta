@@ -46,7 +46,13 @@ namespace AdministratorApplication.Pages
             string password = txtParola.Password;
 
             DateTime? selectedDate = dpDataNasterii.SelectedDate;
-            string dataNastere = selectedDate.Value.ToString("yyyy-MM-dd");
+
+            string dataNastere = "";
+
+            if (selectedDate != null)
+            {
+                dataNastere = selectedDate.Value.ToString("yyyy-MM-dd");
+            }
 
             string jobPosition = (cmbFunctie.SelectedItem as ComboBoxItem)?.Content.ToString();
 

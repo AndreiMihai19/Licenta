@@ -72,12 +72,14 @@ int id=0;
 
 void loop(){
 
+  //SendToDeleteIDMySQL();
+ // delay(2000);
 
   if (espSerial.available() > 0) {
     dataFromArduino = espSerial.readStringUntil('\n');
-
     Serial.print("Date primite de la Arduino: ");
     Serial.println(dataFromArduino);
+    //espSerial.flush();
 
     int indexOfEnroll = dataFromArduino.indexOf("Enroll");
     int indexOfLogin = dataFromArduino.indexOf("Login");
@@ -104,11 +106,7 @@ void loop(){
         GetNameOfIDMySQL();
       }
     }
-     
-
   }
-  
-
 }
 
 void UpdateIDIntoMySQL() 
@@ -202,7 +200,7 @@ void SendToDeleteIDMySQL()
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
     char query[128];
 
-    sprintf(query, "SELECT nume FROM biometrichubaccess.Angajati WHERE ID = '%d'", id);
+    sprintf(query, "SELECT nume FROM biometrichubaccess.Angajati WHERE ID = '%d'", 1);
 
     cur_mem->execute(query);
 

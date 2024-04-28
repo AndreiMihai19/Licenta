@@ -34,16 +34,14 @@ void setup()
   pinMode(solenoidPin, OUTPUT);
   digitalWrite(solenoidPin, HIGH);
 
-  Serial.begin(9600);
+  Serial.begin(19200);
 
   lcd.begin(16, 2);
 
-  
   while (!Serial);  
   Serial.println("\n\n SRL");
   espSerial.begin(9600);
   finger.begin(57600);
-
   if (finger.verifyPassword()) {
     Serial.println("Found fingerprint sensor!");
   } else {
@@ -72,7 +70,7 @@ void setup()
         Serial.print("Sensor contains "); Serial.print(finger.templateCount); Serial.println(" templates");
     }
 
- 
+//espSerial.begin(9600);
 }
 
 uint8_t readnumber(void) {
@@ -93,18 +91,18 @@ void loop()
   lcd.setCursor(0, 1);
   lcd.print("B - Inregistrare");
   
- if (espSerial.available()) { // Verificare dacă datele sunt disponibile pentru citire de la ESP
-    char receivedChar = espSerial.read(); // Citirea caracterului de la ESP
+ if (espSerial.available()) 
+ { 
+    String receivedMessage = espSerial.readString(); // Citirea mesajului de la ESP8266
+    Serial.print("Mesaj primit de la ESP8266: ");
+    Serial.println(receivedMessage); // Afișează mesajul primit
 
-    // Afisarea caracterului primit pe portul serial al Arduino
-    Serial.print("Caracter primit de la ESP: ");
-    Serial.println(receivedChar);
   }
+
 
   if (digitalRead(pinButtonBlue) == LOW) {
     lcd.clear();
-    espSerial.end();
-    
+
     lcd.println("Enroll...       ");
 
     delay(1000);  
@@ -128,7 +126,6 @@ void loop()
     lcd.print("Apropiati");
     lcd.setCursor(4, 1);
     lcd.print("degetul");
-
     while(option!=1)
     {
       getFingerprintID();
@@ -265,7 +262,6 @@ uint8_t getFingerprintEnroll() {
     Serial.println("Stored!");
     // Trimite ID-ul la ESP8266
      espSerial.print("Enroll"+ String(id));
-
   } else if (p == FINGERPRINT_PACKETRECIEVEERR) {
     Serial.println("Communication error");
     return p;
