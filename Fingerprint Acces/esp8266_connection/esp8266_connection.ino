@@ -7,10 +7,10 @@
 #ifndef STASSID
 //#define STASSID "LinksysB019"
 //#define STAPSK "wm83y3fby4"
-//#define STASSID "Sam IL Yei"
-//#define STAPSK "camera503503camera"
-#define STASSID "DIGI-6888"
-#define STAPSK "7JpqVMzk"
+#define STASSID "Sam IL Yei"
+#define STAPSK "camera503503camera"
+//#define STASSID "DIGI-6888"
+//#define STAPSK "7JpqVMzk"
 #endif
 
 //SoftwareSerial s(D7,D6);
@@ -79,7 +79,7 @@ void loop(){
     dataFromArduino = espSerial.readStringUntil('\n');
     Serial.print("Date primite de la Arduino: ");
     Serial.println(dataFromArduino);
-    //espSerial.flush();
+    espSerial.flush();
 
     int indexOfEnroll = dataFromArduino.indexOf("Enroll");
     int indexOfLogin = dataFromArduino.indexOf("Login");
@@ -102,8 +102,8 @@ void loop(){
       if (id != 0) 
       {
         UpdateTimeValueIntoMySQL();
-        delay(1000);
-        GetNameOfIDMySQL();
+    //    delay(1000);
+      //  GetNameOfIDMySQL();
       }
     }
   }

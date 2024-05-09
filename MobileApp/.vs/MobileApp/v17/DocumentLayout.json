@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\Licenta_Repository\\Licenta\\MobileApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\repositories\\dashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\repositories\\dashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\services\\sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\services\\sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\services\\sendemailstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|solutionrelative:mobileapp\\mobileapp\\services\\sendemailstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FBC168B9-8821-4E24-B105-1F51C4C5438A}|MobileApp\\MobileApp\\MobileApp.csproj|d:\\licenta_repository\\licenta\\mobileapp\\mobileapp\\mobileapp\\views\\menuview.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
@@ -31,19 +35,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DashboardRepository.cs",
-              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
-              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
-              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
-              "RelativeToolTip": "MobileApp\\MobileApp\\Repositories\\DashboardRepository.cs",
-              "ViewState": "AQIAAPkBAAAAAAAAAAArwAwCAAAIAAAA",
+              "Title": "SendMail.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Services\\SendMail.cs",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Services\\SendMail.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Services\\SendMail.cs",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Services\\SendMail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T21:42:34.972Z",
+              "WhenOpened": "2024-04-28T20:49:48.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "SendEmailStatus.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Services\\SendEmailStatus.cs",
+              "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Services\\SendEmailStatus.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Services\\SendEmailStatus.cs",
+              "RelativeToolTip": "MobileApp\\MobileApp\\Services\\SendEmailStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T20:49:34.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MenuView.xaml",
               "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml",
               "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\MenuView.xaml",
@@ -56,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MenuView.xaml.cs",
               "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\MobileApp\\MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
               "RelativeDocumentMoniker": "MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
@@ -64,8 +81,7 @@
               "RelativeToolTip": "MobileApp\\MobileApp\\Views\\MenuView.xaml.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAAAGMAAABWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T19:35:00.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-24T19:35:00.413Z"
             }
           ]
         }

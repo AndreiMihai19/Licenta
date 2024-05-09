@@ -269,9 +269,15 @@ namespace AdministratorApplication.Repositories
 
             m %= 60;
 
-            
-            return double.Parse(h.ToString() + "." + m.ToString());
-            
+            if (m < 10)
+            {
+                return double.Parse(h.ToString() + ".0" + m.ToString());
+            }
+            else
+            {
+                return double.Parse(h.ToString() + "." + m.ToString());
+            }
+
 
         }
     }

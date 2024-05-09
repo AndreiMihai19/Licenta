@@ -91,6 +91,7 @@ void loop()
   lcd.setCursor(0, 1);
   lcd.print("B - Inregistrare");
   
+  /*
  if (espSerial.available()) 
  { 
     String receivedMessage = espSerial.readString(); // Citirea mesajului de la ESP8266
@@ -98,7 +99,7 @@ void loop()
     Serial.println(receivedMessage); // Afișează mesajul primit
 
   }
-
+*/
 
   if (digitalRead(pinButtonBlue) == LOW) {
     lcd.clear();
@@ -364,6 +365,7 @@ uint8_t getFingerprintID() {
   // found a match!
 
   id=finger.fingerID;
+  //Serial.println("Login"+ String(id));
   espSerial.print("Login"+ String(id));
 
   Serial.print("Found ID #"); Serial.print(finger.fingerID);
