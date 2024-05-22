@@ -4,20 +4,11 @@
 #include <SoftwareSerial.h>
 #include <ArduinoJson.h>
 
-#ifndef STASSID
-//#define STASSID "LinksysB019"
-//#define STAPSK "wm83y3fby4"
-#define STASSID "Sam IL Yei"
-#define STAPSK "camera503503camera"
-//#define STASSID "DIGI-6888"
-//#define STAPSK "7JpqVMzk"
-#endif
-
-//SoftwareSerial s(D7,D6);
 SoftwareSerial espSerial(D7, D6);
 
-const char *ssid = STASSID;
-const char *wifiPassword = STAPSK;
+const char *ssid[] = {"LinksysB019","Sam IL Yei","DIGI-6888"};
+const char *wifiPassword[] = {"wm83y3fby4","camera503503camera","7JpqVMzk"};
+const int numberOfSSID=3;
 
 IPAddress server_addr(34,78,19,175); 
 char user[] = "root"; 
@@ -34,46 +25,58 @@ espSerial.begin(9600);
 
 while (!Serial) continue;
 
-
-Serial.println();
-Serial.println();
-Serial.print("Connecting to ");
-Serial.println(ssid);
-
-
-WiFi.mode(WIFI_STA);
-WiFi.begin(ssid, wifiPassword);
-
-while (WiFi.status() != WL_CONNECTED) 
-  {
-  delay(500);
-  Serial.print(".");
-  }
-Serial.println("");
-Serial.println("WiFi connected");
-Serial.println("IP address: ");
-Serial.println(WiFi.localIP());
-Serial.println("Connecting...");
-
-if (conn.connect(server_addr, 3306, user, password)) 
-  {
-   Serial.println("Connected to MySQL");
-  } 
-else 
-  {
-    Serial.println("Connection failed.");
-    conn.close();
-  }
+  ConnectToWiFi();
 
 }
+
+void ConnectToWiFi() {
+  Serial.println("Încercăm să ne conectăm la o rețea WiFi...");
+  
+  for (int i = 0; i < numberOfSSID; i++) {
+    Serial.print("Încercăm să ne conectăm la ");
+    Serial.println(ssid[i]);
+    
+    WiFi.begin(ssid[i], wifiPassword[i]);
+
+    int testing = 0;
+    while (WiFi.status() != WL_CONNECTED && testing < 20) {
+      delay(500);
+      Serial.print(".");
+      testing++;
+    }
+
+    if (WiFi.status() == WL_CONNECTED) {
+      Serial.println("");
+      Serial.println("Conectat la rețeaua WiFi!");
+      Serial.print("Adresa IP: ");
+      Serial.println(WiFi.localIP());
+      break;  // Ieșim din buclă dacă ne-am conectat cu succes
+    } else {
+      Serial.println("");
+      Serial.println("Nu am reușit să ne conectăm la această rețea.");
+      if (i == numberOfSSID - 1) {
+        Serial.println("Nu am putut să ne conectăm la nicio rețea disponibilă.");
+      }
+    }
+  }
+  
+  if (conn.connect(server_addr, 3306, user, password)) 
+    {
+    Serial.println("Connected to MySQL");
+    } 
+  else 
+    {
+      Serial.println("Connection failed.");
+      conn.close();
+    }
+}
+
 
 String dataFromArduino=" ";
 int id=0;
 
 void loop(){
 
-  //SendToDeleteIDMySQL();
- // delay(2000);
 
   if (espSerial.available() > 0) {
     dataFromArduino = espSerial.readStringUntil('\n');

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdministratorApplication.Classes
+namespace AdministratorApplication.Models
 {
-    public class RegistryChart
+    public class RegistryChartModel
     {
         public string? NumePrenume { get; set; }
         public string? Data { get; set; }
@@ -14,7 +14,7 @@ namespace AdministratorApplication.Classes
         public double? OraPauza { get; set; }
         public double? OraProgram2 { get; set; }
         public double? TotalOre { get; set; }
-        public string? LunaCalendaristica {  get; set; }
-        public int? Anul {  get; set; }
+        public string? LunaCalendaristica { get; set; }
+        public int? Anul { get; set; }
     }
 }

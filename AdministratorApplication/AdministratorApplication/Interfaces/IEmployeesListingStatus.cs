@@ -1,4 +1,4 @@
-﻿using AdministratorApplication.Classes;
+﻿using AdministratorApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace AdministratorApplication.Interfaces
 {
     public interface IEmployeesListingStatus
     {
-        void AddStatus(List<Status> statusList);
+        void AddStatus(List<StatusModel> statusList);
     }
 }

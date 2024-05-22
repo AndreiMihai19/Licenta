@@ -1,6 +1,6 @@
-﻿using AdministratorApplication.Classes;
-using AdministratorApplication.Forms;
+﻿using AdministratorApplication.Forms;
 using AdministratorApplication.Interfaces;
+using AdministratorApplication.Models;
 using AdministratorApplication.Pages;
 using AdministratorApplication.Repositories;
 using System;
@@ -27,7 +27,7 @@ namespace AdministratorApplication.Employee_Status
     public partial class ListViewStatusControl : UserControl
     {
         private IEmployeesListingStatus? status;
-        private List<Status> statusList = new List<Status>();
+        private List<StatusModel> statusList = new List<StatusModel>();
 
 
         public ListViewStatusControl()

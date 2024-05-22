@@ -1,4 +1,4 @@
-﻿using AdministratorApplication.Classes;
+﻿using AdministratorApplication.Models;
 using AdministratorApplication.Repositories;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace AdministratorApplication.Interfaces
     public interface ICharts
     {
        string[] GetNamesOfEmployees();
-       void AddRegistryValues(List<RegistryChart> chart);
+       void AddRegistryValues(List<RegistryChartModel> chart);
        double GetTime(string time1, string time2);
        double GetTotalHours(string time1, string time2);
     }

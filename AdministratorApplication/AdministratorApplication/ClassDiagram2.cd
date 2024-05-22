@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AdministratorApplication.Classes.Employee">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAAAAACEAAAAAAAAAAAAAECAAAAAgBAAAAAABAAA=</HashCode>
+      <FileName>Classes\EmployeeModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdministratorApplication.Classes.PasswordEncryptor" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAgAAAAQAgAAAAEAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\PasswordEncryptor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AdministratorApplication.Classes.RegistryChartModel">
+    <Position X="7.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAABAiAAAAAAAAAACAAAAACAAABAAAAAAAAIAAAA=</HashCode>
+      <FileName>Classes\RegistryChartModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdministratorApplication.Classes.SendMail" BaseTypeListCollapsed="true">
+    <Position X="6" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SendMail.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AdministratorApplication.Classes.StatusModel">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQACAAIAAAEAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Classes\StatusModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

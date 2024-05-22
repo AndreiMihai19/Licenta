@@ -44,9 +44,14 @@ namespace AdministratorApplication.Classes
                         cmdValidate.Parameters.AddWithValue("@email", this.email);
                         cmdValidate.Parameters.AddWithValue("@password", encryptedPassword);
 
-                        int count = Convert.ToInt32(cmdValidate.ExecuteScalar());
+                        MySqlCommand cmdCheckAdmin = new MySqlCommand("SELECT admin FROM Angajati WHERE email = @email AND parola = @password", connection);
+                        cmdCheckAdmin.Parameters.AddWithValue("@email", this.email);
+                        cmdCheckAdmin.Parameters.AddWithValue("@password", encryptedPassword);
 
-                        if (count > 0)
+                        int count = Convert.ToInt32(cmdValidate.ExecuteScalar());
+                        int adminValue = Convert.ToInt32(cmdCheckAdmin.ExecuteScalar());
+
+                        if (count > 0 && adminValue == 1)
                         {
                             return AuthenticationStatus.Success;
                         }

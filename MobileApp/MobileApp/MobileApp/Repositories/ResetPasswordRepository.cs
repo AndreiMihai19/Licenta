@@ -29,11 +29,11 @@ namespace MobileApp.Repositories
             this.confirmPassword = confirmPassword;
         }
 
-        public async Task<SendEmailStatus> SendPassword()
+        public async Task<SendMailStatus> SendPassword()
         {
             if (string.IsNullOrEmpty(this.email))
             {
-                return SendEmailStatus.InvalidCredentials;
+                return SendMailStatus.InvalidCredentials;
             }
             else
             {
@@ -50,17 +50,17 @@ namespace MobileApp.Repositories
 
                         if (count > 0)
                         {
-                            return SendEmailStatus.Success;
+                            return SendMailStatus.Success;
                         }
                         else
                         {
-                            return SendEmailStatus.Failure;
+                            return SendMailStatus.Failure;
                         }
 
                     }
                     catch
                     {
-                        return SendEmailStatus.DataBaseConnectionProblem;
+                        return SendMailStatus.DataBaseConnectionProblem;
                     }
                     finally
                     {
@@ -97,14 +97,7 @@ namespace MobileApp.Repositories
 
                         return ResetPasswordStatus.Success;
                         
-                        if (rowsAffected > 0)
-                        {
-                            return ResetPasswordStatus.Success;
-                        }
-                        else
-                        {
-                            return ResetPasswordStatus.Failure; 
-                        }
+                    
                         
                     }
                     catch

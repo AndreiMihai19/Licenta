@@ -1,5 +1,4 @@
-﻿using AdministratorApplication.Classes;
-using AdministratorApplication.Interfaces;
+﻿using AdministratorApplication.Interfaces;
 using AdministratorApplication.Repositories;
 using System;
 using System.Collections.Generic;
@@ -18,6 +17,7 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using AdministratorApplication.Forms;
+using AdministratorApplication.Models;
 
 namespace AdministratorApplication.Pages
 {

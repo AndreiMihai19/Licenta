@@ -69,16 +69,16 @@ namespace MobileApp.Views
         {
             await GetEmployeeInfo();
 
-            lblLastName.Text = employee.Nume;
-            lblFirstName.Text = employee.Prenume;
+            lblLastName.Text = employee.LastName;
+            lblFirstName.Text = employee.FirstName;
             lblEmail.Text = employee.Email;
-            lblJob.Text = employee.Functie;
-            lblDailyHours.Text = employee.OreZi.ToString();
-            lblClockIn.Text = employee.OraIn.ToString();
-            lblStartBreak.Text = employee.PauzaIn.ToString();
-            lblEndBreak.Text = employee.PauzaOut.ToString();
-            lblClockOut.Text = employee.OraOut.ToString();
-            lblTotalHours.Text = employee.TotalOreLucrate.ToString();
+            lblJob.Text = employee.Job;
+            lblDailyHours.Text = employee.DailyHours.ToString();
+            lblClockIn.Text = employee.ClockIn.ToString();
+            lblStartBreak.Text = employee.StartBreakHour.ToString();
+            lblEndBreak.Text = employee.EndBreakHour.ToString();
+            lblClockOut.Text = employee.ClockOut.ToString();
+            lblTotalHours.Text = employee.TotalWorkedHours.ToString();
 
         }
 

@@ -1,5 +1,5 @@
-﻿using AdministratorApplication.Classes;
-using AdministratorApplication.Interfaces;
+﻿using AdministratorApplication.Interfaces;
+using AdministratorApplication.Models;
 using Google.Protobuf.WellKnownTypes;
 using LiveCharts.Wpf.Charts.Base;
 using MySql.Data.MySqlClient;
@@ -57,7 +57,7 @@ namespace AdministratorApplication.Repositories
             return names;
         }
         
-        public void AddRegistryValues(List<RegistryChart> chart)
+        public void AddRegistryValues(List<RegistryChartModel> chart)
         {
             try
             {
@@ -147,7 +147,7 @@ namespace AdministratorApplication.Repositories
 
 
 
-                        RegistryChart registryChart = new RegistryChart
+                        RegistryChartModel registryChart = new RegistryChartModel
                         { 
                             NumePrenume = numePrenume,
                             Data = date.ToString("dd-MM-yyyy"),

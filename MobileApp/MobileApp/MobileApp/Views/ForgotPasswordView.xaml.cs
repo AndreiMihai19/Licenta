@@ -29,11 +29,11 @@ namespace MobileApp.Views
         {
             resetPassword = new ResetPasswordRepository(entryEmail.Text);
 
-            SendEmailStatus sendEmailStatus = await resetPassword.SendPassword();
+            SendMailStatus sendEmailStatus = await resetPassword.SendPassword();
 
             switch (sendEmailStatus)
             {
-                case SendEmailStatus.Success:
+                case SendMailStatus.Success:
                     await DisplayAlert("Mesaj", "O sa primiti un cod pentru resetarea parolei. Verificati inbox-ul sau spam-ul!", "OK");
 
                     ResetPasswordModel.ResetCode = resetPassword.GenerateResetCode();
@@ -46,13 +46,13 @@ namespace MobileApp.Views
                     ResetPasswordView resetPasswordView = new ResetPasswordView();
                     await Navigation.PushAsync(resetPasswordView);
                     break;
-                case SendEmailStatus.InvalidCredentials:
+                case SendMailStatus.InvalidCredentials:
                     await DisplayAlert("Mesaj", "Completati toate campurile!", "OK");
                     break;
-                case SendEmailStatus.Failure:
+                case SendMailStatus.Failure:
                     await DisplayAlert("Mesaj", "Nu sunteti inregistrat!", "OK");
                     break;
-                case SendEmailStatus.DataBaseConnectionProblem:
+                case SendMailStatus.DataBaseConnectionProblem:
                     await DisplayAlert("Mesaj", "Conexiunea la baza de date nu se poate realiza!", "OK");
                     break;
                 default:

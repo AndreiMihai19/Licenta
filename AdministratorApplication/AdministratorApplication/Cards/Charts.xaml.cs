@@ -14,7 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AdministratorApplication.Classes;
 using AdministratorApplication.Interfaces;
 using AdministratorApplication.Repositories;
 using System.Text.RegularExpressions;
@@ -23,6 +22,7 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Globalization;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using AdministratorApplication.Models;
 
 
 namespace AdministratorApplication.Employee_Status
@@ -32,7 +32,7 @@ namespace AdministratorApplication.Employee_Status
     /// </summary>
     public partial class Charts : UserControl
     {
-        private List<RegistryChart> chart = new List<RegistryChart>();
+        private List<RegistryChartModel> chart = new List<RegistryChartModel>();
         private ICharts chartInfo = new ChartsRepository();
         private string? selectedName;
         private string? selectedMonth;
@@ -118,7 +118,7 @@ namespace AdministratorApplication.Employee_Status
 
         }
 
-        private double GetHourValue(RegistryChart registryChart, string seriesName)
+        private double GetHourValue(RegistryChartModel registryChart, string seriesName)
         {
             switch (seriesName)
             {

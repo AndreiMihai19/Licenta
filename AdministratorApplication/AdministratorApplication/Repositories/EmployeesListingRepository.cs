@@ -1,5 +1,4 @@
-﻿using AdministratorApplication.Classes;
-using AdministratorApplication.Interfaces;
+﻿using AdministratorApplication.Interfaces;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -11,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
+using AdministratorApplication.Models;
 
 namespace AdministratorApplication.Repositories
 {

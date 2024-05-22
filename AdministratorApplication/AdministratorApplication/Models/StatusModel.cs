@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdministratorApplication.Classes
+namespace AdministratorApplication.Models
 {
-    public class Status
+    public class StatusModel
     {
         public int? Id { get; set; }
         //  public string? Parola{ get; set; }

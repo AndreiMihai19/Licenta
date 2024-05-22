@@ -1,6 +1,6 @@
-﻿using AdministratorApplication.Classes;
-using AdministratorApplication.Employee_Status;
+﻿using AdministratorApplication.Employee_Status;
 using AdministratorApplication.Interfaces;
+using AdministratorApplication.Models;
 using AdministratorApplication.Repositories;
 using MySql.Data.MySqlClient;
 using System;

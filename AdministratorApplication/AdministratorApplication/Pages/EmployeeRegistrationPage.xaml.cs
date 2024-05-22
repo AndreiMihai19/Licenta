@@ -1,5 +1,6 @@
 ﻿using AdministratorApplication.Classes;
 using AdministratorApplication.Interfaces;
+using AdministratorApplication.Models;
 using AdministratorApplication.Repositories;
 using Google.Protobuf.WellKnownTypes;
 using System;

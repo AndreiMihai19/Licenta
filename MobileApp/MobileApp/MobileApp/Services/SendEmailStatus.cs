@@ -1,4 +1,4 @@
-﻿public enum SendEmailStatus
+﻿public enum SendMailStatus
 {
     Success,
     Failure,

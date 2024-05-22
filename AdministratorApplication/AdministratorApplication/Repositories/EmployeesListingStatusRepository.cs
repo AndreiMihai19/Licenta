@@ -1,5 +1,5 @@
-﻿using AdministratorApplication.Classes;
-using AdministratorApplication.Interfaces;
+﻿using AdministratorApplication.Interfaces;
+using AdministratorApplication.Models;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace AdministratorApplication.Repositories
     {
         private readonly MySqlConnection connection = new MySqlConnection("Server=34.78.19.175;Port=3306;database=biometrichubaccess;User Id=root;Password=parolalicenta");
 
-        public void AddStatus(List<Status> status)
+        public void AddStatus(List<StatusModel> status)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace AdministratorApplication.Repositories
                             _hourOut = $"{hour:D2}:{minutes:D2}";
                         }
 
-                        Status s= new Status()
+                        StatusModel s= new StatusModel()
                         {
                             Id = id,
                             Prenume = firstName,

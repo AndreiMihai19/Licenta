@@ -10,12 +10,9 @@ const int buzzerPin = 3;
 
 
 #if (defined(__AVR__) || defined(ESP8266)) || defined(__AVR_ATmega2560__)
-
 SoftwareSerial mySerial(A1, A0);
 SoftwareSerial espSerial(6,7);
-
 #else
-
 #endif
 
 const int pinButtonBlue = 4;  // Pinul la care este conectat butonul 1

@@ -104,16 +104,16 @@ namespace MobileApp.Repositories
                         employee = new EmployeeModel()
                         {
                             EmployeeId = this.id,
-                            Prenume = firstName,
-                            Nume = lastName,
+                            FirstName = firstName,
+                            LastName = lastName,
                             Email = email,
-                            Functie = job,
-                            OreZi = dayHours,
-                            OraIn = _hourIn,
-                            PauzaIn = _breakHourIn,
-                            PauzaOut = _breakHourOut,
-                            OraOut = _hourOut,
-                            TotalOreLucrate = totalHours,
+                            Job = job,
+                            DailyHours = dayHours,
+                            ClockIn = _hourIn,
+                            StartBreakHour = _breakHourIn,
+                            EndBreakHour = _breakHourOut,
+                            ClockOut = _hourOut,
+                            TotalWorkedHours = totalHours,
                         };
 
 
@@ -124,16 +124,16 @@ namespace MobileApp.Repositories
                     employee = new EmployeeModel()
                     {
                         EmployeeId = 0,
-                        Prenume = "",
-                        Nume = "",
+                        FirstName = "",
+                        LastName = "",
                         Email = "",
-                        Functie = "",
-                        OreZi = 0,
-                        OraIn = "",
-                        PauzaIn = "",
-                        PauzaOut = "",
-                        OraOut = "",
-                        TotalOreLucrate = "0",
+                        Job = "",
+                        DailyHours = 0,
+                        ClockIn = "",
+                        StartBreakHour = "",
+                        EndBreakHour = "",
+                        ClockOut = "",
+                        TotalWorkedHours = "0",
                     };
 
                     return employee;

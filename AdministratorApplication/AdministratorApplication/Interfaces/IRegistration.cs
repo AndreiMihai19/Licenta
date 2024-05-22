@@ -1,4 +1,4 @@
-﻿using AdministratorApplication.Classes;
+﻿using AdministratorApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

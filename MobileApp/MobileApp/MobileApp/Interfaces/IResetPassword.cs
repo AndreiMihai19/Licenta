@@ -7,7 +7,7 @@ namespace MobileApp.Interfaces
 {
     public interface IResetPassword
     {
-        Task<SendEmailStatus> SendPassword();
+        Task<SendMailStatus> SendPassword();
 
         Task<ResetPasswordStatus> ResetPassword();
 
