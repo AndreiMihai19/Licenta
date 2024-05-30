@@ -27,7 +27,7 @@ namespace AdministratorApplication.Pages
     {
         private IStatus? status;
 
-        List<Employee> employees = new List<Employee>();
+        List<EmployeeModel> employees = new List<EmployeeModel>();
         public StatusPage()
         {
 

@@ -1,4 +1,4 @@
-﻿using AdministratorApplication.Classes;
+﻿using AdministratorApplication.Services;
 using AdministratorApplication.Interfaces;
 using AdministratorApplication.Models;
 using MySql.Data.MySqlClient;
@@ -17,11 +17,11 @@ namespace AdministratorApplication.Repositories
         private readonly MySqlConnection connection = new MySqlConnection("Server=34.78.19.175;Port=3306;database=biometrichubaccess;User Id=root;Password=parolalicenta");
         private IPasswordEncryptor? passwordEncryptor;
 
-        public RegistrationStatus Register(Employee e, string password) 
+        public RegistrationStatus Register(EmployeeModel e, string password)
         {
             DateTime currentTime = DateTime.Today;
 
-            if (e.Id < 0 || string.IsNullOrEmpty(e.Email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(e.Prenume) || string.IsNullOrEmpty(e.Nume) || string.IsNullOrEmpty(e.DataNasterii) || string.IsNullOrEmpty(e.CNP) || string.IsNullOrEmpty(e.Telefon) || string.IsNullOrEmpty(e.Functie) || e.Ore < 0)
+            if (e.Id < 0 || string.IsNullOrEmpty(e.Email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(e.Prenume) || string.IsNullOrEmpty(e.Nume) || string.IsNullOrEmpty(e.DataNasterii) || string.IsNullOrEmpty(e.CNP) || string.IsNullOrEmpty(e.Telefon) || string.IsNullOrEmpty(e.Functie) || e.Ore <= 0 || e.IsAdmin < 0)
             {
                 return RegistrationStatus.InvalidCredentials;
             }
@@ -33,7 +33,7 @@ namespace AdministratorApplication.Repositories
                 {
                     connection.Open();
 
-                    string insertEmployee = "INSERT INTO Angajati(id,email,parola,nume,prenume,data_nasterii,telefon,cnp,functie,ore) VALUES (@id,@email,@parola,@nume,@prenume,@data_nasterii,@telefon,@cnp,@functie,@ore)";
+                    string insertEmployee = "INSERT INTO Angajati(id,email,parola,nume,prenume,data_nasterii,telefon,cnp,functie,ore,admin) VALUES (@id,@email,@parola,@nume,@prenume,@data_nasterii,@telefon,@cnp,@functie,@ore,@admin)";
                     string insertEmployeeStatus = "INSERT INTO Status_angajati(id,ora_in,ora_pauza_in,ora_pauza_out,ora_out) VALUES (@id,@currentTime,@currentTime,@currentTime,@currentTime)";
                     MySqlCommand commandInsertEmployee = new MySqlCommand(insertEmployee, connection);
                     MySqlCommand commandInsertEmployeeStatus = new MySqlCommand(insertEmployeeStatus, connection);
@@ -51,6 +51,7 @@ namespace AdministratorApplication.Repositories
                     commandInsertEmployee.Parameters.AddWithValue("@cnp", e.CNP);
                     commandInsertEmployee.Parameters.AddWithValue("@functie", e.Functie);
                     commandInsertEmployee.Parameters.AddWithValue("@ore", e.Ore);
+                    commandInsertEmployee.Parameters.AddWithValue("@admin", e.IsAdmin);
                     commandInsertEmployee.ExecuteNonQuery();
 
                     commandInsertEmployeeStatus.Parameters.AddWithValue("@id", e.Id);

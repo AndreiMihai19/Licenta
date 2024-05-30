@@ -11,7 +11,7 @@
 
     <Grid>
 
-        <ListView x:Name="ListViewEmployees" Margin="10,50,10,0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Tahoma">
+        <ListView x:Name="ListViewEmployees" Margin="10,50,10,0"  FontFamily="Tahoma" FontWeight="Bold">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
@@ -24,17 +24,17 @@
                         <GridViewColumn Header="Telefon" DisplayMemberBinding="{Binding Telefon}" />
                         <GridViewColumn Header="Functie" DisplayMemberBinding="{Binding Functie}"/>
                         <GridViewColumn Header="Ore/zi" DisplayMemberBinding="{Binding Ore}"/>
-                        <GridViewColumn>
+                        <GridViewColumn Header="">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Modifica" Background="#1F8C8C" Foreground="Black" Width="100" Click="BtnModify_Click"/>
+                                    <Button Content="Modifica" Background="#1F8C8C" Foreground="Black" Width="70" Click="BtnModify_Click"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn >
+                        <GridViewColumn Header="">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Sterge" Background="#ed3957" Foreground="Black" Width="100"  Click="BtnDelete_Click" />
+                                    <Button Content="Sterge" Background="#ed3957" Foreground="Black" Width="70"  Click="BtnDelete_Click" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -62,6 +62,6 @@
             </ListView.GroupStyle>
         </ListView>
 
-        <ComboBox Name="GroupBy" SelectedIndex="0" Margin="11,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" SelectionChanged="GroupBy_SelectionChanged"></ComboBox>
+        <ComboBox Name="GroupBy" SelectedIndex="0" Margin="11,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" SelectionChanged="GroupBy_SelectionChanged" FontWeight="Bold"></ComboBox>
     </Grid>
 </Page>

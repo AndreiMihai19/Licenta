@@ -22,23 +22,26 @@ namespace AdministratorApplication
     /// Interaction logic for MenuWindow.xaml
     /// </summary>
     public partial class MenuWindow : Window
-    { 
+    {
+        private Type currentPageType;
+
         public MenuWindow()
         {
             InitializeComponent();
 
-            //Main.Content = new MainPage();
+            currentPageType = typeof(StatusPage);
             Main.Content = new StatusPage();
         }
 
-
         private void BtnEmployees_Click(object sender, RoutedEventArgs e)
         {
+            currentPageType = typeof(EmployeesPage);
             Main.Content = new EmployeesPage();
         }
 
         private void BtnEmployeeAdd_Click(object sender, RoutedEventArgs e)
         {
+            currentPageType = typeof(EmployeeRegistrationPage);
             Main.Content = new EmployeeRegistrationPage();
         }
 
@@ -47,32 +50,27 @@ namespace AdministratorApplication
             this.Close();
         }
 
-        private async void BtnStatus_Click(object sender, RoutedEventArgs e)
+        private void BtnStatus_Click(object sender, RoutedEventArgs e)
         {
+            currentPageType = typeof(StatusPage);
 
-            await Task.Run(() =>
+            Main.Content = new StatusPage();
+        }
+
+        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPageType == typeof(EmployeesPage))
             {
-                Dispatcher.Invoke(() => Main.Content = new StatusPage());
-            });
-
-            Dispatcher.Invoke(HidePageProgressBar);
-
-        }
-        private void ShowPageProgressBar()
-        {
-            PageProgressBar.Visibility = Visibility.Visible;
-        }
-
-        private void HidePageProgressBar()
-        {
-            PageProgressBar.Visibility = Visibility.Collapsed;
-        }
-
-       
-
-        private void Main_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
-        {
-
+                Main.Content = new EmployeesPage();
+            }
+            else if (currentPageType == typeof(EmployeeRegistrationPage))
+            {
+                Main.Content = new EmployeeRegistrationPage();
+            }
+            else if (currentPageType == typeof(StatusPage))
+            {
+                Main.Content = new StatusPage();
+            }
         }
     }
 }

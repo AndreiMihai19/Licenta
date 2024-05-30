@@ -12,13 +12,13 @@
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
+                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
                         <GridViewColumn Header="Nume" DisplayMemberBinding="{Binding Nume}"/>
                         <GridViewColumn Header="Prenume" DisplayMemberBinding="{Binding Prenume}" />
-                        <GridViewColumn Header="Ora in" DisplayMemberBinding="{Binding OraIn}" />
-                        <GridViewColumn Header="Pauza in" DisplayMemberBinding="{Binding OraPauzaIn}" />
-                        <GridViewColumn Header="Pauza out" DisplayMemberBinding="{Binding OraPauzaOut}" />
-                        <GridViewColumn Header="Ora out" DisplayMemberBinding="{Binding OraOut}" />
+                        <GridViewColumn Header="Start program" DisplayMemberBinding="{Binding OraIn}" />
+                        <GridViewColumn Header="Start pauza" DisplayMemberBinding="{Binding OraPauzaIn}" />
+                        <GridViewColumn Header="Sfarsit pauza" DisplayMemberBinding="{Binding OraPauzaOut}" />
+                        <GridViewColumn Header="Sfarsit program" DisplayMemberBinding="{Binding OraOut}" />
                     </GridView.Columns>
                 </GridView>
             </ListView.View>

@@ -147,8 +147,6 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Release\net8.0-windows\runtimes\win\lib\net8.0\System.Speech.dll
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Release\net8.0-windows\Resources\logo.png
-D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Pages\MainPage.g.cs
-D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Pages\MainPage.baml
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\StatusCard.baml
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\Charts.g.cs
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\ListViewStatusControl.g.cs
@@ -160,3 +158,4 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\ClockControl.g.cs
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Cards\ClockControl.baml
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\obj\Release\net8.0-windows\Administ.A2169969.Up2Date
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Release\net8.0-windows\Resources\refresh_icon.png

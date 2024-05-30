@@ -35,7 +35,6 @@ namespace AdministratorApplication.Cards
 
         private void UpdateClock(object state)
         {
-            // Actualizează TextBlock-ul cu ora curentă
             Dispatcher.Invoke(() =>
             {
                 clock.Text = DateTime.Now.ToString("HH:mm");

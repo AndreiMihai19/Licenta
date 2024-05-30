@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdministratorApplication.Classes
+namespace AdministratorApplication.Services
 {
     public class AuthenticationRepository : IAuthentication
     {
         private readonly MySqlConnection connection = new MySqlConnection("Server=34.78.19.175;Port=3306;database=biometrichubaccess;User Id=root;Password=parolalicenta");
-        private string email;
-        private string password;
+        private readonly string email;
+        private readonly string password;
         private IPasswordEncryptor? passwordEncryptor;
 
         public AuthenticationRepository(string email, string password)

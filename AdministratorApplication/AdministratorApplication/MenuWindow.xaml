@@ -7,8 +7,8 @@
         xmlns:local="clr-namespace:AdministratorApplication"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" 
-        Title="Menu"
-        Height="700" Width="1300"
+        Title="Meniu"
+        Height="770" Width="1300"
         Icon="./Resources/icon.ico" 
         FontWeight="Bold">
 
@@ -47,6 +47,39 @@
             </Setter>
 
         </Style>
+
+        <Style x:Key="RefreshButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{DynamicResource ButtonColor}"/>
+            <Setter Property="BorderBrush" Value="#676b6b"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Foreground" Value="{DynamicResource ButtontTextColor}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="btnBorder" CornerRadius="15" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <Grid>
+                                <ContentPresenter x:Name="ContentPresenter" Focusable="False" 
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                    RecognizesAccessKey="True"/>
+                                <Image Source="/Resources/refresh_icon.png" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="{DynamicResource ButtonHoverColor}"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
     </Window.Resources>
 
     <Grid>
@@ -61,28 +94,31 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="270"/>
                 </Grid.ColumnDefinitions>
 
                 <Image Grid.Column="0" Source="/Resources/logo.png"/>
 
-                <StackPanel Grid.Column="1" Orientation="Horizontal" Height="50" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">
-                    <Button x:Name="BtnEmployees" Content="Angajati" Style="{DynamicResource ButtonStyle}" VerticalContentAlignment="Center" Click="BtnEmployees_Click" FontSize="20" IsEnabled="True" FontFamily="Tahoma"/>
-                    <Button x:Name="BtnEmployeeAdd" Content="Adaugare angajat" Style="{DynamicResource ButtonStyle}"  Margin="10,0,0,0" Click="BtnEmployeeAdd_Click" FontSize="20" FontFamily="Tahoma"/>
-                    <Button x:Name="BtnStatus" Content="Status" Style="{DynamicResource ButtonStyle}" VerticalContentAlignment="Center" Margin="10,0,0,0" FontSize="20" Click="BtnStatus_Click" FontFamily="Tahoma"/>
-                    <Button x:Name="BtnExit" Content="Iesire" Style="{DynamicResource ButtonStyle}" Margin="10,0,0,0" FontSize="20" Click="BtnExit_Click" FontFamily="Tahoma"/>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Width="900" Height="50" Margin="0,30,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Button x:Name="BtnEmployees" Content="Angajati" Style="{DynamicResource ButtonStyle}" VerticalContentAlignment="Center" Click="BtnEmployees_Click" 
+                            FontSize="20" IsEnabled="True" FontFamily="Tahoma"/>
+                    <Button x:Name="BtnEmployeeAdd" Content="Adaugare angajat" Style="{DynamicResource ButtonStyle}"  Margin="10,0,0,0" Click="BtnEmployeeAdd_Click"
+                            FontSize="20" FontFamily="Tahoma"/>
+                    <Button x:Name="BtnStatus" Content="Status" Style="{DynamicResource ButtonStyle}" VerticalContentAlignment="Center" Margin="10,0,0,0"
+                            FontSize="20" Click="BtnStatus_Click" FontFamily="Tahoma"/>
+                    <Button x:Name="BtnExit" Content="Iesire" Style="{DynamicResource ButtonStyle}" Margin="10,0,0,0"
+                            FontSize="20" Click="BtnExit_Click" FontFamily="Tahoma"/>
+                    <Button x:Name="BtnRefresh" Style="{DynamicResource RefreshButtonStyle}" Margin="10,0,0,0" Click="BtnRefresh_Click"/>
                 </StackPanel>
 
-                <clk:ClockControl x:Name="clock" Grid.Column="2" Margin="100,10,40,10"></clk:ClockControl>
+                <clk:ClockControl x:Name="clock" Grid.Column="2" Margin="70,10,46,10"></clk:ClockControl>
 
             </Grid>
         </Grid>
-        
-   
 
-        <Frame x:Name="Main" Margin="0,100,0,0" NavigationUIVisibility="Hidden" Navigated="Main_Navigated" >
+        <Frame x:Name="Main" Margin="0,100,0,0" NavigationUIVisibility="Hidden">
         </Frame>
-        <ProgressBar  x:Name="PageProgressBar" Background="red" IsIndeterminate="True" Visibility="Collapsed"  HorizontalAlignment="Left" Height="10" Margin="546,367,0,0" VerticalAlignment="Top" Width="100"/>
+       
     </Grid>
 
 

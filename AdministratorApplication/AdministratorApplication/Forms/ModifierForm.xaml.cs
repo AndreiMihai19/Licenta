@@ -26,7 +26,6 @@ namespace AdministratorApplication.Forms
     {
         int? id;
         string currentJobPosition;
-      //  public event EventHandler InfoModified;
 
         public delegate void UpdateEmployeeListEventHandler(object sender, EventArgs e);
 
@@ -77,7 +76,6 @@ namespace AdministratorApplication.Forms
             switch (modifierEmployeeInfo.ModifyEmployeeInfo(id, currentJobPosition, txtEmail.Text, txtParola.Password, txtTelefon.Text, newJobPosition, radioBtnSelected))
             {
                 case ModifierStatus.Success:
-                  //  OnDataModified();
                     UpdateEmployeeList?.Invoke(this, EventArgs.Empty);
                     MessageBox.Show("Modificare reusita!");
                     break;

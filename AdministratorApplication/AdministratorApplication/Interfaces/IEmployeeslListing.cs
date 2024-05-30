@@ -9,9 +9,9 @@ namespace AdministratorApplication.Interfaces
 {
     public interface IEmployeeslListing
     {
-        void AddEmployees(List<Employee> employees);
+        void AddEmployees(List<EmployeeModel> employees);
 
-        void RemoveEmployee(Employee employee);
+        void RemoveEmployee(EmployeeModel employee);
 
        // Employee? GetEmployee(int id);
 

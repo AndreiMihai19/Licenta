@@ -1,4 +1,4 @@
-﻿using AdministratorApplication.Classes;
+﻿using AdministratorApplication.Services;
 using AdministratorApplication.Interfaces;
 using AdministratorApplication.Models;
 using AdministratorApplication.Repositories;
@@ -71,20 +71,34 @@ namespace AdministratorApplication.Pages
             if (radioOre3.IsChecked == true)
             {
                 radioBtnSelected = radioBtn[2];
-             }
+            }
 
-            Employee employee = new Employee()
+            int radioBtnAdminSelected = -1;
+
+            if (radioIsAdmin.IsChecked == true)
+            {
+                radioBtnAdminSelected = 1;
+            }
+            else
+            {
+                if (radioIsNotAdmin.IsChecked == true)
+                {
+                    radioBtnAdminSelected = 0;
+                }
+            }
+
+            EmployeeModel employee = new EmployeeModel()
             {
                 Id = idAngajat,
                 Email = txtEmail.Text,
-             //   Parola = txtParola.Password,
                 Prenume = txtPrenume.Text,
                 Nume = txtNume.Text,
                 DataNasterii = dataNastere,
                 CNP = txtCNP.Text,
                 Telefon = txtTelefon.Text,
                 Functie = jobPosition,
-                Ore = radioBtnSelected
+                Ore = radioBtnSelected,
+                IsAdmin = radioBtnAdminSelected
             };
             
             switch (registration.Register(employee, password))

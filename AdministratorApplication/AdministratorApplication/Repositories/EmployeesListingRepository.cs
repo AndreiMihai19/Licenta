@@ -17,7 +17,8 @@ namespace AdministratorApplication.Repositories
     public class EmployeesListingRepository : IEmployeeslListing
     {
         private readonly MySqlConnection connection = new MySqlConnection("Server=34.78.19.175;Port=3306;database=biometrichubaccess;User Id=root;Password=parolalicenta");
-        public void AddEmployees(List<Employee> employees)
+
+        public void AddEmployees(List<EmployeeModel> employees)
         {
 
             try
@@ -47,11 +48,10 @@ namespace AdministratorApplication.Repositories
                         int hours = reader.GetInt32(8);
 
 
-                        Employee employee = new Employee()
+                        EmployeeModel employee = new EmployeeModel()
                         {
                             Id = id,
                             Email = email,
-                            //Parola = password,
                             Prenume = firstName,
                             Nume = lastName,
                             DataNasterii = dataNastere,
@@ -77,20 +77,13 @@ namespace AdministratorApplication.Repositories
 
         }
 
-        public void RemoveEmployee(Employee employee)
+        public void RemoveEmployee(EmployeeModel employee)
         {
             try
             {
                 if (connection.State == ConnectionState.Closed)
                 {
                     connection.Open();
-
-                    string insert = "INSERT INTO Angajati_stersi(id) VALUES (@id)";
-
-                    MySqlCommand commandInsert = new MySqlCommand(insert, connection);
-                    commandInsert.Parameters.AddWithValue("@id", employee.Id);
-                    commandInsert.ExecuteNonQuery();
-
 
                     string delete = "DELETE FROM Angajati WHERE id=@id";
 

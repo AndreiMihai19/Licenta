@@ -28,7 +28,7 @@ namespace AdministratorApplication.Pages
     {
         private IEmployeeslListing? employeesListing;
 
-        List<Employee> employees = new List<Employee>();
+        List<EmployeeModel> employees = new List<EmployeeModel>();
 
         ModifierForm? modifierForm;
         public EmployeesPage()
@@ -74,7 +74,7 @@ namespace AdministratorApplication.Pages
 
             if (button != null)
             {
-                var employee = button.DataContext as Employee;
+                var employee = button.DataContext as EmployeeModel;
 
                 if (employee != null)
                 {
@@ -94,7 +94,7 @@ namespace AdministratorApplication.Pages
 
             if (button != null)
             {
-                var employee = button.DataContext as Employee;
+                var employee = button.DataContext as EmployeeModel;
 
                 if (employee != null)
                 {
@@ -104,7 +104,6 @@ namespace AdministratorApplication.Pages
             }
 
             modifierForm = new ModifierForm(id, jobPosition);
-            modifierForm.UpdateEmployeeList += (sender, args) => { ListViewEmployees.Items.Refresh(); };
 
             modifierForm.ShowDialog();
 
@@ -120,7 +119,34 @@ namespace AdministratorApplication.Pages
 
                 foreach (var column in gridView.Columns)
                 {
-                    column.Width = columnWidth;
+                    if (column.Header.ToString() == "Id" || column.Header.ToString() == "Ore/zi")
+                    {
+                        column.Width = columnWidth / 2;
+                    }
+                    else
+                    {
+                        if (column.Header.ToString() == "")
+                        {
+                            column.Width = columnWidth / 1.4;
+                        }
+                        else
+                        {
+                            if (column.Header.ToString() == "Functie")
+                            {
+                                column.Width = columnWidth * 1.3;
+                            }
+                            else
+                            {
+                                if (column.Header.ToString() == "Email")
+                                {
+                                    column.Width = columnWidth * 2;
+                                }
+                                else
+                                {
+                                    column.Width = columnWidth;
+                                }
+                            }                        }
+                    }
                 }
             }
         }

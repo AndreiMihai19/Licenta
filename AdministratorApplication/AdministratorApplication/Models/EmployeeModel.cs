@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdministratorApplication.Models
 {
-    public class Employee
+    public class EmployeeModel
     {
 
         public int? Id { get; set; }
@@ -19,6 +19,7 @@ namespace AdministratorApplication.Models
         public string? Telefon { get; set; }
         public string? Functie { get; set; }
         public int? Ore { get; set; }
+        public int? IsAdmin { get; set; }
 
 
     }

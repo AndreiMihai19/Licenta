@@ -1,4 +1,4 @@
-﻿using AdministratorApplication.Classes;
+﻿using AdministratorApplication.Services;
 using AdministratorApplication.Interfaces;
 using MySql.Data.MySqlClient;
 using System.Linq.Expressions;
@@ -31,18 +31,12 @@ namespace AdministratorApplication
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Authentication();
-
-            /*
-            MessageBox.Show("Autentificare reusita!");
-
+            //   Authentication();
             MenuWindow menuWindow = new MenuWindow();
             menuWindow.Show();
 
             this.IsEnabled = false;
             this.Close();
-            */
-
         }
 
         private void Authentication()
@@ -70,11 +64,6 @@ namespace AdministratorApplication
                 default:
                     break;
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 

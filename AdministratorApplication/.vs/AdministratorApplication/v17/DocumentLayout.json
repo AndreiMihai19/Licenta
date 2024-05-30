@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\repositories\\employeeslistingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\repositories\\employeeslistingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|d:\\licenta_repository\\licenta\\administratorapplication\\administratorapplication\\pages\\employeespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5E6BF2-EC3B-4521-A545-CF23E790134B}|AdministratorApplication\\AdministratorApplication.csproj|solutionrelative:administratorapplication\\pages\\employeespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,11 +18,37 @@
       "DocumentGroups": [
         {
           "DockedHeight": 255,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeesListingRepository.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "RelativeToolTip": "AdministratorApplication\\Repositories\\EmployeesListingRepository.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAIAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T21:36:50.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeesPage.xaml.cs",
+              "DocumentMoniker": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Pages\\EmployeesPage.xaml.cs",
+              "RelativeDocumentMoniker": "AdministratorApplication\\Pages\\EmployeesPage.xaml.cs",
+              "ToolTip": "D:\\Licenta_Repository\\Licenta\\AdministratorApplication\\AdministratorApplication\\Pages\\EmployeesPage.xaml.cs",
+              "RelativeToolTip": "AdministratorApplication\\Pages\\EmployeesPage.xaml.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAQwGIAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T20:15:14.424Z",
+              "EditorCaption": ""
             }
           ]
         }

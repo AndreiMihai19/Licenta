@@ -56,7 +56,21 @@ namespace AdministratorApplication.Employee_Status
 
                 foreach (var column in gridView.Columns)
                 {
-                    column.Width = columnWidth;
+                    if (column.Header.ToString() == "Id")
+                    {
+                        column.Width = columnWidth / 2;
+                    }
+                    else
+                    {
+                        if (column.Header.ToString() == "Prenume")
+                        {
+                            column.Width = columnWidth * 1.3;
+                        }
+                        else
+                        {
+                            column.Width = columnWidth;
+                        }
+                    }
                 }
             }
         }
