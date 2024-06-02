@@ -27,8 +27,6 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <es:TotalHoursCard Grid.Column="0" x:Name="totalHourscard1" Title="Total ore" Number="100" Background1="#3052b0"  Background2="#111a33" Margin="25,15,25,15" FontFamily="Tahoma"/>
-
-
             </Grid>
 
         </Grid>
@@ -54,8 +52,9 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Text="Nume angajat" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Tahoma" Foreground="White"></TextBlock>
-                    <ComboBox Grid.Row="1" Name="CBNames" SelectedIndex="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="CBNames_SelectionChanged" Margin="22,10,22,12" FontSize="15" FontFamily="Tahoma"/>
-                    
+                    <ComboBox Grid.Row="1" Name="CBNames" SelectedIndex="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="CBNames_SelectionChanged" 
+                              Margin="22,10,22,12" FontSize="15" FontFamily="Tahoma"/>
+
                 </Grid>
 
                 <Grid Grid.Row="1">
@@ -65,7 +64,8 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Text="Luna" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Tahoma" Foreground="White"></TextBlock>
-                    <ComboBox Grid.Row="1" Name="CBMonths" SelectedIndex="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="20,10,22,12" FontSize="15" FontFamily="Tahoma" SelectionChanged="CBMonths_SelectionChanged" />
+                    <ComboBox Grid.Row="1" Name="CBMonths" SelectedIndex="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="20,10,22,12" FontSize="15" 
+                              FontFamily="Tahoma" SelectionChanged="CBMonths_SelectionChanged" />
                 </Grid>
 
                 <Grid Grid.Row="2">
@@ -75,9 +75,8 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Text="Anul" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Tahoma" Foreground="White"></TextBlock>
-                    <ComboBox Grid.Row="1" Name="CBYears" SelectedIndex="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="20,10,22,12" FontSize="15" FontFamily="Tahoma" SelectionChanged="CBYears_SelectionChanged" />
-
-
+                    <ComboBox Grid.Row="1" Name="CBYears" SelectedIndex="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="20,10,22,12" FontSize="15"
+                              FontFamily="Tahoma" SelectionChanged="CBYears_SelectionChanged" />
                 </Grid>
 
             </Grid>
@@ -97,11 +96,9 @@
                               FontSize="10">
                     </lvc:Axis>
                 </lvc:CartesianChart.AxisY>
-
             </lvc:CartesianChart>
 
         </Grid>
-
-
     </Grid>
+    
 </UserControl>

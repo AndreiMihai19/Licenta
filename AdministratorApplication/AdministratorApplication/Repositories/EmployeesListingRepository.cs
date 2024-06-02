@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 using AdministratorApplication.Models;
+using System.IO.Ports;
 
 namespace AdministratorApplication.Repositories
 {
@@ -115,6 +116,7 @@ namespace AdministratorApplication.Repositories
             }
             catch (MySqlException ex)
             {
+                MessageBox.Show("Stergerea nu s-a putut realiza!");
             }
             finally
             {
@@ -122,6 +124,8 @@ namespace AdministratorApplication.Repositories
             }
 
         }
+
+
 
       
     }

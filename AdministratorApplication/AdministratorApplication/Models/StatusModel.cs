@@ -9,12 +9,11 @@ namespace AdministratorApplication.Models
     public class StatusModel
     {
         public int? Id { get; set; }
-        //  public string? Parola{ get; set; }
         public string? Nume { get; set; }
         public string? Prenume { get; set; }
-        public string? OraIn { get; set; }
-        public string? OraPauzaIn { get; set; }
-        public string? OraPauzaOut { get; set; }
-        public string? OraOut { get; set; }
+        public string? ClockIn { get; set; }
+        public string? StartBreak { get; set; }
+        public string? EndBreak { get; set; }
+        public string? ClockOut { get; set; }
     }
 }

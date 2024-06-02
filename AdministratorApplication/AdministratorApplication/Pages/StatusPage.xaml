@@ -22,9 +22,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <es:StatusCard Grid.Row="0" x:Name="card1" Title="Total angajati" Number="100" Background1="#3052b0"  Background2="#111a33" EllipseBackground1="#676b6b" EllipseBackground2="White"  HorizontalAlignment="Left" Margin="20,0,0,0" FontFamily="Tahoma"/>
-            <es:StatusCard Grid.Row="1" x:Name="card2" Title="Angajati activi" Number="100" Background1= "#193b39" Background2="#317773" EllipseBackground1="#676b6b" EllipseBackground2="White" HorizontalAlignment="Left" Margin="20,0,0,0" FontFamily="Tahoma"/>
-            <es:StatusCard Grid.Row="2" x:Name="card3" Title="Angajati inactivi" Number="100" Background1="#ed3957" Background2="#54141f" EllipseBackground1="#676b6b" EllipseBackground2="White" HorizontalAlignment="Left" Margin="20,0,0,0" FontFamily="Tahoma"/>
+            <es:StatusCard Grid.Row="0" x:Name="card1" Title="Total angajati" Number="100" Background1="#3052b0"  Background2="#111a33" EllipseBackground1="#676b6b" EllipseBackground2="White"
+                           HorizontalAlignment="Left" Margin="20,0,0,0" FontFamily="Tahoma"/>
+            <es:StatusCard Grid.Row="1" x:Name="card2" Title="Angajati activi" Number="100" Background1= "#193b39" Background2="#317773" EllipseBackground1="#676b6b" EllipseBackground2="White" 
+                           HorizontalAlignment="Left" Margin="20,0,0,0" FontFamily="Tahoma"/>
+            <es:StatusCard Grid.Row="2" x:Name="card3" Title="Angajati inactivi" Number="100" Background1="#ed3957" Background2="#54141f" EllipseBackground1="#676b6b" EllipseBackground2="White" 
+                           HorizontalAlignment="Left" Margin="20,0,0,0" FontFamily="Tahoma"/>
 
         </Grid>
 
@@ -48,9 +51,7 @@
                     </Style>
                 </TabItem.Style>
             </TabItem>
-
         </TabControl>
-
     </Grid>
 
 </Page>

@@ -27,7 +27,6 @@ namespace AdministratorApplication.Pages
     {
         private IStatus? status;
 
-        List<EmployeeModel> employees = new List<EmployeeModel>();
         public StatusPage()
         {
 
@@ -47,8 +46,6 @@ namespace AdministratorApplication.Pages
 
         private void TabStatusControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-         
-            // Afișează UserControl-ul corespunzător tab-ului selectat
             if (TabStatusControl.SelectedIndex == 0)
             {
                 tabStatus1.Visibility = Visibility.Visible;
@@ -57,12 +54,6 @@ namespace AdministratorApplication.Pages
             {
                 tabStatus2.Visibility = Visibility.Visible;
             }
-            //else if (myTabControl.SelectedIndex == 2)
-            //{
-            //    userControl3.Visibility = Visibility.Visible;
-            //}
         }
-
-
     }
 }

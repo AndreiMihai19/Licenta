@@ -145,22 +145,19 @@ namespace AdministratorApplication.Repositories
                                 break;
                         }
 
-
-
                         RegistryChartModel registryChart = new RegistryChartModel
                         { 
                             NumePrenume = numePrenume,
                             Data = date.ToString("dd-MM-yyyy"),
                             OraProgram1 = oraProgram1,
-                            OraPauza = GetTime(_breakHourIn, _breakHourOut),
-                            OraProgram2 = GetTime(_breakHourOut, _hourOut),
+                            OraPauza = oraPauza,
+                            OraProgram2 = oraProgram2,
                             TotalOre = totalOre,
                             LunaCalendaristica = month,
                             Anul = year
                         };
 
                         chart.Add(registryChart);
-
                     }
                 }
             }
@@ -207,7 +204,6 @@ namespace AdministratorApplication.Repositories
             {
                 return double.Parse(Math.Abs(h).ToString() + "." + m.ToString());
             }
-
         }
 
         public double GetTotalHours(string time1, string time2)
@@ -256,9 +252,6 @@ namespace AdministratorApplication.Repositories
                 t2_min = 0;
             }
 
-
-
-
             int m = t1_min + t2_min;
             int h = t1_hour + t2_hour;
             
@@ -277,8 +270,6 @@ namespace AdministratorApplication.Repositories
             {
                 return double.Parse(h.ToString() + "." + m.ToString());
             }
-
-
         }
     }
 }

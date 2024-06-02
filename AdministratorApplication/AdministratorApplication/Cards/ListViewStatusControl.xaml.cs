@@ -26,9 +26,8 @@ namespace AdministratorApplication.Employee_Status
     /// </summary>
     public partial class ListViewStatusControl : UserControl
     {
-        private IEmployeesListingStatus? status;
-        private List<StatusModel> statusList = new List<StatusModel>();
-
+        private readonly IEmployeesListingStatus? status;
+        private readonly List<StatusModel> statusList = new List<StatusModel>();
 
         public ListViewStatusControl()
         {
@@ -39,11 +38,6 @@ namespace AdministratorApplication.Employee_Status
             status.AddStatus(statusList);
 
             ListViewStatus.ItemsSource = statusList;
-
-            ListViewStatus.HorizontalContentAlignment = HorizontalAlignment.Center;
-            ListViewStatus.VerticalContentAlignment = VerticalAlignment.Center;
-
-
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)

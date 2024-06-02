@@ -44,8 +44,6 @@
         </Style>
     </Page.Resources>
 
-
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -92,8 +90,6 @@
         <Label Grid.Row="12" Content="Telefon:" Foreground="#317773" FontWeight="Bold"/>
         <TextBox Grid.Row="13" Name="txtTelefon" Margin="5" />
 
-
-
         <Label Grid.Row="14" Content="Functie:" Foreground="#317773" FontWeight="Bold"/>
         <ComboBox SelectedIndex="0" Grid.Row="15" Name="cmbFunctie" Margin="5" >
             <ComboBoxItem Content="Mobile Developer"/>
@@ -123,4 +119,5 @@
 
         <Button Grid.Row="20" Content="Inregistreaza" Margin="5,5,5,-38" Click="BtnInregistrare_Click"  Style="{DynamicResource ButtonStyle}" FontWeight="Bold"/>
     </Grid>
+    
 </Page>

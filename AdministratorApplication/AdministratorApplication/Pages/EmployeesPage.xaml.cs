@@ -18,6 +18,7 @@ using System.ComponentModel;
 using System.Collections.ObjectModel;
 using AdministratorApplication.Forms;
 using AdministratorApplication.Models;
+using System.IO.Ports;
 
 namespace AdministratorApplication.Pages
 {
@@ -27,10 +28,10 @@ namespace AdministratorApplication.Pages
     public partial class EmployeesPage : Page
     {
         private IEmployeeslListing? employeesListing;
-
+        private SerialPort serialPort;
         List<EmployeeModel> employees = new List<EmployeeModel>();
-
         ModifierForm? modifierForm;
+
         public EmployeesPage()
         {
             InitializeComponent();
@@ -68,22 +69,61 @@ namespace AdministratorApplication.Pages
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            employeesListing = new EmployeesListingRepository();
-
-            var button = sender as Button;
-
-            if (button != null)
+            try
             {
-                var employee = button.DataContext as EmployeeModel;
+                InitializeSerialPort();
 
-                if (employee != null)
+                employeesListing = new EmployeesListingRepository();
+
+                var button = sender as Button;
+
+                if (button != null)
                 {
-                    employees.Remove(employee);
-                    employeesListing.RemoveEmployee(employee);
+                    var employee = button.DataContext as EmployeeModel;
 
-                    ListViewEmployees.Items.Refresh();
+                    if (employee != null)
+                    {
+                        employees.Remove(employee);
+                        employeesListing.RemoveEmployee(employee);
+                        SendIdToArduino(employee.Id);
+                        ListViewEmployees.Items.Refresh();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Portul serial care comunica cu Arduino nu este disponibil!");
+            }
+            finally
+            {
+                if (serialPort.IsOpen)
+                {
+                    serialPort.Close();
                 }
             }
+        }
+
+        private void SendIdToArduino(int? id)
+        {
+            if (serialPort.IsOpen)
+            {
+                serialPort.Write(id.ToString());
+            }
+        }
+
+        private void InitializeSerialPort()
+        {
+            serialPort = new SerialPort
+            {
+                PortName = "COM11",
+                BaudRate = 9600,
+                Parity = Parity.None,
+                StopBits = StopBits.One,
+                DataBits = 8,
+                Handshake = Handshake.None
+            };
+             serialPort.Open();
         }
 
         private void BtnModify_Click(object sender, RoutedEventArgs e)
@@ -150,7 +190,5 @@ namespace AdministratorApplication.Pages
                 }
             }
         }
-
-     
     }
 }

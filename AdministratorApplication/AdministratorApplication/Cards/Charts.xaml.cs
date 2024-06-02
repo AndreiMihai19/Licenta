@@ -32,8 +32,8 @@ namespace AdministratorApplication.Employee_Status
     /// </summary>
     public partial class Charts : UserControl
     {
-        private List<RegistryChartModel> chart = new List<RegistryChartModel>();
-        private ICharts chartInfo = new ChartsRepository();
+        private readonly List<RegistryChartModel> chart = new List<RegistryChartModel>();
+        private readonly ICharts chartInfo = new ChartsRepository();
         private string? selectedName;
         private string? selectedMonth;
         private string? selectedYear;
@@ -41,8 +41,6 @@ namespace AdministratorApplication.Employee_Status
         public Charts()
         {
             InitializeComponent();
-
-          //  EmployeeNames = new ObservableCollection<string>(chartInfo.GetNamesOfEmployees());
 
             chartInfo.AddRegistryValues(chart);
 
@@ -55,13 +53,10 @@ namespace AdministratorApplication.Employee_Status
             selectedName = CBNames.SelectedItem.ToString();
             selectedMonth = CBMonths.SelectedItem.ToString();
             selectedYear = CBYears.SelectedItem.ToString();
-
-
         }
 
         public void RowChart(string name, string month, string year)
         {
-
             DataContext = null;
 
             double val = chart
@@ -115,8 +110,11 @@ namespace AdministratorApplication.Employee_Status
             Formatter = value => value + " h";
 
             DataContext = this;
-
         }
+
+        public SeriesCollection SeriesCollection { get; set; }
+        public string[] Labels { get; set; }
+        public Func<double, string> Formatter { get; set; }
 
         private double GetHourValue(RegistryChartModel registryChart, string seriesName)
         {
@@ -132,12 +130,6 @@ namespace AdministratorApplication.Employee_Status
                     return 0;
             }
         }
-
-
-        public SeriesCollection SeriesCollection { get; set; }
-        public string[] Labels { get; set; }
-        public Func<double, string> Formatter { get; set; }
-
 
         private void CBNames_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

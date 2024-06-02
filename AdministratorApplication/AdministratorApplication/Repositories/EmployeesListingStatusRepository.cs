@@ -23,12 +23,10 @@ namespace AdministratorApplication.Repositories
                     connection.Open();
 
                     string query = "SELECT Angajati.id, Angajati.nume, Angajati.prenume, Status_angajati.ora_in, Status_angajati.ora_pauza_in," +
-                        "Status_angajati.ora_pauza_out,Status_angajati.ora_out FROM Angajati CROSS JOIN Status_angajati ON Angajati.id=Status_angajati.id;";
+                        "Status_angajati.ora_pauza_out,Status_angajati.ora_out FROM Angajati INNER JOIN Status_angajati ON Angajati.id=Status_angajati.id;";
 
                     MySqlCommand command = new MySqlCommand(query, connection);
-
                     MySqlDataReader reader = command.ExecuteReader();
-
 
                     while (reader.Read())
                     {
@@ -81,14 +79,13 @@ namespace AdministratorApplication.Repositories
                             Id = id,
                             Prenume = firstName,
                             Nume = lastName,
-                            OraIn = _hourIn,
-                            OraPauzaIn = _breakHourIn,
-                            OraPauzaOut = _breakHourOut,
-                            OraOut = _hourOut,
+                            ClockIn = _hourIn,
+                            StartBreak = _breakHourIn,
+                            EndBreak = _breakHourOut,
+                            ClockOut = _hourOut,
                         };
 
                         status.Add(s);
-
                     }
                 }
 
@@ -100,7 +97,6 @@ namespace AdministratorApplication.Repositories
             {
                 connection.Close();
             }
-
         }
     }
 }

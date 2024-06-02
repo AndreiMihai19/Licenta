@@ -107,6 +107,12 @@ uint8_t downloadFingerprintTemplate(uint16_t id)
 void loop()                   
 {
 
+  if (Serial.available() > 0) {
+    String dataFromWPFApp = Serial.readStringUntil('\n');
+    int idToDelete = dataFromWPFApp.toInt();
+    deleteFingerprint(idToDelete);
+  }
+
   lcd.setCursor(0, 0);
   lcd.print("R - Acces");
   lcd.setCursor(0, 1);
@@ -122,12 +128,12 @@ void loop()
     if (idArray[fingerId] == 0)
     {
        id=fingerId;
-       Serial.println(id);
+    //   Serial.println(id);
        break;
     }
   }
-      Serial.print("Enrolling ID #");
-      Serial.println(id);
+     // Serial.print("Enrolling ID #");
+     // Serial.println(id);
 
       while (!  getFingerprintEnroll() );
   }
@@ -240,7 +246,7 @@ uint8_t getFingerprintEnroll() {
   while (p != FINGERPRINT_NOFINGER) {
     p = finger.getImage();
   }
-  Serial.print("ID "); Serial.println(id);
+  //Serial.print("ID "); Serial.println(id);
 
   p = -1;
 
@@ -407,19 +413,19 @@ uint8_t getFingerprintID() {
   uint8_t p = finger.getImage();
   switch (p) {
     case FINGERPRINT_OK:
-      Serial.println("Image taken");
+    //  Serial.println("Image taken");
       break;
     case FINGERPRINT_NOFINGER:
-      Serial.println("No finger detected");
+    //  Serial.println("No finger detected");
       return p;
     case FINGERPRINT_PACKETRECIEVEERR:
-      Serial.println("Communication error");
+    //  Serial.println("Communication error");
       return p;
     case FINGERPRINT_IMAGEFAIL:
-      Serial.println("Imaging error");
+   //   Serial.println("Imaging error");
       return p;
     default:
-      Serial.println("Unknown error");
+     // Serial.println("Unknown error");
       return p;
   }
 
@@ -521,6 +527,26 @@ uint8_t getFingerprintID() {
   espSerial.print("Login"+ String(id));
 
   return finger.fingerID;
+}
+
+uint8_t deleteFingerprint(uint8_t id) {
+  uint8_t p = -1;
+
+  p = finger.deleteModel(id);
+
+  if (p == FINGERPRINT_OK) {
+   // Serial.println("Deleted!");
+  } else if (p == FINGERPRINT_PACKETRECIEVEERR) {
+   // Serial.println("Communication error");
+  } else if (p == FINGERPRINT_BADLOCATION) {
+   // Serial.println("Could not delete in that location");
+  } else if (p == FINGERPRINT_FLASHERR) {
+   // Serial.println("Error writing to flash");
+  } else {
+  //  Serial.print("Unknown error: 0x"); Serial.println(p, HEX);
+  }
+
+  return p;
 }
 
 

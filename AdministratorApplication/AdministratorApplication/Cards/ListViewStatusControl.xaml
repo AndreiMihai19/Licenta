@@ -15,10 +15,10 @@
                         <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
                         <GridViewColumn Header="Nume" DisplayMemberBinding="{Binding Nume}"/>
                         <GridViewColumn Header="Prenume" DisplayMemberBinding="{Binding Prenume}" />
-                        <GridViewColumn Header="Start program" DisplayMemberBinding="{Binding OraIn}" />
-                        <GridViewColumn Header="Start pauza" DisplayMemberBinding="{Binding OraPauzaIn}" />
-                        <GridViewColumn Header="Sfarsit pauza" DisplayMemberBinding="{Binding OraPauzaOut}" />
-                        <GridViewColumn Header="Sfarsit program" DisplayMemberBinding="{Binding OraOut}" />
+                        <GridViewColumn Header="Start program" DisplayMemberBinding="{Binding ClockIn}" />
+                        <GridViewColumn Header="Start pauza" DisplayMemberBinding="{Binding StartBreak}" />
+                        <GridViewColumn Header="Sfarsit pauza" DisplayMemberBinding="{Binding EndBreak}" />
+                        <GridViewColumn Header="Sfarsit program" DisplayMemberBinding="{Binding ClockOut}" />
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
@@ -29,6 +29,6 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-
     </Grid>
+    
 </UserControl>
