@@ -15,7 +15,7 @@ namespace AdministratorApplication.Repositories
 {
     public class ChartsRepository : ICharts
     {
-        private readonly MySqlConnection connection = new MySqlConnection("Server=34.78.19.175;Port=3306;database=biometrichubaccess;User Id=root;Password=parolalicenta");
+        private readonly MySqlConnection connection = new MySqlConnection("Server=35.195.166.77;Port=3306;database=biometrichubaccess;User Id=root;Password=parolalicenta");
        
         public string[] GetNamesOfEmployees()
         {

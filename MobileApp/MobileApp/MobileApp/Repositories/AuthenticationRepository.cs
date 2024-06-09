@@ -12,7 +12,7 @@ namespace MobileApp.Repositories
 {
     public class AuthenticationRepository : IAuthentication
     {
-        private readonly string connectionString = "Server=34.78.19.175;Database=biometrichubaccess;Uid=root;Pwd=parolalicenta;";
+        private readonly string connectionString = "Server=35.195.166.77;Database=biometrichubaccess;Uid=root;Pwd=parolalicenta;";
         private readonly string email;
         private readonly string password;
         private IPasswordEncryptor passwordEncryptor;
@@ -36,7 +36,6 @@ namespace MobileApp.Repositories
                 {
                     try
                     {
-
                         await Task.Run(() => connection.Open());
 
                         passwordEncryptor = new PasswordEncryptor();
@@ -57,7 +56,6 @@ namespace MobileApp.Repositories
                         {
                             return AuthenticationStatus.Failure;
                         }
-
                     }
                     catch(Exception ex) 
                     {

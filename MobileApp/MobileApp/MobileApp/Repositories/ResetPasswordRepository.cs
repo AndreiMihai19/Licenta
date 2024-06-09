@@ -10,7 +10,7 @@ namespace MobileApp.Repositories
 {
     public class ResetPasswordRepository : IResetPassword
     {
-        private readonly string connectionString = "Server=34.78.19.175;Database=biometrichubaccess;Uid=root;Pwd=parolalicenta;";
+        private readonly string connectionString = "Server=35.195.166.77;Database=biometrichubaccess;Uid=root;Pwd=parolalicenta;";
         private readonly string email;
         private readonly string newPassword;
         private readonly string confirmPassword;
@@ -29,7 +29,7 @@ namespace MobileApp.Repositories
             this.confirmPassword = confirmPassword;
         }
 
-        public async Task<SendMailStatus> SendPassword()
+        public async Task<SendMailStatus> CheckEmail()
         {
             if (string.IsNullOrEmpty(this.email))
             {
@@ -73,8 +73,7 @@ namespace MobileApp.Repositories
 
         public async Task<ResetPasswordStatus> ResetPassword()
         {
-
-            if (string.IsNullOrEmpty(this.newPassword) || string.IsNullOrEmpty(this.newPassword))
+            if (string.IsNullOrEmpty(this.newPassword) || string.IsNullOrEmpty(this.confirmPassword))
             {
                 return ResetPasswordStatus.InvalidCredentials;
             }
@@ -96,9 +95,6 @@ namespace MobileApp.Repositories
                         int rowsAffected = await cmdValidate.ExecuteNonQueryAsync();
 
                         return ResetPasswordStatus.Success;
-                        
-                    
-                        
                     }
                     catch
                     {

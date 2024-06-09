@@ -12,7 +12,7 @@ namespace MobileApp.Repositories
 {
     public class DashboardRepository : IDashboard
     {
-        private readonly string connectionString = "Server=34.78.19.175;Database=biometrichubaccess;Uid=root;Pwd=parolalicenta;";
+        private readonly string connectionString = "Server=35.195.166.77;Database=biometrichubaccess;Uid=root;Pwd=parolalicenta;";
         private readonly string email;
         private readonly int id;
         private readonly int dailyHours;
@@ -27,7 +27,6 @@ namespace MobileApp.Repositories
 
         public async Task<EmployeeModel> GetEmployeeInfo()
         {
-
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
@@ -115,8 +114,6 @@ namespace MobileApp.Repositories
                             ClockOut = _hourOut,
                             TotalWorkedHours = totalHours,
                         };
-
-
                     }
                 }
                 catch (MySqlException ex)

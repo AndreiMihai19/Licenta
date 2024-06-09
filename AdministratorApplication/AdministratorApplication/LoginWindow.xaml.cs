@@ -31,12 +31,7 @@ namespace AdministratorApplication
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            //   Authentication();
-            MenuWindow menuWindow = new MenuWindow();
-            menuWindow.Show();
-
-            this.IsEnabled = false;
-            this.Close();
+            Authentication();
         }
 
         private void Authentication()
@@ -46,7 +41,6 @@ namespace AdministratorApplication
             switch (authenticationManager.Authenticate()) 
             {
                 case AuthenticationStatus.Success:
-                    MessageBox.Show("Autentificare reusita!");
 
                     MenuWindow menuWindow = new MenuWindow();
                     menuWindow.Show();

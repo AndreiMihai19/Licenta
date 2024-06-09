@@ -67,11 +67,12 @@ namespace AdministratorApplication.Pages
             GroupEmployeesList();
         }
 
-        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        private async void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 InitializeSerialPort();
+                await Task.Delay(8000);
 
                 employeesListing = new EmployeesListingRepository();
 
@@ -123,7 +124,7 @@ namespace AdministratorApplication.Pages
                 DataBits = 8,
                 Handshake = Handshake.None
             };
-             serialPort.Open();
+           serialPort.Open();
         }
 
         private void BtnModify_Click(object sender, RoutedEventArgs e)

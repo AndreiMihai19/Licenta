@@ -24,6 +24,12 @@ namespace MobileApp.Views
         {
             InitializeComponent();
         }
+
+        private async void OnAuthenticationClicked(object sender, EventArgs e)
+        {
+            await Authentication();
+        }
+
         private async Task Authentication()
         {
             authenticationManager = new AuthenticationRepository(entryEmail.Text, entryPassword.Text);
@@ -33,8 +39,6 @@ namespace MobileApp.Views
             switch (authenticationStatus)
             {
                 case AuthenticationStatus.Success:
-                    await DisplayAlert("Mesaj", "Autentificare reusita!", "OK");
-
                     DashboardModel.Email=entryEmail.Text;
 
                     string[] workDetails = (await authenticationManager.GetEmployeeWorkDetails()).Split('|');
@@ -42,9 +46,9 @@ namespace MobileApp.Views
                     DashboardModel.Id = Convert.ToInt32(workDetails[0]);
                     DashboardModel.DailyHours = Convert.ToInt32(workDetails[1]);
 
-                    MenuView menuView = new MenuView();
+                    DashboardView dashboardView = new DashboardView();
 
-                    await Navigation.PushAsync(menuView);
+                    await Navigation.PushAsync(dashboardView);
                     break;
                 case AuthenticationStatus.InvalidCredentials:
                     await DisplayAlert("Mesaj", "Completati toate campurile!", "OK");
@@ -58,11 +62,6 @@ namespace MobileApp.Views
                 default:
                     break;
             }
-        }
-
-        private async void OnAuthenticationClicked(object sender, EventArgs e)
-        {
-            await Authentication();
         }
 
         private async void  OnForgotClick(object sender, EventArgs e)

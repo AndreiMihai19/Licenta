@@ -2,15 +2,17 @@
 #include <ArduinoJson.h>
 #include <SoftwareSerial.h>
 #include <LiquidCrystal.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
 
-const int rs = 13, en = 12, d4 = 11, d5 = 10, d6 = 9, d7 = 8;
-LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+//LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 const int buzzerPin = 3;
 #define solenoidPin 2
 
 
 #if (defined(__AVR__) || defined(ESP8266)) || defined(__AVR_ATmega2560__)
-SoftwareSerial mySerial(A1, A0);
+SoftwareSerial mySerial(8, 9);
 SoftwareSerial espSerial(6,7);
 #else
 #endif
@@ -35,7 +37,9 @@ void setup()
 
   Serial.begin(9600);
 
-  lcd.begin(16, 2);
+ // lcd.begin(16, 2);
+  lcd.init();
+  lcd.backlight();
 
   while (!Serial);  
   Serial.println("\n\n SRL");
@@ -79,6 +83,13 @@ void setup()
     downloadFingerprintTemplate(fingerId);
    }
 ///////////////////
+
+/*
+   for ( int fingerId = 3; fingerId < 128; fingerId++)
+  {
+    deleteFingerprint(fingerId);
+  }
+*/
   Serial.println("All id stored");
 
   for ( int fingerId = 1; fingerId < 128; fingerId++)
@@ -118,7 +129,8 @@ void loop()
   lcd.setCursor(0, 1);
   lcd.print("B - Inregistrare");
 
-  if (digitalRead(pinButtonBlue) == LOW) {
+
+  if (digitalRead(pinButtonBlue) == HIGH) {
     lcd.clear();
 
     lcd.println("Inregistrare...                ");
@@ -138,7 +150,8 @@ void loop()
       while (!  getFingerprintEnroll() );
   }
 
-  if (digitalRead(pinButtonRed) == LOW) {
+
+  if (digitalRead(pinButtonRed) == HIGH) {
     option = -1;
     lcd.clear();
     lcd.setCursor(3, 0);
@@ -165,7 +178,7 @@ uint8_t getFingerprintEnroll() {
     case FINGERPRINT_OK:
       break;
     case FINGERPRINT_NOFINGER:
-      Serial.println(".");
+      //Serial.println(".");
       break;
     case FINGERPRINT_PACKETRECIEVEERR:
       lcd.clear();

@@ -25,11 +25,16 @@ namespace MobileApp.Views
 			InitializeComponent();
 		}
 
+        private async void OnSendClicked(object sender, EventArgs e)
+        {
+            await SendEmail();
+        }
+
         private async Task SendEmail()
         {
             resetPassword = new ResetPasswordRepository(entryEmail.Text);
 
-            SendMailStatus sendEmailStatus = await resetPassword.SendPassword();
+            SendMailStatus sendEmailStatus = await resetPassword.CheckEmail();
 
             switch (sendEmailStatus)
             {
@@ -58,12 +63,6 @@ namespace MobileApp.Views
                 default:
                     break;
             }
-
-        }
-
-        private async void OnSendClicked(object sender, EventArgs e)
-        {
-            await SendEmail();
         }
 
         private async void OnBackClicked(object sender, EventArgs e)

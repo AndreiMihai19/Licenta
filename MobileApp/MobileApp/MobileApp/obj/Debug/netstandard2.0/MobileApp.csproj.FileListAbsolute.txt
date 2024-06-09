@@ -25,7 +25,6 @@ D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandar
 D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandard2.0\Views\AuthenticationView.xaml.g.cs
 D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandard2.0\Views\ForgotPasswordView.xaml.g.cs
-D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandard2.0\Views\MenuView.xaml.g.cs
 D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandard2.0\Views\ResetPasswordView.xaml.g.cs
 D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandard2.0\MobileApp.AssemblyInfoInputs.cache
 D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandard2.0\MobileApp.AssemblyInfo.cs
@@ -35,3 +34,4 @@ D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandar
 D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandard2.0\MobileApp.dll
 D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandard2.0\refint\MobileApp.dll
 D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandard2.0\MobileApp.pdb
+D:\Licenta_Repository\Licenta\MobileApp\MobileApp\MobileApp\obj\Debug\netstandard2.0\Views\DashboardView.xaml.g.cs

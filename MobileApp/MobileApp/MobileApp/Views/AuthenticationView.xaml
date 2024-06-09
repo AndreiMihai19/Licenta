@@ -22,11 +22,14 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0"  Text="BiometricHub Access" FontSize="24" FontAttributes="Bold" TextColor="#317773" HorizontalOptions="CenterAndExpand"></Label>
-                    <Label Grid.Row="1" Margin="0,-15,0,0" Text="Login in to account" TextColor="#000000"  HorizontalOptions="CenterAndExpand"></Label>
-                    <Entry Grid.Row="2" x:Name="entryEmail" Placeholder="Email" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PlaceholderColor="#317773"></Entry>
-                    <Entry Grid.Row="3" Placeholder="Password" x:Name="entryPassword" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" PlaceholderColor="#317773"></Entry>
-                    <Button Grid.Row="4" Text="Login" BackgroundColor="#317773" CornerRadius="20" TextColor="White" Clicked="OnAuthenticationClicked"></Button>
-                    <Button Grid.Row="5" Text="Forgot password? Reset it now!" BackgroundColor="Transparent" FontSize="12" BorderWidth="0" Margin="0,-15,0,0" TextTransform="None" Clicked="OnForgotClick" />
+                    <Label Grid.Row="1" Margin="0,-15,0,0" Text="Autentificare in cont" TextColor="#000000"  HorizontalOptions="CenterAndExpand"></Label>
+                    <Entry Grid.Row="2" x:Name="entryEmail" Placeholder="Email" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand" PlaceholderColor="#317773"></Entry>
+                    <Entry Grid.Row="3" Placeholder="Parola" x:Name="entryPassword" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                           PlaceholderColor="#317773"></Entry>
+                    <Button Grid.Row="4" Text="Autentificare" BackgroundColor="#317773" CornerRadius="20" TextColor="White" Clicked="OnAuthenticationClicked"></Button>
+                    <Button Grid.Row="5" Text="Ti-ai uitat parola? Reseteaz-o de aici!" BackgroundColor="Transparent" FontSize="12" BorderWidth="0" Margin="0,-15,0,0" 
+                            TextTransform="None" Clicked="OnForgotClick" />
 
                 </Grid>
             </Frame>
