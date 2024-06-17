@@ -240,11 +240,10 @@ namespace MobileApp.Views
                     workingDays++;
                 }
             }
-
             return workingDays;
         }
 
-        private int SetWorkingDaysOfWeek(int year, int month,string week)
+        private int SetWorkingDaysOfWeek(int year, int month, string week)
         {
             int workingDaysOfWeek = 0;
             string[] _week = week.Split('-');
@@ -261,7 +260,6 @@ namespace MobileApp.Views
                     workingDaysOfWeek++;
                 }
             }
-
             return workingDaysOfWeek;
         }
 
@@ -314,7 +312,6 @@ namespace MobileApp.Views
 
         private string GetFirstWeekOfMonth(int year, int month)
         {
-
             DateTime firstDayOfMonth = new DateTime(year, month, 1);
             DateTime firstDayOfWeek = firstDayOfMonth.AddDays(-(int)firstDayOfMonth.DayOfWeek);
             if (firstDayOfWeek.DayOfWeek != DayOfWeek.Monday)
@@ -328,7 +325,6 @@ namespace MobileApp.Views
             int _lastDayOfWeek = lastDayOfWeek.Day;
 
             return _firstDayOfWeek.ToString() + "-" + _lastDayOfWeek.ToString();
-
         }
 
         private string SetIntervalOfWeek(int year, int month, string week)

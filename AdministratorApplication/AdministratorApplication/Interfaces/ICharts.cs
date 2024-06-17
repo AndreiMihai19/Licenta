@@ -13,6 +13,6 @@ namespace AdministratorApplication.Interfaces
        string[] GetNamesOfEmployees();
        void AddRegistryValues(List<RegistryChartModel> chart);
        double GetTime(string time1, string time2);
-       double GetTotalHours(string time1, string time2);
+       string GetTotalHours(string time1, string time2);
     }
 }

@@ -99,7 +99,7 @@ namespace AdministratorApplication.Repositories
                         double oraProgram1 = GetTime(_hourIn, _breakHourIn);
                         double oraPauza = GetTime(_breakHourIn, _breakHourOut);
                         double oraProgram2 = GetTime(_breakHourOut, _hourOut);
-                        double totalOre = GetTotalHours(oraProgram1.ToString(), oraProgram2.ToString());
+                        string totalOre = GetTotalHours(oraProgram1.ToString(), oraProgram2.ToString());
                         string month = string.Empty;
 
                         switch (_month)
@@ -206,24 +206,22 @@ namespace AdministratorApplication.Repositories
             }
         }
 
-        public double GetTotalHours(string time1, string time2)
+        public string GetTotalHours(string time1, string time2)
         {
             int t1_hour, t1_min, t2_hour, t2_min;
             string t1_min_str, t2_min_str;
 
-            if (time1.Contains('.'))
+            if (time1.Contains(':'))
             {
-                string[] _time1 = time1.Split('.');
+                string[] _time1 = time1.Split(':');
                 t1_hour = Convert.ToInt32(_time1[0]);
                 t1_min_str = _time1[1];
-
                 t1_min = Convert.ToInt32(_time1[1]);
 
-                if (t1_min_str.Length==1)
+                if (t1_min_str.Length == 1)
                 {
                     t1_min *= 10;
                 }
-
             }
             else
             {
@@ -231,20 +229,17 @@ namespace AdministratorApplication.Repositories
                 t1_min = 0;
             }
 
-            if (time2.Contains('.'))
+            if (time2.Contains(':'))
             {
-                string[] _time2 = time2.Split('.');
+                string[] _time2 = time2.Split(':');
                 t2_hour = Convert.ToInt32(_time2[0]);
                 t2_min_str = _time2[1];
-
-
                 t2_min = Convert.ToInt32(_time2[1]);
 
-                if (t2_min_str[0] != '0' && t2_min_str.Length == 1)
+                if (t2_min_str.Length == 1)
                 {
                     t2_min *= 10;
                 }
-
             }
             else
             {
@@ -252,24 +247,11 @@ namespace AdministratorApplication.Repositories
                 t2_min = 0;
             }
 
-            int m = t1_min + t2_min;
-            int h = t1_hour + t2_hour;
-            
-            if (h != 0)
-            {
-                h += m / 60;
-            }
+            int totalMinutes = (t1_hour * 60 + t1_min) + (t2_hour * 60 + t2_min);
+            int h = totalMinutes / 60;
+            int m = totalMinutes % 60;
 
-            m %= 60;
-
-            if (m < 10)
-            {
-                return double.Parse(h.ToString() + ".0" + m.ToString());
-            }
-            else
-            {
-                return double.Parse(h.ToString() + "." + m.ToString());
-            }
+            return h.ToString() + ":" + m.ToString("D2");
         }
     }
 }

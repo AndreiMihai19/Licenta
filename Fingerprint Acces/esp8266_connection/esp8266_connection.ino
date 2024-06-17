@@ -17,6 +17,8 @@ char password[] = "parolalicenta";
 WiFiClient client;
 MySQL_Connection conn((Client *)&client);
 
+String dataFromArduino=" ";
+int id=0;
 
 void setup() {
 
@@ -25,15 +27,14 @@ espSerial.begin(9600);
 
 while (!Serial) continue;
 
-  ConnectToWiFi();
-
+ConnectToWiFi();
 }
 
 void ConnectToWiFi() {
-  Serial.println("Încercăm să ne conectăm la o rețea WiFi...");
+  Serial.println("Incercam sa ne conectam la o rețea WiFi...");
   
   for (int i = 0; i < numberOfSSID; i++) {
-    Serial.print("Încercăm să ne conectăm la ");
+    Serial.print("Incercam sa ne conectam la ");
     Serial.println(ssid[i]);
     
     WiFi.begin(ssid[i], wifiPassword[i]);
@@ -47,37 +48,32 @@ void ConnectToWiFi() {
 
     if (WiFi.status() == WL_CONNECTED) {
       Serial.println("");
-      Serial.println("Conectat la rețeaua WiFi!");
+      Serial.println("Conectat la reteaua WiFi!");
       Serial.print("Adresa IP: ");
       Serial.println(WiFi.localIP());
-      break;  // Ieșim din buclă dacă ne-am conectat cu succes
+      break;  
     } else {
       Serial.println("");
-      Serial.println("Nu am reușit să ne conectăm la această rețea.");
+      Serial.println("Nu am reusit sa ne conectam la aceasta retea.");
       if (i == numberOfSSID - 1) {
-        Serial.println("Nu am putut să ne conectăm la nicio rețea disponibilă.");
+        Serial.println("Nu am putut sa ne conectam la nicio retea disponibila.");
       }
     }
   }
   
   if (conn.connect(server_addr, 3306, user, password)) 
     {
-    Serial.println("Connected to MySQL");
+    Serial.println("Connectat la MySQL");
     } 
   else 
     {
-      Serial.println("Connection failed.");
+      Serial.println("Conectare esuata.");
       conn.close();
     }
 }
 
-
-String dataFromArduino=" ";
-int id=0;
-
-void loop(){
-
-
+void loop()
+{
   if (espSerial.available() > 0) {
     dataFromArduino = espSerial.readStringUntil('\n');
     Serial.print("Date primite de la Arduino: ");
@@ -105,8 +101,6 @@ void loop(){
       if (id != 0) 
       {
         UpdateTimeValueIntoMySQL();
-    //    delay(1000);
-      //  GetNameOfIDMySQL();
       }
     }
   }
@@ -156,87 +150,4 @@ void InsertInTimeValueIntoMySQL()
   delete cur_mem;
 }
 
-void GetNameOfIDMySQL()
-{
-    MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
-    char query[128];
-
-    sprintf(query, "SELECT nume FROM biometrichubaccess.Angajati WHERE ID = '%d'", id);
-
-    cur_mem->execute(query);
-
-    // Citeste coloanele
-    column_names *columns = cur_mem->get_columns();
-
-    int numColumns = columns->num_fields;
-
-    // Verifică dacă există coloane
-    if (numColumns > 0)
-    {
-        row_values *row = NULL;
-
-        do
-        {
-            row = cur_mem->get_next_row();
-            if (row)
-            {
-                // Accesează valorile coloanelor
-                for (int i = 0; i < numColumns; i++)
-                {
-                   // espSerial.print(String(row->values[i]));
-                    Serial.print(String(row->values[i]));
-                }
-            }
-        } while (row);
-    }
-    else
-    {
-        Serial.println("Nu s-au găsit coloane.");
-    }
-
-    // Eliberează resursele
-    delete cur_mem;
-}
-
-void SendToDeleteIDMySQL()
-{
-    MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
-    char query[128];
-
-    sprintf(query, "SELECT nume FROM biometrichubaccess.Angajati WHERE ID = '%d'", 1);
-
-    cur_mem->execute(query);
-
-    // Citeste coloanele
-    column_names *columns = cur_mem->get_columns();
-
-    int numColumns = columns->num_fields;
-
-    // Verifică dacă există coloane
-    if (numColumns > 0)
-    {
-        row_values *row = NULL;
-
-        do
-        {
-            row = cur_mem->get_next_row();
-            if (row)
-            {
-                // Accesează valorile coloanelor
-                for (int i = 0; i < numColumns; i++)
-                {
-                    espSerial.print(String(row->values[i]));
-                    Serial.print(String(row->values[i]));
-                }
-            }
-        } while (row);
-    }
-    else
-    {
-        Serial.println("Nu s-au găsit coloane.");
-    }
-
-    // Eliberează resursele
-    delete cur_mem;
-}
 

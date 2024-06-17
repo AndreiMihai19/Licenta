@@ -180,7 +180,7 @@ namespace MobileApp.Repositories
             }
 
         }
-        
+
 
         public string GetTotalHours(string time1, string time2)
         {
@@ -192,14 +192,12 @@ namespace MobileApp.Repositories
                 string[] _time1 = time1.Split(':');
                 t1_hour = Convert.ToInt32(_time1[0]);
                 t1_min_str = _time1[1];
-
                 t1_min = Convert.ToInt32(_time1[1]);
 
                 if (t1_min_str.Length == 1)
                 {
                     t1_min *= 10;
                 }
-
             }
             else
             {
@@ -212,45 +210,26 @@ namespace MobileApp.Repositories
                 string[] _time2 = time2.Split(':');
                 t2_hour = Convert.ToInt32(_time2[0]);
                 t2_min_str = _time2[1];
-
-
                 t2_min = Convert.ToInt32(_time2[1]);
 
-                if (t2_min_str[0] != '0' && t2_min_str.Length == 1)
+                if (t2_min_str.Length == 1)
                 {
                     t2_min *= 10;
                 }
-
             }
             else
             {
-                t2_hour = Convert.ToInt32(time1);
+                t2_hour = Convert.ToInt32(time2);
                 t2_min = 0;
             }
 
+            int totalMinutes = (t1_hour * 60 + t1_min) + (t2_hour * 60 + t2_min);
+            int h = totalMinutes / 60;
+            int m = totalMinutes % 60;
 
-
-
-            int m = t1_min + t2_min;
-            int h = t1_hour + t2_hour;
-
-            if (h != 0)
-            {
-                h += m / 60;
-            }
-
-            m %= 60;
-
-            if (m<10)
-            {
-                return h.ToString() + ":0" + m.ToString();
-            }
-            else
-            {
-                return h.ToString() + ":" + m.ToString();
-            }
-
+            return h.ToString() + ":" + m.ToString("D2");
         }
+
 
 
 
@@ -515,7 +494,8 @@ namespace MobileApp.Repositories
             string[] _workedHours = workedHours.Split(':');
             string hoursToWork = (dailyHours * workingDaysOfMonth) + ":00";
 
-            if (dailyHours * workingDaysOfMonth < Convert.ToInt32(_workedHours[0]))
+            if (dailyHours * workingDaysOfMonth < Convert.ToInt32(_workedHours[0]) || 
+                (dailyHours * workingDaysOfMonth == Convert.ToInt32(_workedHours[0]) && _workedHours[1].CompareTo("00") != 0))
                 overtime = GetTime(hoursToWork, workedHours);
 
             return overtime;

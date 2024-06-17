@@ -1,0 +1,6 @@
+D:\Licenta_Repository\Licenta\AdministratorApplication\UTestAdminApp\obj\Debug\net8.0\UTestAdminApp.csproj.AssemblyReference.cache
+D:\Licenta_Repository\Licenta\AdministratorApplication\UTestAdminApp\obj\Debug\net8.0\UTestAdminApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Licenta_Repository\Licenta\AdministratorApplication\UTestAdminApp\obj\Debug\net8.0\UTestAdminApp.AssemblyInfoInputs.cache
+D:\Licenta_Repository\Licenta\AdministratorApplication\UTestAdminApp\obj\Debug\net8.0\UTestAdminApp.AssemblyInfo.cs
+D:\Licenta_Repository\Licenta\AdministratorApplication\UTestAdminApp\obj\Debug\net8.0\UTestAdminApp.csproj.CoreCompileInputs.cache
+D:\Licenta_Repository\Licenta\AdministratorApplication\UTestAdminApp\obj\Debug\net8.0\UTestAdminApp.sourcelink.json
