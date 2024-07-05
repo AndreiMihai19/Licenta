@@ -211,9 +211,9 @@ namespace AdministratorApplication.Repositories
             int t1_hour, t1_min, t2_hour, t2_min;
             string t1_min_str, t2_min_str;
 
-            if (time1.Contains(':'))
+            if (time1.Contains('.'))
             {
-                string[] _time1 = time1.Split(':');
+                string[] _time1 = time1.Split('.');
                 t1_hour = Convert.ToInt32(_time1[0]);
                 t1_min_str = _time1[1];
                 t1_min = Convert.ToInt32(_time1[1]);
@@ -229,9 +229,9 @@ namespace AdministratorApplication.Repositories
                 t1_min = 0;
             }
 
-            if (time2.Contains(':'))
+            if (time2.Contains('.'))
             {
-                string[] _time2 = time2.Split(':');
+                string[] _time2 = time2.Split('.');
                 t2_hour = Convert.ToInt32(_time2[0]);
                 t2_min_str = _time2[1];
                 t2_min = Convert.ToInt32(_time2[1]);
@@ -251,7 +251,7 @@ namespace AdministratorApplication.Repositories
             int h = totalMinutes / 60;
             int m = totalMinutes % 60;
 
-            return h.ToString() + ":" + m.ToString("D2");
+            return h.ToString() + "." + m.ToString("D2");
         }
     }
 }

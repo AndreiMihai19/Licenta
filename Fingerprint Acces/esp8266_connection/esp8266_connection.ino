@@ -4,13 +4,13 @@
 #include <SoftwareSerial.h>
 #include <ArduinoJson.h>
 
-SoftwareSerial espSerial(D7, D6);
+SoftwareSerial espSerial(D6, D7);
 
-const char *ssid[] = {"LinksysB019","Sam IL Yei","DIGI-6888"};
-const char *wifiPassword[] = {"wm83y3fby4","camera503503camera","7JpqVMzk"};
+const char *ssid[] = {"AIA","Sam IL Yei","AIA"};
+const char *wifiPassword[] = {"UPT-aia!","camera503503camera","UPT-aia!"};
 const int numberOfSSID=3;
 
-IPAddress server_addr(34,78,19,175); 
+IPAddress server_addr(35,195,166,77); 
 char user[] = "root"; 
 char password[] = "parolalicenta"; 
 

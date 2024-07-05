@@ -21,12 +21,11 @@ namespace AdministratorApplication.Repositories
         {
             DateTime currentTime = DateTime.Today;
 
-            if (e.Id < 0 || string.IsNullOrEmpty(e.Email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(e.Prenume) || string.IsNullOrEmpty(e.Nume) || string.IsNullOrEmpty(e.DataNasterii) || string.IsNullOrEmpty(e.CNP) || string.IsNullOrEmpty(e.Telefon) || string.IsNullOrEmpty(e.Functie) || e.Ore <= 0 || e.IsAdmin < 0)
+            if (e.Id < 0 || string.IsNullOrEmpty(e.Email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(e.Prenume) || string.IsNullOrEmpty(e.Nume) || string.IsNullOrEmpty(e.DataNasterii) || string.IsNullOrEmpty(e.CNP) ||
+                string.IsNullOrEmpty(e.Telefon) || string.IsNullOrEmpty(e.Functie) || e.Ore <= 0 || e.IsAdmin < 0)
             {
                 return RegistrationStatus.InvalidCredentials;
             }
-
-
             try
             {
                 if (connection.State == ConnectionState.Closed)
@@ -60,7 +59,6 @@ namespace AdministratorApplication.Repositories
 
                     return RegistrationStatus.Success;
                 }
-             
                 else
                 {
                     return RegistrationStatus.Failure;
@@ -74,7 +72,6 @@ namespace AdministratorApplication.Repositories
             {
                 connection.Close();
             }
-
         }
 
     }

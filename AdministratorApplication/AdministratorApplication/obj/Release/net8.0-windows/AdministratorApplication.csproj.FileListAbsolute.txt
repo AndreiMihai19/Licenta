@@ -268,3 +268,4 @@ D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Release\net8.0-windows\zh-Hant\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Release\net8.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Release\net8.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Licenta_Repository\Licenta\AdministratorApplication\AdministratorApplication\bin\Release\net8.0-windows\System.Security.Cryptography.Xml.dll

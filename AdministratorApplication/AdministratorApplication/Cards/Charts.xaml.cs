@@ -23,6 +23,7 @@ using System.Drawing;
 using System.Globalization;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using AdministratorApplication.Models;
+using ZstdSharp.Unsafe;
 
 
 namespace AdministratorApplication.Employee_Status
@@ -59,25 +60,23 @@ namespace AdministratorApplication.Employee_Status
         {
             DataContext = null;
 
-            double val = chart
-                            .Where(registryChart => registryChart.NumePrenume == name && registryChart.LunaCalendaristica == month && registryChart.Anul.ToString()  == year)
-                            .Select(registryChart => registryChart.TotalOre ?? 0)
-                            .Sum();
+            string time = "00.00";
 
-            string[] time = val.ToString("F2").Split(".");
+            List<string?> totalOre = chart
+                                        .Where(registryChart => registryChart.NumePrenume == name && registryChart.LunaCalendaristica == month && registryChart.Anul.ToString() == year)
+                                        .Select(item => item.TotalOre).ToList();
 
-            if (time[1].Length == 1)
+            if (totalOre != null)
             {
-                time[1] = time[1] + "0";
+                foreach (string ore in totalOre)
+                {
+                    time = chartInfo.GetTotalHours(ore, time);
+                }
             }
 
-            int minutes = Convert.ToInt32(time[1]);
-            int hour = Convert.ToInt32(time[0]) + minutes / 60;
-            minutes %= 60;
+            string[] _time = time.Split(".");
 
-            string _time = $"{hour}:{minutes:D2}";
-
-            totalHourscard1.Number = _time.ToString();
+            totalHourscard1.Number = _time[0] + ":" + _time[1];
 
             List<string> seriesNames = new List<string> { "Program 1", "Pauza", "Program 2" };
 
